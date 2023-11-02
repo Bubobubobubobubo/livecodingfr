@@ -3,6 +3,4 @@
   import "../app.postcss";
 </script>
 
-export const prerender = true;
-
 <slot />
