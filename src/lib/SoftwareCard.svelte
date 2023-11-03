@@ -8,7 +8,7 @@
 
 <a
   href={link}
-  class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row dark:hover:bg-base-100 hover:bg-base-100 bg-base-300 dark:bg-base-300"
+  class="flex flex-col items-center rounded-lg shadow md:flex-row dark:hover:bg-base-100 hover:bg-base-100 bg-base-300 dark:bg-base-300"
 >
   <img
     class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
