@@ -3,7 +3,7 @@ const typography = require("@tailwindcss/typography");
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: ["./src/**/*.{html,js,svelte,ts,svelte.md}"],
 
   theme: {
     extend: {},

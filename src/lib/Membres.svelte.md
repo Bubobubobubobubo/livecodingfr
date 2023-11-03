@@ -22,7 +22,6 @@
                site: "https://th4music.net",
                mail: "",
           },
-
           {
                name: "Raphaël Bastide",
                description: "",
@@ -30,13 +29,31 @@
                site: "https://raphaelbastide.com",
                mail: "",
           },
+          {
+               name: "Raphaël Bastide",
+               description: "",
+               image: "https://radicalnetworks.org/archives/2018/participants/raphael-bastide/raphaelbastide.jpg",
+               site: "https://raphaelbastide.com",
+               mail: "",
+          },
+          {
+               name: "Raphaël Bastide",
+               description: "",
+               image: "https://radicalnetworks.org/archives/2018/participants/raphael-bastide/raphaelbastide.jpg",
+               site: "https://raphaelbastide.com",
+               mail: "",
+          },
+
+
      ]
 </script>
 
 # Membres
 
-<div class="grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-4 h-5/6 w-4/5 mx-auto">
+<div class="lg:grid sm:grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 mx-auto gap-4">
      {#each members as {name, description, image, site, mail}, i}
-          <Portrait name={name} description={description} image={image} site={site} mail={mail}/>
+          <div>
+               <Portrait name={name} description={description} image={image} site={site} mail={mail}/>
+          </div>
      {/each}
 </div>
