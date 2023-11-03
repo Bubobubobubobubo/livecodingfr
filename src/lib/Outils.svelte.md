@@ -5,7 +5,8 @@
           {
                name:"Sardine",
                creator:"Raphaël Forment",
-               description:"Sardine est un logiciel libre et open source pour Python 3.10+. Sardine transforme Python en un instrument de musique. C'est un framework pour live coder et contrôler du matérial audio depuis Python. Sardine peut se synchroniser à d'autres logiciels ou instances du même logiciel.", image:"https://sardine.raphaelforment.fr/sardine_logo.svg#center",
+               description:"Sardine est un logiciel libre et open source pour Python 3.10+. Sardine transforme Python en un instrument de musique. C'est un framework pour live coder et contrôler du matérial audio depuis Python. Sardine peut se synchroniser à d'autres logiciels ou instances du même logiciel.", 
+               image:"https://sardine.raphaelforment.fr/sardine_logo.svg#center",
                link:"https://sardine.raphaelforment.fr" 
           },
           {
@@ -14,7 +15,15 @@
                description:"Été mélange live coding (écriture musicale temps réel au travers du code) et percussions. Le programme  considère le clavier comme un instrument percussif. Le musicien peut écrire des instructions algorithmiques et des instructions percussives très précises au sein du même environnement de programmation. Été est une expérimentation qui essaie de lier dans un même programme le temps dédié à la composition algorithmique et celui dédié à l'improvisation spontanée.",
                image:"https://gitlab.com/uploads/-/system/project/avatar/35391245/Screenshot_2023-09-19_16-09-44.jpg",
                link:"https://raphaelbastide.com/ete/"
-          } ,
+          },
+          {
+               name: "Cordelia",
+               creator: "Jacopo Greco d'Alceo",
+               description: "A method, a tender affection, winter 2023.",
+               image:"https://avatars.githubusercontent.com/u/92983918?v=4",
+               link: "https://github.com/jacopogrecodalceo/CORDELIA",
+
+          },
           {
                name:"Topos",
                creator:"Raphaël Forment",
