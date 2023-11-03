@@ -10,7 +10,7 @@
 </script>
 
 <div
-  class="max-w-sm w-80 h-fit bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+  class="max-w-sm w-80 h-fit bg-base-300 dark:bg-base-300 border border-gray-300 rounded-lg shadow-md dark:border-gray-700"
 >
   <a href="#">
     <img class="rounded-t-lg h-48 w-80 object-cover" src={image} alt="" />
