@@ -6,8 +6,8 @@
   export let description: string;
 </script>
 
-<div class="card card-side bg-base-100 shadow-xl">
-  <figure class="object-cover h-80 w-1/2">
+<div class="card card-side shadow-xl bg-base-300 dark:bg-base-300">
+  <figure class="object-cover h-80 w-1/2 pl-8">
     <img src={image} alt={description} class="object-cover" />
   </figure>
   <div class="card-body">

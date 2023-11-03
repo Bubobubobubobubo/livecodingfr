@@ -14,7 +14,7 @@
   });
 </script>
 
-<div class="alert">
+<div class="alert bg-base-300 dark:bg-base-300">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

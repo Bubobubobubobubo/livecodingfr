@@ -39,7 +39,7 @@
 </script>
 
 <div>
-  <div class="bg-base-300">
+  <div class="bg-neutral-800 dark:bg-base-300">
     <nav class="pl-8 py-2 md:flex md:justify-between md:items-center pr-8">
       <div class="flex items-center justify-between">
         <a
@@ -112,7 +112,7 @@
   </div>
 </div>
 
-<main>
+<main class="bg-gray-100 dark:bg-base-100">
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content space-y-4 flex flex-col px-16 py-8">
@@ -124,45 +124,60 @@
         aria-label="close sidebar"
         class="drawer-overlay"
       />
-      <ul class="menu p-4 w-40 min-h-full bg-base-300 text-base-content">
+      <ul
+        class="menu p-4 w-40 min-h-full bg-neutral-800 dark:bg-base-300 text-base-content"
+      >
         <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Evenements")}
-            >Évènements</a
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Evenements")}>Évènements</a
           >
         </li>
         <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Membres")}
-            >Membres</a
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Membres")}>Membres</a
           >
         </li>
         <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Outils")}>Outils</a>
-        </li>
-        <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Réseaux")}
-            >Réseaux</a
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Outils")}>Outils</a
           >
         </li>
         <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Ressources")}
-            >Ressources</a
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Réseaux")}>Réseaux</a
+          >
+        </li>
+        <li class="text-xl">
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Ressources")}>Ressources</a
           >
         </li>
 
         <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Presse")}>Presse</a>
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Presse")}>Presse</a
+          >
         </li>
         <li class="text-xl">
-          <a class="text-white" on:click={() => changePage("Contact")}
-            >Contact</a
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Contact")}>Contact</a
           >
         </li>
       </ul>
     </div>
   </div>
 
-  <footer class="footer ml-0 pl-0 pb-4 pt-4 bg-base-300 justify-between pr-16">
-    <p class="indent-4 text-base">Raphaël Forment</p>
+  <footer
+    class="footer ml-0 pl-0 pb-4 pt-4 bg-neutral-800 dark:bg-base-300 justify-between pr-16"
+  >
+    <p class="indent-4 text-bold text-white">Raphaël Forment</p>
     <p>
       <a class="pl-4" href="https://github.com/Bubobubobubobubo/livecodingfr"
         >GitHub</a
