@@ -29,22 +29,6 @@
                site: "https://raphaelbastide.com",
                mail: "",
           },
-          {
-               name: "Raphaël Bastide",
-               description: "",
-               image: "https://radicalnetworks.org/archives/2018/participants/raphael-bastide/raphaelbastide.jpg",
-               site: "https://raphaelbastide.com",
-               mail: "",
-          },
-          {
-               name: "Raphaël Bastide",
-               description: "",
-               image: "https://radicalnetworks.org/archives/2018/participants/raphael-bastide/raphaelbastide.jpg",
-               site: "https://raphaelbastide.com",
-               mail: "",
-          },
-
-
      ]
 </script>
 
