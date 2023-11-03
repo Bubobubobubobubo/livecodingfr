@@ -1,4 +1,28 @@
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
+
+@layer base {
+  a {
+    @apply text-orange-300;
+  }
+  p {
+    @apply text-xl;
+  }
+  li {
+    @apply list-disc text-xl;
+  }
+  h1 {
+    @apply text-3xl border-b-2 py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
+  }
+  h2 {
+    @apply text-2xl border-b-2 py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
+  }
+  h3 {
+    @apply text-2xl bg-white text-right underline py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-orange-300 pr-4;
+  }
+  h4 {
+    @apply text-2xl text-right underline py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-orange-300 pr-4;
+  }
+}
 @tailwind components;
 @tailwind utilities;
