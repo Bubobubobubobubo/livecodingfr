@@ -17,7 +17,7 @@ const config = {
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter({ pages: "dist" }),
     alias: {
-      $data: "./src/data",
+      $data: "src/data",
     }
   },
 };
