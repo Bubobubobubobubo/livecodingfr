@@ -1,6 +1,6 @@
 <script>
      import Press from "$lib/Press.svelte";
-     import Presse from "../data/presse.json";
+     import Presse from "$data/presse.json";
      let general_press = Presse;
 </script>
 
