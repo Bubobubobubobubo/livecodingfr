@@ -19,7 +19,7 @@
           {
                name: "Cordelia",
                creator: "Jacopo Greco d'Alceo",
-               description: "A method, a tender affection, winter 2023.",
+               description: "Une méthode, une tendre affection, hiver 2023. Cordelia est un environnement de live coding qui combine Python au moteur audio CSound.",
                image:"https://avatars.githubusercontent.com/u/92983918?v=4",
                link: "https://github.com/jacopogrecodalceo/CORDELIA",
 
@@ -36,6 +36,13 @@
                description: "OSCII est un logiciel pour dessiner et live coder des visuels en text-mode. OSCII produit également du son grâce à WebAudio.",
                image: "https://i1.sndcdn.com/avatars-1Kjtq0wbLSNSpNQH-AqRXfQ-t500x500.jpg",
                link: "https://gitlab.com/adelfaure/oscii",
+          },
+          {
+               name: "Claude",
+               creator: "Loïc Vital",
+               description: "Claude est un outil pour synchroniser des visuels avec de l'audio dans un contexte de live coding. Claude, pour le moment, est seulement disponible pour un environnement : Sardine. Il peut être utilisé comme un sender, ce qui permet ensuite d'utiliser le Sardine Pattern Language pour écrire des valeurs uniform à envoyer.",
+               image: "https://avatars.githubusercontent.com/u/70104194?v=4",
+               link: "https://github.com/mugulmd/Claude",
           },
           {
                name:"Cascade",

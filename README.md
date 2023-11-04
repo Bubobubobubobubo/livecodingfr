@@ -1,38 +1,33 @@
-# create-svelte
+# Livecoding.fr
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Ce dépôt contient la source du site web [https://livecoding.fr](https://livecoding.fr). Ce dépôt est ouvert à la collaboration. Ajoutez / modifiez / supprimez les informations que vous souhaitez. La source est organisée de sorte à ce que toutes les informations puissent être facilement modifiées sans trop toucher au **HTML/CSS/JS**. Chaque page est éditable en **MarkDown**, et vous pouvez toujours ajouter autant de **HTML/CSS** que vous souhaitez !
 
-## Creating a project
+## Stack technique
 
-If you're seeing this, you've probably already done this step. Congrats!
+Le site suit les standards modernes mais il est ensuite compilé comme un site
+statique. Les outils suivants sont utilisés :
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- [Svelte](https://svelte.dev/) : framework frontend.
+- [SvelteKit](https://kit.svelte.dev/)/Vite : tooling.
+- [Tailwind](https://tailwindcss.com/) : CSS.
+- [DaisyUi](https://daisyui.com/) : CSS supplémentaire.
+- [Mdsvex](https://github.com/pngwn/MDsveX) : MarkDown en Svelte.
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Comment contribuer ?
+
+- Les pages du site sont écrites en **Markdown**. Vous pouvez les modifier même
+  sans connaissance préalable de la programmation web.
+- Les informations structurées (outils, membres, etc) sont contenues dans une
+structure de donnée qui apparaît au début de chaque fichier. Il vous suffit
+d'ajouter les informations en suivant le format déjà défini. Par ex. pour un
+ nouveau membre :
+
+```js
+{
+  name: "Joe Joe",
+  description: "Pseudo",
+  image: "url_image",
+  site: "url_site",
+  mail: "mail (non utilisé, laissez blanc)"
+},
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
