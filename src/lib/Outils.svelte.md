@@ -1,6 +1,6 @@
 <script>
      import SoftwareCard from "$lib/SoftwareCard.svelte";
-     import Software from "$data/outils.json";
+     import Software from "$lib/data/outils.json";
      let softwares = Software;
 </script>
 

@@ -1,7 +1,7 @@
 <script>
      import Calendar from "$lib/Calendar.svelte";
      import Info from "$lib/Info.svelte";
-     import Evenements from "$data/Evenements.json";
+     import Evenements from "$lib/data/Evenements.json";
      const passe = Evenements.passe;
      const avenir = Evenements.avenir;
 </script>

@@ -1,6 +1,6 @@
 <script>
      import Portrait from "$lib/Portrait.svelte";
-     import Membres from "$data/membres.json";
+     import Membres from "$lib/data/membres.json";
      let members = Membres;
 </script>
 
