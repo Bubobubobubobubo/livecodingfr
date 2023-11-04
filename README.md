@@ -17,10 +17,8 @@ statique. Les outils suivants sont utilisés :
 
 - Les pages du site sont écrites en **Markdown**. Vous pouvez les modifier même
   sans connaissance préalable de la programmation web.
-- Les informations structurées (outils, membres, etc) sont contenues dans une
-structure de donnée qui apparaît au début de chaque fichier. Il vous suffit
-d'ajouter les informations en suivant le format déjà défini. Par ex. pour un
- nouveau membre :
+- Les informations structurées (outils, membres, etc) sont contenues dans des
+fichiers JSON qui sont dans `src/data`. Ajoutez votre info, et c'est tout :
 
 ```js
 {

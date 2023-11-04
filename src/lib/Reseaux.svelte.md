@@ -1,7 +1,7 @@
 <script>
      import SoftwareCard from "$lib/SoftwareCard.svelte";
      import Info from "$lib/Info.svelte";
-     import Reseaux from "../data/reseaux.json";
+     import Reseaux from "$data/reseaux.json";
      let reseaux = Reseaux;
 </script>
 
