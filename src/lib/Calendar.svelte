@@ -2,6 +2,7 @@
   export let date: string;
   export let title: string;
   export let description: string;
+  export let link: string = "";
 
   let realDate = date.split(" ");
 </script>
@@ -21,8 +22,11 @@
     </div>
   </div>
   <!-- Info -->
-  <div class="block">
+  <div class="flex-col">
     <h3 class="pl-4 flex">{title}</h3>
     <p class="pl-4">{description}</p>
+    <a class="mt-4 ml-4 btn btn-primary btn btn-xs text-right" href={link}
+      >Lien</a
+    >
   </div>
 </div>

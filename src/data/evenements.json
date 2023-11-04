@@ -1,0 +1,24 @@
+{
+  "avenir": [
+    {
+      "date": "1 jan 2023",
+      "description": "Description de l'évènement",
+      "title": "Template pour un évènement",
+      "link": "https://google.fr"
+    }
+  ],
+  "passe": [
+    {
+      "date": "4 oct 2023",
+      "description": "Grrrnd Zero - Vaulx en Velin",
+      "title": "Écoutes périphériques",
+      "link": "https://www.grrrndzero.org/index.php/2487-sam-dim-4-et-5-11-ecoutes-peripheriques-petit-multidifest-de-musiques"
+    },
+    {
+      "date": "28 oct 2023",
+      "description": "L'Aiguillage - Polisot",
+      "title": "Algorave (Cookie Collective)",
+      "link": "https://www.facebook.com/photo/?fbid=829027699024902&set=a.538927648034910"
+    }
+  ]
+}

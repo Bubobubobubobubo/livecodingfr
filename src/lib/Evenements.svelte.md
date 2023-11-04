@@ -1,27 +1,9 @@
 <script>
      import Calendar from "$lib/Calendar.svelte";
      import Info from "$lib/Info.svelte";
-
-     let avenir = [
-          {
-               date: "1 jan 2023",
-               description: "Description de l'évènement",
-               title: "Template pour un évènement",
-          }
-     ]
-     let passe = [
-          {
-            date: "4 oct 2023",
-            description: "Grrrnd Zero - Vaulx en Velin",
-            title: "Écoutes périphériques",
-
-          },
-          {
-               date: "28 oct 2023",
-               description: "L'Aiguillage - Polisot",
-               title: "Algorave (Cookie Collective)",
-          }
-     ]
+     import Evenements from "../data/Evenements.json";
+     const passe = Evenements.passe;
+     const avenir = Evenements.avenir;
 </script>
 
 # Évènements
@@ -32,12 +14,12 @@
 
 <!-- Format attendu : 3 Fev 2023 -->
 
-{#each avenir as {title, description, date}, i}
-<Calendar date={date} description={description} title={title} />
+{#each avenir as {title, description, date, link}, i}
+<Calendar date={date} description={description} title={title} link={link} />
 {/each}
 
 ## Passés
 
-{#each passe as {title, description, date}, i}
-<Calendar date={date} description={description} title={title} />
+{#each passe as {title, description, date, link}, i}
+<Calendar date={date} description={description} title={title} link={link} />
 {/each}
