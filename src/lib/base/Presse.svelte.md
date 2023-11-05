@@ -1,5 +1,5 @@
 <script>
-     import Press from "$lib/Press.svelte";
+     import Press from "$lib/components/Press.svelte";
      import Presse from "$lib/data/presse.json";
      let general_press = Presse;
 </script>

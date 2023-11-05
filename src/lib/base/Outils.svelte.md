@@ -1,5 +1,5 @@
 <script>
-     import SoftwareCard from "$lib/SoftwareCard.svelte";
+     import SoftwareCard from "$lib/components/SoftwareCard.svelte";
      import Software from "$lib/data/outils.json";
      let softwares = Software;
 </script>

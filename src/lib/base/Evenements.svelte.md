@@ -1,6 +1,6 @@
 <script>
-     import Calendar from "$lib/Calendar.svelte";
-     import Info from "$lib/Info.svelte";
+     import Calendar from "$lib/components/Calendar.svelte";
+     import Info from "$lib/components/Info.svelte";
      import Evenements from "$lib/data/evenements.json";
      const passe = Evenements.passe;
      const avenir = Evenements.avenir;
@@ -27,5 +27,3 @@
 {#each passe as {title, description, date, link}, i}
 <Calendar date={date} description={description} title={title} link={link} />
 {/each}
-
-
