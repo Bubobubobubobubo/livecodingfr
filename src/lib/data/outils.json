@@ -47,5 +47,12 @@
     "description": "Cascade est un environnement de live-coding pour le navigateur web. Il transforme les règles du langage CSS en sons !",
     "image": "https://raphaelbastide.com/cascade/website/img/poster.svg",
     "link": "https://raphaelbastide.com/cascade/"
+  },
+  {
+    "name": "Biset Regex",
+    "creator": "Gibbon Joyeux",
+    "description": "Un séquenceur de patterns pour créer des rythmes et des mélodies à partir de texte sur VCVRack 2.0.",
+    "image": "https://library.vcvrack.com/screenshots/400/Biset/Biset-Regex.png",
+    "link": "https://github.com/gibbonjoyeux/VCV-Biset"
   }
 ]
