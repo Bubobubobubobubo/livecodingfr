@@ -25,7 +25,7 @@
     "creator": "Raphaël Forment",
     "description": "Topos est un séquenceur algorithmique expérimental dans le web sequencer programmé par BuboBubo (Raphaël Forment) et Amiika (Miika Alonen). Il est écrit en TypeScript, avec Vite. Ce projet est basé sur le Monome Teletype de Brian Crabtree et Kelli Cain. Nous espérons respecter le même esprit de partage et d'expérimentation que les concepteurs originels ! Comment rendre le Teletype plus accessible tout en étendant ses capacités sur le web ?",
     "image": "https://raphaelforment.fr/img/inline_annotation.png",
-    "link": "https://topos.raphaelforment.fr"
+    "link": "https://topos.live"
   },
   {
     "name": "OSCII",
