@@ -19,5 +19,12 @@
     "description": "Creative Code Lyon est une communauté lyonnaise dédiée à la programmation créative. En son sein existe un petit groupe, nommé le DAC (Digital Audio Community). Il se réunit toutes les deux semaines au Laboratoire Ouvert Lyonnais (LOL) pour discuter de synthèse sonore, de live coding, de création sonore. Pour nous contacter, rejoignez le serveur Discord !",
     "image": "images/creative_code_lyon.jpeg",
     "link": "https://discord.gg/B2e5a3Y3uk"
+  },
+  {
+    "name": "Live Coding Strasbourg",
+    "place": "Strasbourg",
+    "image": "https://scontent.flyn1-1.fna.fbcdn.net/v/t39.30808-6/308519739_434280725461676_1220763930413175897_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=DJSHmDxQfj8AX90PwZ0&_nc_ht=scontent.flyn1-1.fna&oh=00_AfCh8c_sGFOtUKu5FrBsMaif0NzhCRyPbyrnrIu2LqQrgA&oe=6556F0D9",
+    "description": "Communauté dédiée au live coding à Strasbourg.",
+    "link": "https://www.facebook.com/livecodingstrasbourg"
   }
 ]
