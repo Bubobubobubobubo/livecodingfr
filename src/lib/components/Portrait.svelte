@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="mx-2 w-72 bg-base-300 dark:bg-base-300 border border-gray-200 rounded-lg shadow dark:border-gray-700"
+  class="mx-2 w-72 my-4 bg-base-300 dark:bg-base-300 border border-gray-200 rounded-lg shadow dark:border-gray-700"
 >
   <div class="flex justify-end px-4 pt-4" />
   <div class="flex flex-col items-center pb-10">
