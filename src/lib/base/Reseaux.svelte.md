@@ -2,7 +2,9 @@
      import SoftwareCard from "$lib/components/SoftwareCard.svelte";
      import Info from "$lib/components/Info.svelte";
      import Reseaux from "$lib/data/reseaux.json";
+     import { shuffleArray } from "$lib/utils";
      let reseaux = Reseaux;
+     shuffleArray(reseaux);
 </script>
 
 # Réseaux

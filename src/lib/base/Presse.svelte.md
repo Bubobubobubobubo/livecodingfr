@@ -1,7 +1,9 @@
 <script>
      import Press from "$lib/components/Press.svelte";
      import Presse from "$lib/data/presse.json";
+     import { shuffleArray } from "$lib/utils";
      let general_press = Presse;
+     shuffleArray(general_press);
 </script>
 
 # Presse

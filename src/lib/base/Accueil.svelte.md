@@ -10,7 +10,9 @@ Historiquement, le _live coding_ est un type de création porté par le collecti
 
 # À propos de ce site
 
-Ce site est une collection de ressources. Il est conçu pour combler un vide. La communauté francophone du _live coding_ ne possédait pas de site permettant aux artistes et musiciens français de se trouver et d'échanger facilement. Disposer d'un site dédié permet de rompre avec la nécessité de se tenir informé sans cesse sur les réseaux sociaux sous peine de manquer une information.
+Ce site est une collection de ressources. Il est conçu pour combler un vide. La communauté francophone du _live coding_ ne possédait pas de site permettant aux artistes et musiciens français de se trouver et d'échanger facilement. Disposer d'un site dédié permet de rompre avec la nécessité de se tenir informé sans cesse sur les réseaux sociaux sous peine de manquer une information. Ce site est conçu et maintenu par [Raphaël Forment](https://raphaelforment.fr) (BuboBubo).
+
+L'information sur chacune des pages est randomisée pour favoriser la découverte.
 
 # Comment contribuer ?
 

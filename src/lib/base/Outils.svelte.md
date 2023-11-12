@@ -1,7 +1,9 @@
 <script>
      import SoftwareCard from "$lib/components/SoftwareCard.svelte";
      import Software from "$lib/data/outils.json";
+     import { shuffleArray } from "$lib/utils";
      let softwares = Software;
+     shuffleArray(softwares);
 </script>
 
 # Outils

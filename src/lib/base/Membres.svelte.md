@@ -1,7 +1,9 @@
 <script>
      import Portrait from "$lib/components/Portrait.svelte";
      import Membres from "$lib/data/membres.json";
+     import { shuffleArray } from "$lib/utils";
      let members = Membres;
+     shuffleArray(members);
 </script>
 
 # Membres
