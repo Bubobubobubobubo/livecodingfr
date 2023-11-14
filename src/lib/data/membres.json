@@ -54,7 +54,13 @@
     "image": "https://crashserver.fr/wp-content/uploads/2021/03/transparent_blanc.png",
     "site": "https://crashserver.fr/",
     "mail": ""
-
+  },
+  {
+    "name": "Jonathan Lefebvre",
+    "description": "Krease / VJBlind",
+    "image": "images/vj.jpeg",
+    "site": "https://www.linkedin.com/in/jonathan-lefebvre-a4867744/",
+    "mail": ""
   },
   {
     "name": "Adel Faure",
