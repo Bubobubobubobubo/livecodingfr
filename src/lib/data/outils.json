@@ -35,6 +35,13 @@
     "link": "https://gitlab.com/adelfaure/oscii"
   },
   {
+    "name": "TEXTOR",
+    "creator": "Adel Faure",
+    "description": "Textor est un éditeur graphique en text mode conçu pour être utilisé entièrement au clavier sans aucun menus. Le rendu est basé sur le canvas de JavaScript et le logiciel possède un système de glyphes visuels personnalisé. Textor est également un outil de création musicale, au travers d'une interface WebAudio.",
+    "image": "/images/textor.png",
+    "link": "https://adelfaure.net/tools/textor/"
+  },
+  {
     "name": "Claude",
     "creator": "Loïc Vital",
     "description": "Claude est un outil pour synchroniser des visuels avec de l'audio dans un contexte de live coding. Claude, pour le moment, est seulement disponible pour un environnement : Sardine. Il peut être utilisé comme un sender, ce qui permet ensuite d'utiliser le Sardine Pattern Language pour écrire des valeurs uniform à envoyer.",
