@@ -7,7 +7,7 @@
   import Outils from "$lib/base/Outils.svelte.md";
   import Reseaux from "$lib/base/Reseaux.svelte.md";
   import Ressources from "$lib/base/Ressources.svelte.md";
-  import Guides from "$lib/base/Tutorials.svelte.md";
+  import Guides from "$lib/base/Guides.svelte.md";
   const pages = {
     accueil: Accueil,
     evenements: Evenements,
