@@ -2,7 +2,9 @@
 	export let data;
 </script>
 
-<h1>Blog</h1>
+<h1>Articles</h1>
+
+<p>Pour proposer un article, référez-vous à l'article <a href="/guides/propose:-un-article">Proposer un article</a>. Nous acceptons toutes les collaborations.</p>
 
 <ul>
 	{#each data.guides as post}

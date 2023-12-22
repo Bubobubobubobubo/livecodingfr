@@ -38,7 +38,7 @@
           ? 'flex'
           : 'hidden'}"
       >
-        <a href="evenements/" class="text-gray-100 hover:text-orange-300 flex md:hidden" >Évènements</a>
+        <a href="evenements" class="text-gray-100 hover:text-orange-300 flex md:hidden" >Évènements</a>
         <a href="membres" class="text-gray-100 hover:text-orange-300 flex md:hidden">Membres</a>
         <a href="outils" class="text-gray-100 hover:text-orange-300 flex md:hidden">Outils</a>
         <a href="guides" class="text-gray-100 hover:text-orange-300 flex md:hidden">Guides</a>
@@ -79,7 +79,6 @@
         <li class="text-xl">
           <a class="text-white hover:text-orange-300" href="guides">Guides</a>
         </li>
-
         <li class="text-xl">
           <a class="text-white hover:text-orange-300" href="reseaux">Réseaux</a>
         </li>
