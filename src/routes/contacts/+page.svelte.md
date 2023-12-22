@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Contact</title> 
+</svelte:head>
 <script>
      import Info from "$lib/components/Info.svelte"
 </script>

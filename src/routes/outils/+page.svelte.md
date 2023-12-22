@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Outils</title> 
+</svelte:head>
 <script>
      import SoftwareCard from "$lib/components/SoftwareCard.svelte";
      import Software from "$lib/data/outils.json";

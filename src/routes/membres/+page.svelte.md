@@ -5,6 +5,11 @@
      let members = Membres;
      shuffleArray(members);
 </script>
+<svelte:head>
+    <title>Membres</title> 
+</svelte:head>
+
+
 
 # Membres
 

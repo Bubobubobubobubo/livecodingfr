@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Réseaux</title> 
+</svelte:head>
 <script>
      import SoftwareCard from "$lib/components/SoftwareCard.svelte";
      import Info from "$lib/components/Info.svelte";

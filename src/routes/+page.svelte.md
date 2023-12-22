@@ -1,6 +1,11 @@
 <script>
      import Info from "$lib/components/Info.svelte"
 </script>
+<svelte:head>
+    <title>LC.FR</title> 
+</svelte:head>
+
+
 
 # Qu'est-ce que le live-coding ?
 
