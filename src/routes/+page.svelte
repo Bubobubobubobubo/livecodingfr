@@ -7,11 +7,13 @@
   import Outils from "$lib/base/Outils.svelte.md";
   import Reseaux from "$lib/base/Reseaux.svelte.md";
   import Ressources from "$lib/base/Ressources.svelte.md";
+  import Guides from "$lib/base/Tutorials.svelte.md";
   const pages = {
     accueil: Accueil,
     evenements: Evenements,
     membres: Membres,
     outils: Outils,
+    guides: Guides,
     réseaux: Reseaux,
     presse: Presse,
     ressources: Ressources,
@@ -91,6 +93,10 @@
           class="text-gray-100 hover:text-orange-300 flex md:hidden">Outils</a
         >
         <a
+          on:click={() => changePage("Guides")}
+          class="text-gray-100 hover:text-orange-300 flex md:hidden">Guides</a
+        >
+        <a
           on:click={() => changePage("Réseaux")}
           class="text-gray-100 hover:text-orange-300 flex md:hidden">Réseaux</a
         >
@@ -145,6 +151,13 @@
             on:click={() => changePage("Outils")}>Outils</a
           >
         </li>
+        <li class="text-xl">
+          <a
+            class="text-white hover:text-orange-300"
+            on:click={() => changePage("Guides")}>Guides</a
+          >
+        </li>
+
         <li class="text-xl">
           <a
             class="text-white hover:text-orange-300"
