@@ -61,10 +61,10 @@
       <label
         for="my-drawer-2"
         aria-label="close sidebar"
-        class="drawer-overlay"
+        class="drawer-overlay scrollbar-hide whitespace-nowrap overflow-hidden"
       />
       <ul
-        class="menu p-4 w-40 min-h-full bg-neutral-800 dark:bg-base-300 text-base-content"
+        class="menu p-4 w-40 min-h-full bg-neutral-800 dark:bg-base-300 text-base-content overflow-hidden"
       >
         <li class="text-xl ml-0">
           <a class="text-white hover:text-orange-300" href="/evenements">Évènements</a>
