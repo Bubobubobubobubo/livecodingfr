@@ -15,16 +15,15 @@
     src={image}
     alt=""
   />
-  <div class="flex flex-col justify-between p-4 leading-normal">
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      {name}
-    </h5>
-    <p class="text-right">{creator}</p>
-
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-      {description}
-    </p>
+  <div class="flex flex-col items-start md:items-end w-full">
+    <div class="flex flex-col justify-between p-4 leading-normal w-full">
+      <div class="flex justify-between">
+      <h5 class="inline mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" > {name} </h5>
+      <p class="inline text-right">{creator}</p>
+      </div>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {description}
+      </p>
+    </div>
   </div>
 </a>
