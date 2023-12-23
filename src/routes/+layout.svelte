@@ -38,14 +38,14 @@
           ? 'flex'
           : 'hidden'}"
       >
-        <a href="evenements" class="text-gray-100 hover:text-orange-300 flex md:hidden" >Évènements</a>
-        <a href="membres" class="text-gray-100 hover:text-orange-300 flex md:hidden">Membres</a>
-        <a href="outils" class="text-gray-100 hover:text-orange-300 flex md:hidden">Outils</a>
-        <a href="guides" class="text-gray-100 hover:text-orange-300 flex md:hidden">Guides</a>
-        <a href="reseaux" class="text-gray-100 hover:text-orange-300 flex md:hidden">Réseaux</a>
-        <a href="ressources" class="text-gray-100 hover:text-orange-300 flex md:hidden">Ressources</a>
-        <a href="presse" class="text-gray-100 hover:text-orange-300 flex md:hidden">Presse</a>
-        <a href="contacts" class="text-gray-100 hover:text-orange-300 flex md:hidden">Contact</a>
+        <a href="/evenements" class="text-gray-100 hover:text-orange-300 flex md:hidden" >Évènements</a>
+        <a href="/membres" class="text-gray-100 hover:text-orange-300 flex md:hidden">Membres</a>
+        <a href="/outils" class="text-gray-100 hover:text-orange-300 flex md:hidden">Outils</a>
+        <a href="/guides" class="text-gray-100 hover:text-orange-300 flex md:hidden">Guides</a>
+        <a href="/reseaux" class="text-gray-100 hover:text-orange-300 flex md:hidden">Réseaux</a>
+        <a href="/ressources" class="text-gray-100 hover:text-orange-300 flex md:hidden">Ressources</a>
+        <a href="/presse" class="text-gray-100 hover:text-orange-300 flex md:hidden">Presse</a>
+        <a href="/contacts" class="text-gray-100 hover:text-orange-300 flex md:hidden">Contact</a>
       </div>
     </nav>
   </div>
@@ -66,31 +66,31 @@
       <ul
         class="menu p-4 w-40 min-h-full bg-neutral-800 dark:bg-base-300 text-base-content"
       >
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="evenements">Évènements</a>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/evenements">Évènements</a>
         </li>
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="membres">Membres</a >
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/membres">Membres</a >
         </li>
-        <li class="text-xl">
+        <li class="text-xl ml-0">
           <a
-            class="text-white hover:text-orange-300" href="outils">Outils</a>
+            class="text-white hover:text-orange-300" href="/outils">Outils</a>
         </li>
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="guides">Guides</a>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/guides">Guides</a>
         </li>
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="reseaux">Réseaux</a>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/reseaux">Réseaux</a>
         </li>
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="ressources">Ressources</a>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/ressources">Ressources</a>
         </li>
 
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="presse">Presse</a>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/presse">Presse</a>
         </li>
-        <li class="text-xl">
-          <a class="text-white hover:text-orange-300" href="contacts">Contact</a>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/contacts">Contact</a>
         </li>
       </ul>
     </div>
@@ -101,10 +101,8 @@
 <footer
   class="footer ml-0 pl-0 pb-4 pt-4 bg-neutral-800 dark:bg-base-300 justify-between pr-16"
 >
-  <p class="indent-4 text-bold text-white">Raphaël Forment</p>
-  <p>
-    <a class="pl-4" href="https://github.com/Bubobubobubobubo/livecodingfr"
-      >GitHub</a
-    >
-  </p>
+  <div class="flex justify-between">
+    <p class="inline indent-4 text-bold text-white">Raphaël Forment</p>
+    <p> <a class="inline pl-4" href="https://github.com/Bubobubobubobubo/livecodingfr" >GitHub</a></p>
+  </div>
 </footer>

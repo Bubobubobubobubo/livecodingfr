@@ -6,19 +6,19 @@ export const shuffleArray = (array: any[]) => {
 };
 
 export const fetchMarkdownGuides = async () => {
-const allPostFiles = import.meta.glob('/src/routes/guides/*.md');
-const iterablePostFiles = Object.entries(allPostFiles);
+  const allGuideFiles = import.meta.glob('/src/routes/guides/*.md');
+  const iterableGuideFiles = Object.entries(allGuideFiles);
+  // Also return the content
+  const allGuides = await Promise.all(
+    iterableGuideFiles.map(async ([path, resolver]) => {
+      const { metadata } = await (resolver() as Promise<{ metadata: any }>);
+      const guidePath = path.slice(11, -3);
+      return {
+        meta: metadata,
+        path: guidePath,
+      };
+    })
+  );
 
-const allPosts = await Promise.all(
-  iterablePostFiles.map(async ([path, resolver]) => {
-    const { metadata } = await (resolver() as Promise<{ metadata: any }>);
-    const postPath = path.slice(11, -3);
-    return {
-      meta: metadata,
-      path: postPath
-    };
-  })
-);
-
-	return allPosts;
+	return allGuides;
 };

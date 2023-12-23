@@ -1,10 +1,8 @@
-<script lang="ts">
-    //@ts-ignore
+<script>
 	export let title;
-    //@ts-ignore
 	export let date;
 </script>
 
-<svelte:head>
-    <title>{title}</title> 
-</svelte:head>
+<article>
+	<slot />
+</article>
