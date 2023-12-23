@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Évènements</title> 
+</svelte:head>
 <script>
      import Calendar from "$lib/components/Calendar.svelte";
      import Info from "$lib/components/Info.svelte";

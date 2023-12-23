@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Presse</title> 
+</svelte:head>
 <script>
      import Press from "$lib/components/Press.svelte";
      import Presse from "$lib/data/presse.json";

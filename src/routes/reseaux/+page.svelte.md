@@ -1,3 +1,6 @@
+<svelte:head>
+    <title>Réseaux</title> 
+</svelte:head>
 <script>
      import SoftwareCard from "$lib/components/SoftwareCard.svelte";
      import Info from "$lib/components/Info.svelte";
@@ -9,7 +12,7 @@
 
 # Réseaux
 
-<Info info="Il existe plusieurs collectifs et groupes qui promeuvent la pratique du <i>live coding</i>. Cette page est un recensement des groupes connus. Si vous êtes actifs, ajoutez quelque chose ici." markdown=false />
+<Info info="Il existe plusieurs collectifs et groupes qui promeuvent la pratique du <i>live coding</i>. Cette page est un recensement des groupes connus. Si vous êtes actifs, faites-le nous savoir ou ajoutez quelque chose ici depuis le dépôt GitHub." markdown=false />
 
 {#each reseaux as {name, place, description, image, link}, i}
 <SoftwareCard name={name} creator={place} description={description}
