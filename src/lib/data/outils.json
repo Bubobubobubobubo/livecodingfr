@@ -7,6 +7,13 @@
     "link": "https://sardine.raphaelforment.fr"
   },
   {
+    "name": "Grimoire",
+    "creator": "Guillaume Pelletier-Auger",
+    "description": "Grimoire est un logiciel expérimental dédié à l'exploration de nouvelles rencontres possibles entre l'animation, la musique, le dessin, la programmation informatique, la performance audiovisuelle, l'écriture et l'hypertextualité. Avec Grimoire, les artistes peuvent apprendre la programmtion 'in vivo' afin de créer de l'art génératif visuel ou sonore ainsi que des systèmes interactifs.",
+    "link": "https://pelletierauger.com/grimoire/",
+    "image": "https://pelletierauger.com/images/thumbnails/grimoire.jpg"
+  },
+  {
     "name": "Été",
     "creator": "Raphaël Bastide",
     "description": "Été mélange live coding (écriture musicale temps réel au travers du code) et percussions. Le programme considère le clavier comme un instrument percussif. Le musicien peut écrire des instructions algorithmiques et des instructions percussives très précises au sein du même environnement de programmation. Été est une expérimentation qui essaie de lier dans un même programme le temps dédié à la composition algorithmique et celui dédié à l'improvisation spontanée.",
