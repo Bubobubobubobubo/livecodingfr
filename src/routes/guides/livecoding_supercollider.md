@@ -194,29 +194,19 @@ venez de créer.
 
 <br>
 
-**SuperCollider** vous permet de manipuler le son sans aucune restriction. C'est très utile mais c'est aussi assez dangereux non seulement
-pour vous mais aussi pour votre public si vous vous produisez sur scène :
-_larsens_, _clipping_, explosion du volume, etc. Heureusement, ce problème est
-connu et il existe des moyens efficaces de se protéger. Nous allons utiliser le
-système de _plugins_ interne pour installer un **Quark** très utile. Avec la
-commande suivante, installez [BatLib](https://github.com/supercollider-quarks/BatLib):
+**SuperCollider** vous permet de manipuler le son sans aucune restriction. C'est très utile mais c'est aussi assez dangereux non seulement pour vous mais aussi pour votre public si vous vous produisez sur scène : _larsens_, _clipping_, explosion du volume, etc. Heureusement, ce problème est connu et il existe des moyens efficaces de se protéger. Nous allons utiliser le système de _plugins_ interne pour installer un **Quark** très utile. Avec la commande suivante, installez [BatLib](https://github.com/supercollider-quarks/BatLib):
 
 ```supercollider
 Quarks.install("https://github.com/supercollider-quarks/BatLib")
 ```
 
-Recompilez ensuite la librairie et vous pourrez utiliser le
-`StageLimiter`. Il vous sauvera sans doute la vie de nombreuses fois. Vous
-verrez comment on le démarre dans le récapitulatif plus bas. TLDR, la commande
-est :
+Recompilez ensuite la librairie et vous pourrez utiliser le `StageLimiter`. Il vous sauvera sans doute la vie de nombreuses fois. Vous verrez comment on le démarre dans le récapitulatif plus bas. TLDR, la commande est :
 
 ```supercollider
 StageLimiter.activate;
 ```
 
-Si vous routez le son de **SuperCollider** vers une autre application, n'hésitez
-  pas à installer des protections similaires dans cette application (_limiter_,
-etc).
+Notez que pour certains types de musique, il peut être intéressant de ne pas activer le `StageLimiter`. La protection a tendance à colorer le son et peut aller à l'encontre de ce que vous souhaitez réellement faire : distortion numérique, _clipping_ volontaire. Il existe d'[autres types de protection](https://github.com/adcxyz/SafetyNet) (le **Quark** _SafetyNet_) ou bien, tout simplement, vous pouvez vous fier à votre oreille et à votre expérience pour ne pas dépasser les limites.
 
 <br>
 
