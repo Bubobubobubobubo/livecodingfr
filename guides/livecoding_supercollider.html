@@ -7,13 +7,13 @@
 		<meta name="theme-color" content="#ffffff">
 		
 		<link href="../_app/immutable/assets/0.B2YDv0ji.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.cKyxnSZP.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.yVU_blNA.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.aZRR5A_O.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.K3AlUOsq.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.3YCCveFb.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.0HuHagjb.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.AIcdAWo0.js">
 		<link rel="modulepreload" href="../_app/immutable/nodes/0.uMzUYRGs.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/9.YZ57kV9v.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/9.FHypHKIr.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/dynamic-import-helper.0gtGTknh.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
@@ -50,17 +50,7 @@ sur <code>44100hz</code> ou <code>48000hz</code>.</p> <br> <p data-svelte-h="sve
 fréquence d’échantillonnage à la connexion/déconnexion. Il en va de même des
 micros et carte sons externes.</p> <br> <h3 data-svelte-h="svelte-kfth7w">Router le son de SuperCollider vers un autre logiciel</h3> <br> <p data-svelte-h="svelte-aiy4wh">Il est tout à fait possible d’utiliser <strong>SuperCollider</strong> comme source principale et de router ensuite le son vers un autre logiciel pour le traitement. Cela vous permettra d’enregistrer plus facilement en multipiste, de disposer d’effets ou de synthétiseurs supplémentaires, etc. Vous pourrez aussi contrôler une partie de votre dispositif en <strong>MIDI</strong> ou <strong>OSC</strong> directement depuis <strong>SuperCollider</strong>. Pour pouvoir router librement les signaux sortants de <strong>SuperCollider</strong>, il est préférable d’utiliser une interface virtuelle comme <a href="https://existential.audio/blackhole/" rel="nofollow">BlackHole</a> (<em>cross-platform</em>), <a href="https://rogueamoeba.com/loopback/" rel="nofollow">Loopback</a> (MacOS, payant), <a href="https://jackaudio.org/" rel="nofollow">Jack</a> (<em>cross-platform</em>) ou <a href="https://vb-audio.com/Voicemeeter/" rel="nofollow">VB-Audio VoiceMeeter</a> (Windows, payant). Ces logiciels permettent de créer des <em>bus</em> audio virtuels qui peuvent être utilisés comme entrée ou sortie par <strong>SuperCollider</strong> aussi bien que par n’importe quel autre logiciel. L’utilisation de bus audios virtuels offre une grande flexibilité et je recommande de prendre l’habitude de les utiliser.</p> <br> <p data-svelte-h="svelte-nb5dha">1) Choisir comme entrée/sortie une interface virtuelle (BlackHole, Loopback,
 etc).</p> <p data-svelte-h="svelte-uv9hed">2) Choisir comme entrée dans le logiciel de traitement le bus virtuel que vous
-venez de créer.</p> <p data-svelte-h="svelte-1edr512">3) Traiter / enregistrer le son canal par canal dans votre logiciel.</p> <br> <p data-svelte-h="svelte-fbrdfo"><img src="/images/reaper_supercollider_1.png" alt="Routage de SuperCollider dans Reaper"></p> <br> <h3 data-svelte-h="svelte-4wsstc">Protéger ses oreilles</h3> <br> <p data-svelte-h="svelte-1jfe1ue"><strong>SuperCollider</strong> vous permet de manipuler le son sans aucune restriction. C’est très utile mais c’est aussi assez dangereux non seulement
-pour vous mais aussi pour votre public si vous vous produisez sur scène :
-<em>larsens</em>, <em>clipping</em>, explosion du volume, etc. Heureusement, ce problème est
-connu et il existe des moyens efficaces de se protéger. Nous allons utiliser le
-système de <em>plugins</em> interne pour installer un <strong>Quark</strong> très utile. Avec la
-commande suivante, installez <a href="https://github.com/supercollider-quarks/BatLib" rel="nofollow">BatLib</a>:</p> <pre class="language-supercollider"><!-- HTML_TAG_START --><code class="language-supercollider"><span class="token class-name">Quarks</span><span class="token punctuation">.</span>install<span class="token punctuation">(</span><span class="token string">"https://github.com/supercollider-quarks/BatLib"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-1xdvwf3">Recompilez ensuite la librairie et vous pourrez utiliser le
-<code>StageLimiter</code>. Il vous sauvera sans doute la vie de nombreuses fois. Vous
-verrez comment on le démarre dans le récapitulatif plus bas. TLDR, la commande
-est :</p> <pre class="language-supercollider"><!-- HTML_TAG_START --><code class="language-supercollider"><span class="token class-name">StageLimiter</span><span class="token punctuation">.</span>activate<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-gq30x">Si vous routez le son de <strong>SuperCollider</strong> vers une autre application, n’hésitez
-pas à installer des protections similaires dans cette application (<em>limiter</em>,
-etc).</p> <br> <h3 data-svelte-h="svelte-eqy1p7">Choisir un dossier de stockage</h3> <br> <p data-svelte-h="svelte-1izbaiv">Plutôt que de tout stocker dans le dossier par défaut, je préfère utiliser un
+venez de créer.</p> <p data-svelte-h="svelte-1edr512">3) Traiter / enregistrer le son canal par canal dans votre logiciel.</p> <br> <p data-svelte-h="svelte-fbrdfo"><img src="/images/reaper_supercollider_1.png" alt="Routage de SuperCollider dans Reaper"></p> <br> <h3 data-svelte-h="svelte-4wsstc">Protéger ses oreilles</h3> <br> <p data-svelte-h="svelte-1kgpabk"><strong>SuperCollider</strong> vous permet de manipuler le son sans aucune restriction. C’est très utile mais c’est aussi assez dangereux non seulement pour vous mais aussi pour votre public si vous vous produisez sur scène : <em>larsens</em>, <em>clipping</em>, explosion du volume, etc. Heureusement, ce problème est connu et il existe des moyens efficaces de se protéger. Nous allons utiliser le système de <em>plugins</em> interne pour installer un <strong>Quark</strong> très utile. Avec la commande suivante, installez <a href="https://github.com/supercollider-quarks/BatLib" rel="nofollow">BatLib</a>:</p> <pre class="language-supercollider"><!-- HTML_TAG_START --><code class="language-supercollider"><span class="token class-name">Quarks</span><span class="token punctuation">.</span>install<span class="token punctuation">(</span><span class="token string">"https://github.com/supercollider-quarks/BatLib"</span><span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-dg58kp">Recompilez ensuite la librairie et vous pourrez utiliser le <code>StageLimiter</code>. Il vous sauvera sans doute la vie de nombreuses fois. Vous verrez comment on le démarre dans le récapitulatif plus bas. TLDR, la commande est :</p> <pre class="language-supercollider"><!-- HTML_TAG_START --><code class="language-supercollider"><span class="token class-name">StageLimiter</span><span class="token punctuation">.</span>activate<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre> <p data-svelte-h="svelte-8mr65h">Notez que pour certains types de musique, il peut être intéressant de ne pas activer le <code>StageLimiter</code>. La protection a tendance à colorer le son et peut aller à l’encontre de ce que vous souhaitez réellement faire : distortion numérique, <em>clipping</em> volontaire. Il existe d’<a href="https://github.com/adcxyz/SafetyNet" rel="nofollow">autres types de protection</a> (le <strong>Quark</strong> <em>SafetyNet</em>) ou bien, tout simplement, vous pouvez vous fier à votre oreille et à votre expérience pour ne pas dépasser les limites.</p> <br> <h3 data-svelte-h="svelte-eqy1p7">Choisir un dossier de stockage</h3> <br> <p data-svelte-h="svelte-1izbaiv">Plutôt que de tout stocker dans le dossier par défaut, je préfère utiliser un
 dossier qui contient tout ce dont j’ai besoin pour travailler : configuration,
 définitions de synthèse, échantillons sonores. Cela permet de n’avoir qu’une
 seule route à retenir si le système est relativement unifié. J’ai choisi de tout
@@ -102,7 +92,7 @@ synthétiseurs, effets pré-déclarés, etc. Nous y reviendrons.</p></article></
 			
 			<script>
 				{
-					__sveltekit_1vsa1vc = {
+					__sveltekit_byhnbs = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: null
 					};
@@ -112,8 +102,8 @@ synthétiseurs, effets pré-déclarés, etc. Nous y reviendrons.</p></article></
 					const data = [{"type":"data","data":null,"uses":{}},null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.cKyxnSZP.js"),
-						import("../_app/immutable/entry/app.K3AlUOsq.js")
+						import("../_app/immutable/entry/start.yVU_blNA.js"),
+						import("../_app/immutable/entry/app.3YCCveFb.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 9],
