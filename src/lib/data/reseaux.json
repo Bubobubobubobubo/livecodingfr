@@ -14,6 +14,13 @@
     "link": "https://wiki.fuz.re/doku.php?id=evenements:creative_coding"
   },
   {
+    "name": "Creative Coding Bordeaux",
+    "place": "Bordeaux",
+    "description": "Creative Coding Bordeaux est un groupe destiné au partage des idées, techniques et passions autour de l'art algorithmique",
+    "image": "https://secure.meetupstatic.com/photos/event/b/7/a/2/clean_515327010.webp",
+    "link": "https://www.meetup.com/fr-FR/creative-coding-bordeaux/"
+  },
+  {
     "name": "Digital Audio Community",
     "place": "Lyon",
     "description": "Creative Code Lyon est une communauté lyonnaise dédiée à la programmation créative. En son sein existe un petit groupe, nommé le DAC (Digital Audio Community). Il se réunit toutes les deux semaines au Laboratoire Ouvert Lyonnais (LOL) pour discuter de synthèse sonore, de live coding, de création sonore. Pour nous contacter, rejoignez le serveur Discord !",

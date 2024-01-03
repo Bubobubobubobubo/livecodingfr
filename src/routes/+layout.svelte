@@ -42,6 +42,7 @@
         <a href="/membres" class="text-gray-100 hover:text-orange-300 flex md:hidden">Membres</a>
         <a href="/outils" class="text-gray-100 hover:text-orange-300 flex md:hidden">Outils</a>
         <a href="/guides" class="text-gray-100 hover:text-orange-300 flex md:hidden">Guides</a>
+        <a href="/articles" class="text-gray-100 hover:text-orange-300 flex md:hidden">Articles</a>
         <a href="/reseaux" class="text-gray-100 hover:text-orange-300 flex md:hidden">Réseaux</a>
         <a href="/ressources" class="text-gray-100 hover:text-orange-300 flex md:hidden">Ressources</a>
         <a href="/presse" class="text-gray-100 hover:text-orange-300 flex md:hidden">Presse</a>
@@ -78,6 +79,9 @@
         </li>
         <li class="text-xl ml-0">
           <a class="text-white hover:text-orange-300" href="/guides">Guides</a>
+        </li>
+        <li class="text-xl ml-0">
+          <a class="text-white hover:text-orange-300" href="/articles">Articles</a>
         </li>
         <li class="text-xl ml-0">
           <a class="text-white hover:text-orange-300" href="/reseaux">Réseaux</a>

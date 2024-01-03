@@ -5,7 +5,8 @@ const config = defineConfig({
   layout: {
     guides: 'src/routes/guides/guides.svelte'
   },
-
+  highlight: {
+  },
   smartypants: {
     dashes: "oldschool",
   },
