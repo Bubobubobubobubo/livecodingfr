@@ -6,7 +6,8 @@
 <h1>Articles</h1>
 
 <Info
-  info="Dans cette section seront publiés tout les articles qui ne sont pas des guides à proprement parler."
+  info="Cette section sert pour tout les articles généralistes qui ne peuvent
+  pas réellement être considérés comme des guides. Publiez ce que vous voulez !"
   markdown="false"
 />
 
@@ -26,4 +27,3 @@
     </li>
   {/each}
 </ul>
-
