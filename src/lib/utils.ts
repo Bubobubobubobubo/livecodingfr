@@ -19,6 +19,22 @@ export const fetchMarkdownGuides = async () => {
       };
     })
   );
-
 	return allGuides;
+};
+
+export const fetchMarkdownArticles = async () => {
+  const alLArticleFiles = import.meta.glob('/src/routes/articles/*.md');
+  const iterableArticleFiles = Object.entries(alLArticleFiles);
+  // Also return the content
+  const allArticles = await Promise.all(
+    iterableArticleFiles.map(async ([path, resolver]) => {
+      const { metadata } = await (resolver() as Promise<{ metadata: any }>);
+      const articlePath = path.slice(11, -3);
+      return {
+        meta: metadata,
+        path: articlePath,
+      };
+    })
+  );
+	return allArticles;
 };
