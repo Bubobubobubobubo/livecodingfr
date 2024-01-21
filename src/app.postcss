@@ -4,15 +4,31 @@
 
 
 @layer utilities {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-     /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
     }
+    .sideli {
+      @apply text-xl ml-0;
+    }
+    .sidemenu-style {
+      @apply p-4 w-40 min-h-full bg-neutral-800 dark:bg-base-300 text-base-content overflow-hidden;
+    }
+    .footer-style {
+      @apply ml-0 pl-0 pb-4 pt-4 bg-neutral-800 dark:bg-base-300 justify-between pr-16;
+    }
+    .mobile-menu-link {
+      @apply text-gray-100 hover:text-orange-300 flex md:hidden;
+    }
+    .sidebar-link {
+      @apply text-white hover:text-orange-300;
+    }
+
   }
 
 @layer base {
