@@ -47,40 +47,18 @@
       ? 'flex'
       : 'hidden'}"
   >
-    <a
-      on:click={() => changePage("Evenements")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden"
+    <a on:click={() => changePage("Evenements")} class="titlebar-link"
       >Évènements</a
     >
-    <a
-      on:click={() => changePage("Membres")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden">Membres</a
+    <a on:click={() => changePage("Membres")} class="titlebar-link">Membres</a>
+    <a on:click={() => changePage("Outils")} class="titlebar-link">Outils</a>
+    <a on:click={() => changePage("Guides")} class="titlebar-link">Guides</a>
+    <a on:click={() => changePage("Réseaux")} class="titlebar-link">Réseaux</a>
+    <a on:click={() => changePage("Ressources")} class="titlebar-link">
+      Ressources</a
     >
-    <a
-      on:click={() => changePage("Outils")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden">Outils</a
-    >
-    <a
-      on:click={() => changePage("Guides")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden">Guides</a
-    >
-    <a
-      on:click={() => changePage("Réseaux")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden">Réseaux</a
-    >
-    <a
-      on:click={() => changePage("Ressources")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden"
-      >Ressources</a
-    >
-    <a
-      on:click={() => changePage("Presse")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden">Presse</a
-    >
-    <a
-      on:click={() => changePage("Contact")}
-      class="text-gray-100 hover:text-orange-300 flex md:hidden">Contact</a
-    >
+    <a on:click={() => changePage("Presse")} class="titlebar-link">Presse</a>
+    <a on:click={() => changePage("Contact")} class="titlebar-link">Contact</a>
   </div>
 </nav>
- 
+
