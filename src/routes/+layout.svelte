@@ -11,11 +11,7 @@
   <div class="bg-neutral-800 dark:bg-base-300">
     <nav class="pl-8 py-2 md:flex md:justify-between md:items-center pr-8">
       <div class="flex items-center justify-between">
-        <a
-          href="/"
-          class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200 uppercase"
-          >livecoding.fr</a
-        >
+        <a href="/" class="website-title">livecoding.fr</a>
         <!-- Mobile menu button -->
         <div on:click={toggleNavbar} class="flex md:hidden">
           <button
