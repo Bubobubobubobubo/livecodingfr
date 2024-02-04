@@ -1,5 +1,15 @@
 <script>
-     import Info from "$lib/components/Info.svelte"
+     import Info from "$lib/components/Info.svelte";
+     import Gallery from "$lib/components/Gallery.svelte";
+
+     let intro_gallery = [
+        {link: "https://ralt144mi.remigeorges.fr/Ralt144MI3.png", description: "Rémi Georges"},
+        {link: "https://www.cookie.paris/static/bc65c5fd7f7c76dc70bcd9892dc17a4d/5cc0d/16.webp", description: "Azertype"},
+        {link: "https://www.cookie.paris/static/9dbc442f1f54a41b9210b3ba1b835226/5cc0d/13.webp", description: "Jules Cipher"},
+        {link: "../images/leondenise.jpeg", description: "Léon Denise"},
+        {link: "https://renardo.org/images/screenshot1.png", description: "Renardo"},
+        {link: "https://sardine.raphaelforment.fr/presentation/what_is_live_coding.jpeg#center", description: "Raphaël Forment"},
+     ]
 </script>
 <svelte:head>
     <title>LC.FR</title> 
@@ -7,14 +17,9 @@
 
 # Bienvenue
 
-[Livecoding.fr](https://livecoding.fr) est un site collaboratif consacré à la
-pratique du _live coding_. Il est maintenu par un effort communautaire d'un
-groupe d'artistes, de musiciens et de développeurs francophones. Son objectif
-premier est de centraliser les informations sur la pratique du _live coding_ :
-guides, articles, évènements, information sur les artistes, etc. Tout ajout est
-le bienvenu. Consulter [ce guide](/guides/ajouter_information) ou [ce guide](/guides/proposer_guide) pour apprendre comment ajouter une information.
+[Livecoding.fr](https://livecoding.fr) est un site d'information consacré à la pratique du _live coding_. Il est maintenu par l'effort communautaire d'un groupe d'artistes, de musiciens et de développeurs francophones. Son objectif est de centraliser les informations sur cette pratique et de servir de portail : guides, articles, évènements, information sur les artistes, etc. Tout ajout est le bienvenu. Consulter [ce guide](/guides/ajouter_information) ou [ce guide](/guides/proposer_guide) pour apprendre comment ajouter une information.
 
-<embed type="text/html" src="https://strudel.cc/?SVDRxdhV4_CT" width="100%" height="350px"/>
+<Gallery pictures={intro_gallery}/>
 
 # Qu'est-ce que le live-coding ?
 
