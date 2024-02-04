@@ -1,5 +1,12 @@
 [
   {
+    "name": "Renardo",
+    "creator": "Elie Gavoty et co.",
+    "description": "Un environnement pour la musique algorithmique en Python, conçu pour les débutants. Une nouvelle version de FoxDot avec beaucoup de nouvelles fonctionnalités.",
+    "image": "https://renardo.org/images/screenshot1.png",
+    "link": "https://renardo.org"
+  },
+  {
     "name": "Sardine",
     "creator": "Raphaël Forment",
     "description": "Sardine est un logiciel libre et open source pour Python 3.10+. Sardine transforme Python en un instrument de musique. C'est un framework pour live coder et contrôler du matérial audio depuis Python. Sardine peut se synchroniser à d'autres logiciels ou instances du même logiciel.",
