@@ -17,21 +17,21 @@ aussi l'auteur d'un module <a href="https://en.wikipedia.org/wiki/Music_tracker"
 
     <br>
 
-    Le <b>Blank</b> dont il est ici question modifie le comportement global de
+    <p>Le <b>Blank</b> dont il est ici question modifie le comportement global de
     l'application et de son interface ! Une fois inséré dans un <i>patch</i>,
     chaque câble devient <i>auscultable</i> et s'anime. Il est possible d'aperçevoir la
     forme d'onde du signal passant au travers des câbles. Pour le public, cela
     permet de comprendre plus facilement le type de signaux utilisés et la nature des signaux qui transitent pour chaque connexion. Pour l'apprentissage ou la pédagogie, ce module remplace
     aisément l'utilisation d'un oscilloscope dédié. Passer la souris
-    sur une connexion affiche aussi un oscilloscope dans une fenêtre <i>popup</i>. Le module est également relativement économe en ressources, ce qui est toujours un plus !
+    sur une connexion affiche aussi un oscilloscope dans une fenêtre <i>popup</i>. Le module est également relativement économe en ressources, ce qui est toujours un plus !</p>
 
     <br>
     <img src="../images/bisetblank.gif" alt="Biset Blank" style="display:block;margin-left:auto;margin-right:auto;max-width:1000px;width:75%" />
 
+    <p>Ce module a initialement été conçu pour offrir un meilleur retour visuel au public lors des performances de <i>live coding</i>. Son utilité dépasse désormais ce seul contexte. Félicitations à gibbonJoyeux pour son travail sur l'écosystème
+    VCVRack.</p>
+
     </div>
 </div>
 
-Ce module a initialement été conçu pour offrir un meilleur retour visuel au
-public lors des performances de _live coding_. Son utilité dépasse désormais ce
-seul contexte. Félicitations à gibbonJoyeux pour son travail sur l'écosystème
-VCVRack, encore peu investi par les communautés de _live coding_.
+
