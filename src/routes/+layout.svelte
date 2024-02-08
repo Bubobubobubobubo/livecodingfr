@@ -63,7 +63,7 @@
 <main class="bg-gray-100 dark:bg-base-100">
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content space-y-0 flex flex-col lg:px-16 px-4 py-8">
+    <div class="drawer-content space-y-4 flex flex-col lg:px-16 px-4 py-8">
       <slot />
     </div>
     <div class="drawer-side no-scrollbar m-0">
