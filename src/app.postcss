@@ -5,6 +5,26 @@
 
 @layer utilities {
 
+    .animate-gradient {
+      background-size: 300%;
+      -webkit-animation: animatedgradient 6s ease infinite alternate;
+      -moz-animation: animatedgradient 6s ease infinite alternate;
+      animation: animatedgradient 6s ease infinite alternate;
+    }
+
+    @keyframes animatedgradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+
     /* Hide scrollbar for Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -33,7 +53,7 @@
       @apply text-gray-100 hover:text-orange-300 flex md:hidden;
     }
     .website-title {
-      @apply text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200 uppercase
+      @apply text-3xl uppercase font-bold bg-gradient-to-r from-orange-300 via-red-300 to-orange-200 text-transparent bg-clip-text animate-gradient
     }
 }
 
