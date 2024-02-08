@@ -59,16 +59,16 @@
 <main class="bg-gray-100 dark:bg-base-100">
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content space-y-4 flex flex-col lg:px-16 px-4 py-8">
+    <div class="drawer-content space-y-0 flex flex-col lg:px-16 px-4 py-8">
       <slot />
     </div>
-    <div class="drawer-side">
+    <div class="drawer-side no-scrollbar m-0">
       <label
         for="my-drawer-2"
         aria-label="close sidebar"
-        class="drawer-overlay scrollbar-hide whitespace-nowrap overflow-hidden"
+        class="drawer-overlay scrollbar-hide whitespace-nowrap overflow-hidden no-scrollbar"
       />
-      <ul class="menu sidemenu-style">
+      <ul class="menu sidemenu-style no-scrollbar my-0">
         <li class="sideli">
           <a class="sidebar-link" href="/evenements">Évènements</a>
         </li>
