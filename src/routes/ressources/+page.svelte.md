@@ -12,7 +12,7 @@ coding</i>. Au vu de l'objectif poursuivi par ce site, il est préférable de
 mentionner les sources francophones en premier puis d'inclure des liens 
 généralistes." markdown=false />
 
-## Sites internet
+## Ressources anglophones
 
 - [TOPLAP](https://toplap.org) : **TOPLAP** est le collectif historique qui a
   promu la pratique du _live coding_ à partir de sa fondation en 2004. Le
@@ -40,7 +40,6 @@ généralistes." markdown=false />
   l'émergence de la scène musicale du _live coding_, et pour de bonnes raisons.
   Foisonnant, infini, logiciel tentaculaire et puissant.
 
-## Ressources généralistes
+## Ressources francophones
 
-- [Labomedia](https://ressources.labomedia.org/live_coding) : collection de
-  ressources pour le _creative coding_.
+- [Labomedia](https://ressources.labomedia.org/live_coding) : collection de ressources pour le _creative coding_.
