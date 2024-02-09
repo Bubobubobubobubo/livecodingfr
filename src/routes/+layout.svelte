@@ -8,7 +8,7 @@
 </script>
 
 <div>
-  <div class="bg-neutral-800 dark:bg-base-300">
+  <div class="bg-neutral-800">
     <nav class="pl-8 py-2 md:flex md:justify-between md:items-center pr-8">
       <div class="flex items-center justify-between">
         <a
@@ -60,7 +60,7 @@
   </div>
 </div>
 
-<main class="bg-gray-100 dark:bg-base-100">
+<main class="bg-neutral-900">
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content space-y-4 flex flex-col lg:px-16 px-4 py-8">

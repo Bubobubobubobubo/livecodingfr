@@ -1,8 +1,4 @@
-/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
-
-
-
 @layer utilities {
 
     .animate-gradient {
@@ -29,47 +25,60 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+
     /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
     }
+
     .sideli {
       @apply text-xl ml-0;
     }
+
     .sidemenu-style {
-      @apply p-4 w-40 min-h-full bg-neutral-800 dark:bg-base-300 text-base-content overflow-hidden;
+      @apply p-4 w-40 min-h-full bg-neutral-800 text-base-content overflow-hidden;
     }
+
     .footer-style {
-      @apply ml-0 pl-0 pb-4 pt-4 bg-neutral-800 dark:bg-base-300 justify-between pr-16;
+      @apply ml-0 pl-0 pb-4 pt-4 bg-neutral-800 justify-between pr-16;
     }
+
     .mobile-menu-link {
       @apply text-gray-100 hover:text-orange-300 flex md:hidden;
     }
+
     .sidebar-link {
-      @apply text-white hover:text-orange-300;
+      @apply text-white hover:text-orange-300 hover:bg-neutral-700;
     }
+
     .titlebar-link {
       @apply text-gray-100 hover:text-orange-300 flex md:hidden;
     }
+
     .website-title {
       @apply text-3xl uppercase font-bold bg-gradient-to-r from-orange-300 via-red-300 to-orange-200 text-transparent bg-clip-text animate-gradient
     }
 }
 
 @layer base {
+
   .inline-picture {
-      @apply w-24 inline;
+    @apply w-24 inline;
   }
+
   a {
     @apply text-orange-300;
   }
+
   p {
-    @apply text-xl;
+    @apply text-xl text-white;
   }
+
   li {
-    @apply list-disc text-xl py-1 ml-8;
+    @apply list-disc text-xl text-white py-1 ml-8;
   }
+
   h1 {
     @apply text-3xl border-b-2 dark:border-b-white border-b-gray-400 py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
   }
@@ -90,7 +99,7 @@
     @apply my-2
   }
   blockquote {
-    @apply bg-gray-900 py-4 px-4 mx-4 my-4 border-l-4 text-xl
+    @apply bg-gray-900 py-4 px-4 mx-4 my-4 border-l-4 text-xl text-white
   }
 }
 @tailwind components;
