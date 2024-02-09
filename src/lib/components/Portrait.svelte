@@ -11,11 +11,7 @@
 >
   <div class="flex justify-end px-4 pt-4" />
   <div class="flex flex-col items-center pb-10">
-    <img
-      class="w-24 h-24 mb-3 rounded-full shadow-lg"
-      src={image}
-      alt="Portrait"
-    />
+  <div class="w-24 h-24 mb-3 rounded-full shadow-lg" style="background-image:url('{image}');background-size: cover;background-position: center;" />
     <h5 class="mb-1 text-xl font-medium text-white">
       {name}
     </h5>
