@@ -16,7 +16,7 @@
 <ul>
   {#each data.articles as post}
     <li
-      class="px-4 pb-4 my-4 rounded-lg bg-base-300 dark:bg-base-300 hover:bg-base-200 hover:dark:bg-base-200 border-1 border-color-base-100"
+      class="list-none px-4 pb-4 my-4 rounded-lg bg-base-300 dark:bg-base-300 hover:bg-base-200 hover:dark:bg-base-200 border-1 border-color-base-100"
     >
       <h2>
         <a href={post.path}>
