@@ -19,12 +19,12 @@ export const fetchMarkdownGuides = async () => {
       };
     })
   );
-	return allGuides;
+  return allGuides;
 };
 
 export const fetchMarkdownArticles = async () => {
-  const alLArticleFiles = import.meta.glob('/src/routes/articles/*.md');
-  const iterableArticleFiles = Object.entries(alLArticleFiles);
+  const allArticleFiles = import.meta.glob('/src/routes/articles/*.md');
+  const iterableArticleFiles = Object.entries(allArticleFiles);
   // Also return the content
   const allArticles = await Promise.all(
     iterableArticleFiles.map(async ([path, resolver]) => {
@@ -36,5 +36,5 @@ export const fetchMarkdownArticles = async () => {
       };
     })
   );
-	return allArticles;
+  return allArticles;
 };
