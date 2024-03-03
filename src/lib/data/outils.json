@@ -7,6 +7,13 @@
     "link": "https://renardo.org"
   },
   {
+    "name": "Protoplug",
+    "creator": "Pierre Cusa",
+    "description": "Protoplug is a VST/AU plugin that lets you load and edit Lua scripts as audio effects and instruments. The scripts can process audio and MIDI, display their own interface, and use external libraries. Transform any music software into a live coding environment!",
+    "image": "https://www.osar.fr/protoplug/protoplug_screenshot.png",
+    "link": "https://github.com/pac-dev/protoplug"
+  },
+  {
     "name": "Sardine",
     "creator": "Raphaël Forment",
     "description": "Sardine est un logiciel libre et open source pour Python 3.10+. Sardine transforme Python en un instrument de musique. C'est un framework pour live coder et contrôler du matérial audio depuis Python. Sardine peut se synchroniser à d'autres logiciels ou instances du même logiciel.",
