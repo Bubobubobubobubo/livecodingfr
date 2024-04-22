@@ -4,8 +4,8 @@
 
      let intro_gallery = [
         {link: "https://ralt144mi.remigeorges.fr/Ralt144MI3.png", description: "Rémi Georges"},
-        {link: "https://www.cookie.paris/static/bc65c5fd7f7c76dc70bcd9892dc17a4d/5cc0d/16.webp", description: "Azertype"},
-        {link: "https://www.cookie.paris/static/9dbc442f1f54a41b9210b3ba1b835226/5cc0d/13.webp", description: "Jules Cipher"},
+        {link: "https://www.cookie.paris/static/bc65c5fd7f7c76dc70bcd9892dc17a4d/7c735/16.webp", description: "Azertype"},
+        {link: "https://www.cookie.paris/static/9dbc442f1f54a41b9210b3ba1b835226/7c735/13.webp", description: "Jules Cipher"},
         {link: "../images/leondenise.jpeg", description: "Léon Denise"},
         {link: "https://renardo.org/images/screenshot1.png", description: "Renardo"},
         {link: "https://sardine.raphaelforment.fr/presentation/what_is_live_coding.jpeg#center", description: "Raphaël Forment"},
