@@ -1,5 +1,12 @@
 [
   {
+    "name": "Jules Déjardin",
+    "description": "Fronssons",
+    "image": "/images/fronssons.png",
+    "site": "https://soundcloud.com/FRONSSONS",
+    "mail": ""
+  },
+  {
     "name": "Raphaël Forment",
     "description": "BuboBubo",
     "image": "https://avatars.githubusercontent.com/u/45191785?s=400&u=3ee9062082ce04b6f08f811e657797fe9528d106&v=4",
