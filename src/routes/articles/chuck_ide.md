@@ -4,7 +4,7 @@ author: "Raphaël Maurice Forment"
 date: "2024-10-02"
 ---
 
-<img src="../images/chuck_logo.png" style="display:block;margin-left:auto;margin-right:auto;max-width:500px;width:90%;height:auto" />
+<img alt="Chuck Logo" src="../images/chuck_logo.png" style="display:block;margin-left:auto;margin-right:auto;max-width:500px;width:90%;height:auto" />
 
 <br>
 
@@ -32,7 +32,7 @@ sémantique et la syntaxe du langage sont construites autour de cette idée et l
 ## ChucK sur le web
 
 
-<img src="../images/webchuck.png" style="display:block;margin-left:auto;margin-right:auto;max-width:1000px;width:90%;height:auto" />
+<img alt="WebChuck" src="../images/webchuck.png" style="display:block;margin-left:auto;margin-right:auto;max-width:1000px;width:90%;height:auto" />
 
 <br>
 

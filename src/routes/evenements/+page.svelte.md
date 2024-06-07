@@ -15,4 +15,4 @@
 
 ## Agenda du Cookie Collective
 
-<iframe width="100%" height="700" src="https://framagenda.org/apps/calendar/embed/zpDjE9gGFeFZAmdz"></iframe>
+<iframe title="Agenda du Cookie Collective" width="100%" height="700" src="https://framagenda.org/apps/calendar/embed/zpDjE9gGFeFZAmdz"></iframe>

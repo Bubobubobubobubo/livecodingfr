@@ -16,7 +16,7 @@ date: "2023-24-12"
 <br>
 
 <div>
-  <a href="https://www.instagram.com/p/CtHWU0fuOKd/"><img style="min-width: 200px;width:30%;height:auto;float:inline-end;padding-right:20px;margin-left:20px" src="/images/supercollider_meme.png"></a>
+  <a href="https://www.instagram.com/p/CtHWU0fuOKd/"><img style="min-width: 200px;width:30%;height:auto;float:inline-end;padding-right:20px;margin-left:20px" src="/images/supercollider_meme.png" alt="SuperCollider meme"></a>
 </div>
 
 Si vous avez lu et suivi le premier article, tout est en place et vous devriez

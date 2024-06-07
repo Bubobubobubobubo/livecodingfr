@@ -9,6 +9,7 @@ date: "2024-03-02"
 Le [Monome Teletype](https://monome.org/docs/teletype/) est un module Eurorack _open source_ (relativement cher et rare..) qui embarque un interpréteur pour un petit langage de programmation dédié à la composition algorithmique et au contrôle des synthétiseurs Eurorack. Le Teletype permet aux plus courageux de pratiquer le _live coding_ sans ordinateur, directement au contact de la machine. Un clavier connecté en facade du module constitue l'interface principale pour interagir avec ce dernier. Il est aussi possible de recevoir des signaux (**CV**) et des impulsions  (**Gate**) pour contrôler le déclenchement de scripts ou pour nourrir vos scripts de données externes. Une version [VCVRack](https://vcvrack.com/) (gratuite !) existe également et autorise le _live coding_ directement depuis ce logiciel.
 
 <iframe 
+    title="Teletype"
     src="https://player.vimeo.com/video/129271731?h=0070353db0&color=ff7700&title=0&byline=0&portrait=0" 
     width="640" height="360" frameborder="0" 
     allow="autoplay; fullscreen; picture-in-picture allowfullscreen" 

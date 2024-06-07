@@ -1,7 +1,6 @@
 <script lang="ts">
   export let image: string;
   export let name: string;
-  export let mail: string;
   export let site: string;
   export let description: string;
 </script>

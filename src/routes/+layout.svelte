@@ -17,7 +17,7 @@
           >livecoding.fr</a
         >
         <!-- Mobile menu button -->
-        <div on:click={toggleNavbar} class="flex md:hidden">
+        <div on:click={toggleNavbar} role="button" class="flex md:hidden">
           <button
             type="button"
             class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"

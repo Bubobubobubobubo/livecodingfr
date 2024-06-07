@@ -12,11 +12,11 @@
 <div
   class="max-w-sm my-4 w-80 h-fit rounded-lg shadow-md bg-neutral-800 hover:bg-neutral-700"
 >
-  <a href="#">
+  <a href="/">
     <img class="rounded-t-lg h-48 w-80 object-cover" src={image} alt="" />
   </a>
   <div class="p-5">
-    <a href="#">
+    <a href="/">
       <h5 class="mb-2 text-lg font-bold tracking-tight text-white">
         {truncateString(title, 50)}
       </h5>
