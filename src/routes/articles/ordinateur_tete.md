@@ -1,7 +1,7 @@
 ---
 title: "Ordinateur dans la tête : un label de musique live codée"
 author: "Raphaël Maurice Forment"
-date: "2024-09-02"
+date: "2024-02-09"
 ---
 
 Rémi Georges a lancé depuis plus d'un an un label de musique dédiée à la musique

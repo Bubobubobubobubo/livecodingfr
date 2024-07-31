@@ -1,6 +1,6 @@
 ---
 title: Comment proposer un guide ?
-date: '2023-12-22'
+date: '2023-10-22'
 author: "Raphaël Maurice Forment"
 ---
 
@@ -9,7 +9,7 @@ Les guides sont rédigés en [MarkDown](https://en.wikipedia.org/wiki/Markdown),
 ```yaml
 ---
 title: Comment proposer un guide ?
-date: '2023-12-22'
+date: '2023-10-22'
 author: "Raphaël Maurice Forment"
 ---
 ```

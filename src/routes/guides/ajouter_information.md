@@ -1,6 +1,6 @@
 ---
 title: Comment ajouter des informations au site ?
-date: '2023-12-23'
+date: '2023-10-20'
 author: "Raphaël Maurice Forment"
 ---
 

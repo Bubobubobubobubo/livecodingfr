@@ -1,7 +1,7 @@
 ---
 title: "Scheme for Max/Pure Data : LISP encore et toujours"
 author: "Raphaël Maurice Forment"
-date: "2024-11-02"
+date: "2024-02-11"
 ---
 
 <img src="https://repository-images.githubusercontent.com/232438669/2786d100-7d94-11ea-81b9-74d9e19db04a" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:500px;width:75%" />

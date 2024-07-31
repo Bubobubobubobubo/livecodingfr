@@ -1,7 +1,7 @@
 ---
 title: "Premières versions de Renardo"
 author: "Raphaël Maurice Forment"
-date: "2024-03-02"
+date: "2024-02-03"
 ---
 
 [Jules Cipher](https://ordinateurdanslatete.bandcamp.com/album/-) a récemment commencé à publier ses efforts pour moderniser l'environnement [FoxDot](https://foxdot681713046.wordpress.com/) dont le développement a été mis en pause par son développeur, Ryan Kirkbride. Preuve de l'intérêt que cette démarche suscite, le groupe [Telegram](https://t.me/foxdot) qui centralise les utilisateurs de FoxDot vient d'être renommé **FoxDot/Renardo**. Le travail de Jules Cipher propose de faciliter l'installation du logiciel et de ses dépendances tout en apportant quelques nouvelles fonctionnalités. **Le lien est ici :** [Renardo](https://renardo.org/#/).

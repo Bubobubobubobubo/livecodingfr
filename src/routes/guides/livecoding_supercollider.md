@@ -1,7 +1,7 @@
 ---
 title: 'Introduction au live coding sur SuperCollider (I)'
 author: 'Raphaël Maurice Forment'
-date: '2023-12-24'
+date: '2023-12-20'
 ---
 
 <script>

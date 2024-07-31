@@ -1,7 +1,7 @@
 ---
 title: "ChucK Web IDE: le retour de ChucK sur le web"
 author: "Raphaël Maurice Forment"
-date: "2024-10-02"
+date: "2024-02-10"
 ---
 
 <img alt="Chuck Logo" src="../images/chuck_logo.png" style="display:block;margin-left:auto;margin-right:auto;max-width:500px;width:90%;height:auto" />
