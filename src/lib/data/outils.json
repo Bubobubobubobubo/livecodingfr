@@ -82,5 +82,12 @@
     "description": "Un séquenceur de patterns pour créer des rythmes et des mélodies à partir de texte sur VCVRack 2.0.",
     "image": "https://library.vcvrack.com/screenshots/400/Biset/Biset-Regex.png",
     "link": "https://github.com/gibbonjoyeux/VCV-Biset"
+  },
+  {
+    "name": "dublang",
+    "creator": "Joenio Marques da Costa",
+    "description": "dublang est un système de codage en direct multilingue qui prend en charge plusieurs langues au cours d'un même code source.",
+    "image": "https://dublang.4two.art/artwork/dublang-logo-bg-white-420x420.png",
+    "link": "https://dublang.4two.art"
   }
 ]
