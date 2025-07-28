@@ -27,4 +27,27 @@
 
 Le _live coding_ a été historiquement promu et popularisé par le collectif international [TOPLAP](https://toplap.org). La scène du _live coding_ réunit aujourd'hui de nombreux [chercheurs](https://livecodingbook.toplap.org/), musiciens et développeurs de tous horizons. De nombreux groupes en Europe et dans le monde sont issus de la sphère d'influence de ce collectif et ont depuis trouvé leur voix propre : [TOPLAP Barcelona](https://toplap.cat/en/home), [Livecode NYC](https://livecode.nyc/), parmi d'autres. La pratique du _live coding_ s'est popularisée au travers d'un [manifeste](https://toplap.org/wiki/ManifestoDraft) et de nombreuses [Algoraves](https://algorave.com) (_algorithmic rave parties_, à partir de 2012). Toutefois, limiter le <i>live coding</i> à ce seul phénomène culturel revient à ne prêter à attention qu'à l'arbre qui cache la forêt. Le _live coding_ est une pratique ancienne, qui existe <i>a minima</i> depuis la fin des années 1980. Cette dernière s'est disséminée dans l'ensemble des arts numériques, aussi bien en [musique](https://supercollider.github.io/) que dans les [arts visuels](https://teddavis.org/p5live/), le [jeu vidéo](https://chuck.cs.princeton.edu/chunity/), etc. Le _live coding_ est une pratique courante en informatique, bien que sa mise en valeur par la performance soit un phénomène plus rare.
 
-<iframe src="https://www.youtube.com/embed/2GSNAGLkvGw" title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="aspect-video">
+        <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/2GSNAGLkvGw" 
+            title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+    </div>
+    <div class="aspect-video">
+        <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/Crz6R4p_owI" 
+            title="Algorave : la teuf en open source | Tracks | ARTE" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+    </div>
+</div>
