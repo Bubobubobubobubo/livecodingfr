@@ -10,25 +10,29 @@
 </script>
 
 <div
-  class="max-w-sm my-4 w-80 h-fit rounded-lg shadow-md bg-neutral-800 hover:bg-neutral-700"
+  class="w-full bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] flex flex-col h-full"
 >
-  <a href="/presse">
-    <img class="rounded-t-lg h-48 w-80 object-cover" src={image} alt="" />
+  <a href={link} target="_blank" rel="noopener noreferrer">
+    <img class="h-40 w-full object-cover" src={image} alt="" loading="lazy" />
   </a>
-  <div class="p-5">
-    <a href="/presse">
-      <h5 class="mb-2 text-lg font-bold tracking-tight text-white">
-        {truncateString(title, 50)}
-      </h5>
+  <div class="p-4 flex flex-col flex-1">
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <h3 class="mb-2 text-base font-semibold text-white leading-tight hover:text-orange-300 transition-colors duration-200">
+        {truncateString(title, 60)}
+      </h3>
     </a>
-    <p class="mb-3 font-normal text-gray-400">
+    <p class="mb-4 text-sm text-gray-400 font-normal leading-relaxed flex-1">
       {description}
     </p>
-    <a
-      href={link}
-      class="inline-flex items-center btn btn-primary text-sm font-medium text-center text-white"
-    >
-      En savoir plus
-    </a>
+    <div class="mt-auto">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center text-sm font-medium text-orange-300 hover:text-orange-200 transition-colors duration-200"
+      >
+        Lire l'article →
+      </a>
+    </div>
   </div>
 </div>

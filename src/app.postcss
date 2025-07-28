@@ -1,4 +1,25 @@
 @tailwind base;
+
+:root {
+  --rounded-box: 0;
+  --rounded-btn: 0;
+  --rounded-badge: 0;
+  --tab-radius: 0;
+}
+
+/* Set IBM Plex Sans as default font */
+html,
+body,
+* {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Ensure consistent base font size and weight */
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
 @layer utilities {
 
     .animate-gradient {
@@ -32,32 +53,57 @@
           scrollbar-width: none;  /* Firefox */
     }
 
-    .sideli {
-      @apply text-xl ml-0;
-    }
-
-    .sidemenu-style {
-      @apply p-4 w-40 min-h-full bg-neutral-800 text-base-content overflow-hidden;
-    }
 
     .footer-style {
-      @apply ml-0 pl-0 pb-4 pt-4 bg-neutral-800 justify-between pr-16;
+      @apply px-4 sm:px-6 lg:px-8 py-4 bg-neutral-800 border-t border-neutral-700;
+    }
+    
+    .footer-style * {
+      font-family: 'IBM Plex Sans', sans-serif;
     }
 
-    .mobile-menu-link {
-      @apply text-gray-100 hover:text-orange-300 flex hover:border-b-2;
+    .mobile-nav-link {
+      @apply block px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-neutral-700 transition-colors duration-200 rounded-lg;
     }
 
-    .sidebar-link {
-      @apply text-white hover:text-orange-300 hover:bg-neutral-700;
-    }
 
-    .titlebar-link {
-      @apply text-gray-100 hover:text-orange-300 flex md:hidden;
+    .nav-link {
+      @apply text-sm font-medium text-gray-300 hover:text-orange-300 px-3 py-2 transition-colors duration-200 relative;
+    }
+    
+    .nav-link:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #fdba74, #fb923c);
     }
 
     .website-title {
-      @apply text-3xl uppercase font-bold bg-gradient-to-r from-orange-300 via-red-300 to-orange-200 text-transparent bg-clip-text animate-gradient
+      @apply text-3xl uppercase font-bold bg-gradient-to-r from-orange-300 via-red-300 to-orange-200 text-transparent bg-clip-text animate-gradient;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .line-clamp-4 {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .member-name {
+      text-decoration: none !important;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    /* Responsive iframe styling */
+    iframe {
+      @apply w-full max-w-4xl mx-auto;
+      aspect-ratio: 16 / 9;
+      height: auto;
     }
 }
 
@@ -72,34 +118,38 @@
   }
 
   p {
-    @apply text-xl text-white;
+    @apply text-lg text-white mb-6 leading-relaxed font-normal;
   }
 
   li {
-    @apply list-disc text-xl text-white py-1 ml-8;
+    @apply list-disc text-base text-white py-1 ml-8 font-normal;
   }
 
   h1 {
-    @apply text-3xl border-b-2 dark:border-b-white border-b-gray-400 py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
+    @apply text-4xl border-b-2 dark:border-b-white border-b-gray-400 py-3 mb-8 font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
   }
   h2 {
-    @apply text-2xl border-b-2 dark:border-b-white border-b-gray-400 py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200 mb-4 mt-4;
+    @apply text-2xl border-b-2 dark:border-b-white border-b-gray-400 py-2 mb-6 mt-10 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
   }
   h3 {
-    @apply text-2xl bg-white text-right underline py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-orange-300 pr-4;
+    @apply text-xl py-2 mb-4 mt-8 font-semibold text-white;
   }
   h4 {
-    @apply text-2xl text-right underline py-2 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-orange-300 pr-4;
+    @apply text-lg py-1 mb-3 mt-6 font-medium text-white;
   }
   pre {
     @apply bg-base-300 border-white border-l-2 my-4 px-2 py-2 pl-4
     overflow-x-scroll no-scrollbar
   }
   ul {
-    @apply my-2
+    @apply my-4 space-y-1;
+  }
+  
+  ol {
+    @apply my-4 space-y-1 list-decimal ml-8;
   }
   blockquote {
-    @apply bg-gray-900 py-4 px-4 mx-4 my-4 border-l-4 text-xl text-white
+    @apply bg-gray-900 py-5 px-6 mx-0 my-8 border-l-4 text-base text-white leading-relaxed font-normal italic;
   }
 }
 @tailwind components;

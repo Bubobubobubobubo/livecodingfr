@@ -7,10 +7,16 @@
 
 # Ressources
 
-<Info info="Cette page est une liste de ressources généralistes sur le <i>live
-coding</i>. Au vu de l'objectif poursuivi par ce site, il est préférable de 
-mentionner les sources francophones en premier puis d'inclure des liens 
-généralistes." markdown=false />
+<Info info="Cette page est une liste de ressources généralistes sur le <i>live coding</i>. Il est préférable de mentionner les sources francophones en premier afin de faciliter leur découverte, puis d'inclure des ressources plus généralistes. Toute contribution est la bienvenue." markdown=false />
+
+
+## Ressources francophones
+
+- [Cookie Collective Compilation](https://ccc.cookie.paris/) : compilation audiovisuelle du Cookie Collective. Plusieurs heures de musique et de vidéos, un fanzine, et bien plus d'autres choses. Avec la compilation de très nombreux artistes et _live coders_ francophones. Un format physique de la compilation existe aussi : disque, fanzine, clé USB, etc.
+
+- [Crash Server](https://crashserver.fr/) : site du duo strasbourgeois _Crash Server_. Contient quelques articles et quelques tutoriels expliquant le _live coding_ et les outils utilisés par le duo.
+
+- [Labomedia](https://ressources.labomedia.org/live_coding) : collection de ressources pour le _creative coding_.
 
 ## Ressources anglophones
 
@@ -40,6 +46,3 @@ généralistes." markdown=false />
   l'émergence de la scène musicale du _live coding_, et pour de bonnes raisons.
   Foisonnant, infini, logiciel tentaculaire et puissant.
 
-## Ressources francophones
-
-- [Labomedia](https://ressources.labomedia.org/live_coding) : collection de ressources pour le _creative coding_.

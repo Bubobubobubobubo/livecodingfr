@@ -4,7 +4,7 @@ author: "Raphaël Maurice Forment"
 date: "2024-02-08"
 ---
 
-<img src="../images/bisetblank.gif" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:1000px;width:75%" />
+<img src="../images/bisetblank.gif" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:1000px;width:75%" loading="lazy" />
 
 <br>
 

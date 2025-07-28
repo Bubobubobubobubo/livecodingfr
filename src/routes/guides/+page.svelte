@@ -15,7 +15,7 @@
 <ul>
   {#each data.guides as post}
     <li
-      class="ml-0 list-none px-4 pb-4 my-4 rounded-lg border-1 border-color-base-100 bg-neutral-800 hover:bg-neutral-700"
+      class="ml-0 list-none px-4 pb-4 my-4 border-1 border-color-base-100 bg-neutral-800 hover:bg-neutral-700"
     >
       <h2>
         <a href={post.path}>

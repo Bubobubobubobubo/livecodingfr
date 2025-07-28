@@ -9,14 +9,14 @@
 
 <div class="flex flex-row">
   <div
-    class="w-42 block rounded-t overflow-hidden bg-white text-center min-w-max"
+    class="w-42 block overflow-hidden bg-white text-center min-w-max"
   >
     <div class="bg-red-800 text-white py-1">{realDate[1]}</div>
     <div class="pt-1 border-l border-r">
       <span class="text-4xl font-bold">{realDate[0]}</span>
     </div>
     <div
-      class="pb-2 px-2 border-l border-r border-b rounded-b flex justify-between"
+      class="pb-2 px-2 border-l border-r border-b flex justify-between"
     >
       <span class="text-xs font-bold">{realDate[2]}</span>
     </div>

@@ -6,120 +6,91 @@
     showMenu = !showMenu;
   }
 </script>
-<div>
-  <div class="bg-neutral-800">
-    <nav class="px-8 py-2 flex justify-between items-center">
-      <div class="flex items-center justify-between w-full">
-        <a
-          href="/"
-          class="website-title text-2xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient"
-          >livecoding.fr</a
-        >
-        <!-- Mobile menu button -->
-        <div class="lg:hidden">
-          <button
-            on:click={toggleNavbar}
-            type="button"
-            class="text-gray-100 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
+<div class="min-h-screen flex flex-col">
+  <header class="bg-neutral-800 sticky top-0 z-50 shadow-lg">
+    <nav class="px-4 sm:px-6 lg:px-8 py-2">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a
+              href="/"
+              class="website-title text-xl sm:text-2xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          </button>
+              livecoding.fr
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex md:items-center md:space-x-6">
+            <a href="/evenements" class="nav-link">Évènements</a>
+            <a href="/membres" class="nav-link">Membres</a>
+            <a href="/outils" class="nav-link">Outils</a>
+            <a href="/reseaux" class="nav-link">Réseaux</a>
+            <a href="/ressources" class="nav-link">Ressources</a>
+            <a href="/presse" class="nav-link">Presse</a>
+            <a href="/contacts" class="nav-link">Contact</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              on:click={toggleNavbar}
+              type="button"
+              class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-300 transition-all duration-200 {showMenu ? 'bg-neutral-700' : ''}"
+              aria-expanded={showMenu}
+              aria-label={showMenu ? 'Close menu' : 'Open menu'}
+            >
+              <span class="sr-only">{showMenu ? 'Close' : 'Open'} main menu</span>
+              {#if !showMenu}
+                <svg class="h-6 w-6 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              {:else}
+                <svg class="h-6 w-6 transition-transform duration-200 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              {/if}
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden {showMenu ? 'block animate-in slide-in-from-top-2 duration-200' : 'hidden'} mt-3 border-t border-neutral-700 pt-3">
+          <div class="space-y-1 pb-2">
+            <a href="/evenements" class="mobile-nav-link" on:click={() => showMenu = false}>Évènements</a>
+            <a href="/membres" class="mobile-nav-link" on:click={() => showMenu = false}>Membres</a>
+            <a href="/outils" class="mobile-nav-link" on:click={() => showMenu = false}>Outils</a>
+            <a href="/reseaux" class="mobile-nav-link" on:click={() => showMenu = false}>Réseaux</a>
+            <a href="/ressources" class="mobile-nav-link" on:click={() => showMenu = false}>Ressources</a>
+            <a href="/presse" class="mobile-nav-link" on:click={() => showMenu = false}>Presse</a>
+            <a href="/contacts" class="mobile-nav-link" on:click={() => showMenu = false}>Contact</a>
+          </div>
         </div>
       </div>
-      <!-- Desktop Menu -->
-      <div class="hidden lg:flex lg:items-center lg:space-x-10">
-        <a href="/evenements" class="titlebar-link">Évènements</a>
-        <a href="/membres" class="titlebar-link">Membres</a>
-        <a href="/outils" class="titlebar-link">Outils</a>
-        <a href="/guides" class="titlebar-link">Guides</a>
-        <a href="/articles" class="titlebar-link">Articles</a>
-        <a href="/reseaux" class="titlebar-link">Réseaux</a>
-        <a href="/ressources" class="titlebar-link">Ressources</a>
-        <a href="/presse" class="titlebar-link">Presse</a>
-        <a href="/contacts" class="titlebar-link">Contact</a>
-      </div>
     </nav>
-    <!-- Mobile Menu -->
-    <div class="lg:hidden {showMenu ? 'block' : 'hidden'}">
-      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <a href="/evenements" class="mobile-menu-link block">Évènements</a>
-        <a href="/membres" class="mobile-menu-link block">Membres</a>
-        <a href="/outils" class="mobile-menu-link block">Outils</a>
-        <a href="/guides" class="mobile-menu-link block">Guides</a>
-        <a href="/articles" class="mobile-menu-link block">Articles</a>
-        <a href="/reseaux" class="mobile-menu-link block">Réseaux</a>
-        <a href="/ressources" class="mobile-menu-link block">Ressources</a>
-        <a href="/presse" class="mobile-menu-link block">Presse</a>
-        <a href="/contacts" class="mobile-menu-link block">Contact</a>
-      </div>
-    </div>
-  </div>
-</div>
-<main class="bg-neutral-900">
-  <div class="drawer lg:drawer-open">
-    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content space-y-4 flex flex-col lg:px-16 px-4 py-8">
-      <slot />
-    </div>
-    <div class="drawer-side no-scrollbar m-0 lg:block hidden">
-      <label
-        for="my-drawer-2"
-        aria-label="close sidebar"
-        class="drawer-overlay scrollbar-hide whitespace-nowrap overflow-hidden no-scrollbar"
-      />
-      <ul class="menu sidemenu-style no-scrollbar my-0">
-        <li class="sideli">
-          <a class="sidebar-link" href="/evenements">Évènements</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/membres">Membres</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/outils">Outils</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/guides">Guides</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/articles">Articles</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/reseaux">Réseaux</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/ressources">Ressources</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/presse">Presse</a>
-        </li>
-        <li class="sideli">
-          <a class="sidebar-link" href="/contacts">Contact</a>
-        </li>
-      </ul>
-    </div>
+  </header>
+<main class="bg-neutral-900 flex-1">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <slot />
   </div>
 </main>
-<footer class="footer-style">
-  <div class="flex justify-between">
-    <p class="inline indent-4 text-bold text-white">Raphaël Forment</p>
-    <p>
+<footer class="footer-style mt-auto">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-row justify-between items-center">
+      <span class="text-gray-400 text-sm">© 2024 Raphaël Forment</span>
       <a
-        class="inline pl-4"
-        href="https://github.com/Bubobubobubobubo/livecodingfr">GitHub</a
+        class="text-gray-400 hover:text-orange-300 transition-colors duration-200 text-sm flex items-center gap-2"
+        href="https://github.com/Bubobubobubobubo/livecodingfr"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-    </p>
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
   </div>
 </footer>
+</div>

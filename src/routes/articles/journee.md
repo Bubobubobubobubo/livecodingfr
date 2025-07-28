@@ -9,7 +9,7 @@ Le **23 avril 2024** sera organisé à la **Maison des Sciences de l'Homme Paris
 <br>
 
 
-<img alt="Poster journée d'étude" src="../images/jlc_poster.png" style="display:block; margin-left:auto;margin-right:auto;max-width:1000px;width:75%" />
+<img alt="Poster journée d'étude" src="../images/jlc_poster.png" style="display:block; margin-left:auto;margin-right:auto;max-width:1000px;width:75%" loading="lazy" />
 
 
 <br>

@@ -11,7 +11,7 @@
 
 # Presse
 
-<div class="lg:grid sm:grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 mx-auto gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
      {#each general_press as {title, picture, link, author}, i}
           <Press title={title} description={author} image={picture} link={link} />
      {/each}

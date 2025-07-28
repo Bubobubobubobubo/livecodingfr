@@ -6,20 +6,34 @@
 </script>
 
 <div
-  class="mx-2 w-72 my-4 bg-neutral-800 rounded-lg shadow dark:border-gray-700"
+  class="w-full max-w-sm mx-auto h-96 bg-neutral-800 shadow-lg transition-transform hover:scale-105 duration-200 flex flex-col"
 >
-  <div class="flex justify-end px-4 pt-4" />
-  <div class="flex flex-col items-center pb-10">
-  <div class="w-24 h-24 mb-3 rounded-full shadow-lg" style="background-image:url('{image}');background-size: cover;background-position: center;" />
-    <h5 class="mb-1 text-xl font-medium text-white">
+  <div class="flex flex-col items-center p-6 h-full">
+    <!-- Profile Image -->
+    <div class="w-28 h-28 sm:w-32 sm:h-32 mb-4 shadow-lg" style="background-image:url('{image}');background-size: cover;background-position: center;" />
+    
+    <!-- Name -->
+    <h3 class="mb-3 text-lg font-semibold text-white text-center member-name">
       {name}
-    </h5>
-    <span class="text-sm text-gray-400">{description}</span>
-    <div class="flex mt-4 space-x-3 md:mt-6">
+    </h3>
+    
+    <!-- Description -->
+    <div class="flex-1 overflow-hidden mb-4">
+      <p class="text-sm text-gray-400 text-center leading-relaxed line-clamp-4 overflow-hidden font-normal">
+        {description}
+      </p>
+    </div>
+    
+    <!-- Button -->
+    <div class="pb-2">
       <a
         href={site}
-        class="btn btn-tertiary border-none bg-neutral-700 text-white">Site</a
+        class="btn btn-sm bg-neutral-700 hover:bg-neutral-600 text-white border-none transition-colors duration-200 px-4"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        Site
+      </a>
     </div>
   </div>
 </div>

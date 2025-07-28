@@ -8,7 +8,7 @@ date: "2024-02-03"
 
 <br>
 
-<img src="https://renardo.org/images/screenshot1.png" alt="Renardo" style="display:block;margin-left:auto;margin-right:auto;max-width:1000px;width:90%"/>
+<img src="https://renardo.org/images/screenshot1.png" alt="Renardo" style="display:block;margin-left:auto;margin-right:auto;max-width:1000px;width:90%" loading="lazy"/>
 
 
 <br>

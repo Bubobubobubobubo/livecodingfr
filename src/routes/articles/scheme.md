@@ -4,7 +4,7 @@ author: "Raphaël Maurice Forment"
 date: "2024-02-11"
 ---
 
-<img src="https://repository-images.githubusercontent.com/232438669/2786d100-7d94-11ea-81b9-74d9e19db04a" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:500px;width:75%" />
+<img src="https://repository-images.githubusercontent.com/232438669/2786d100-7d94-11ea-81b9-74d9e19db04a" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:500px;width:75%" loading="lazy" />
 
 <br>
 
@@ -30,7 +30,7 @@ temps de publier [quelques](https://iainctduncan.github.io/scheme-for-max-docs/s
 
 <br>
 
-<img src="https://imgs.xkcd.com/comics/lisp_cycles.png" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:800px;width:75%" />
+<img src="https://imgs.xkcd.com/comics/lisp_cycles.png" alt="Biset Blank" style="display:block; margin-left:auto;margin-right:auto;max-width:800px;width:75%" loading="lazy" />
 
 <br>
 

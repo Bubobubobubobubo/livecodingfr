@@ -8,22 +8,25 @@
 
 <a
   href={link}
-  class="flex flex-col items-center bg-neutral-800 hover:bg-neutral-700 rounded-lg shadow md:flex-row"
+  class="flex flex-col bg-neutral-800 hover:bg-neutral-700 shadow md:flex-row md:min-h-32 transition-colors duration-200"
 >
-  <img
-    class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-    src={image}
-    alt=""
-  />
-  <div class="flex flex-col items-start md:items-end w-full">
-    <div class="flex flex-col justify-between p-4 leading-normal w-full">
-      <div class="flex justify-between">
-        <h5 class="inline mb-2 text-2xl font-bold tracking-tight text-white">
+  <div class="w-full h-48 md:h-auto md:w-48 md:self-stretch flex-shrink-0 overflow-hidden">
+    <img
+      class="object-cover w-full h-full"
+      src={image}
+      alt=""
+      loading="lazy"
+    />
+  </div>
+  <div class="flex flex-col justify-between w-full p-4 min-h-0">
+    <div>
+      <div class="flex justify-between items-start mb-3">
+        <h3 class="text-xl font-semibold text-white leading-tight">
           {name}
-        </h5>
-        <p class="inline text-right text-orange-300">{creator}</p>
+        </h3>
+        <p class="text-sm text-orange-300 font-medium ml-4 text-right flex-shrink-0">{creator}</p>
       </div>
-      <p class="mb-3 font-normal text-gray-400">
+      <p class="font-normal text-gray-400 leading-relaxed">
         {description}
       </p>
     </div>

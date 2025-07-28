@@ -13,7 +13,7 @@
 
 # Membres
 
-<div class="lg:grid sm:grid grid-cols-2 md:grid-cols-3 grid-rows-2 md:grid-rows-3 mx-auto gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
      {#each members as {name, description, image, site, mail}, i}
           <div>
                <Portrait name={name} description={description} image={image} site={site} mail={mail}/>
