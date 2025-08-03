@@ -30,6 +30,7 @@
             <a href="/ressources" class="nav-link">Ressources</a>
             <a href="/presse" class="nav-link">Presse</a>
             <a href="/contacts" class="nav-link">Contact</a>
+            <a href="https://cookieforum.livecoding.fr" class="nav-link">Forum</a>
           </div>
 
           <!-- Mobile menu button -->
@@ -65,6 +66,7 @@
             <a href="/ressources" class="mobile-nav-link" on:click={() => showMenu = false}>Ressources</a>
             <a href="/presse" class="mobile-nav-link" on:click={() => showMenu = false}>Presse</a>
             <a href="/contacts" class="mobile-nav-link" on:click={() => showMenu = false}>Contact</a>
+            <a href="https://cookieforum.livecoding.fr" class="mobile-nav-link" on:click={() => showMenu = false}>Forum</a>
           </div>
         </div>
       </div>
