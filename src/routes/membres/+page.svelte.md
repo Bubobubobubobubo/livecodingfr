@@ -1,7 +1,8 @@
 <script>
+     import Grid from "$lib/components/Grid.svelte";
      import Portrait from "$lib/components/Portrait.svelte";
      import Membres from "$lib/data/membres.json";
-     import { shuffleArray } from "$lib/utils";
+     import { shuffleArray } from "$lib/utils";
      let members = Membres;
      shuffleArray(members);
 </script>
@@ -13,10 +14,14 @@
 
 # Membres
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
-     {#each members as {name, description, image, site, mail}, i}
-          <div>
-               <Portrait name={name} description={description} image={image} site={site} mail={mail}/>
-          </div>
+<Grid columns={3} gap={1}>
+     {#each members as member}
+          <Portrait 
+               name={member.name} 
+               description={member.description} 
+               image={member.image} 
+               site={member.site} 
+               mail={member.mail}
+          />
      {/each}
-</div>
+</Grid>

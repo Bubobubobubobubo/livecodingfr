@@ -7,17 +7,17 @@
   }
 </script>
 <div class="min-h-screen flex flex-col">
-  <header class="bg-neutral-800 sticky top-0 z-50 shadow-lg">
-    <nav class="px-4 sm:px-6 lg:px-8 py-2">
+  <header class="bg-neutral-900 sticky top-0 z-50 border-b border-gray-800 shadow-xl">
+    <nav class="px-4 sm:px-6 lg:px-8 py-3">
       <div class="max-w-7xl mx-auto">
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="flex-shrink-0">
             <a
               href="/"
-              class="website-title text-xl sm:text-2xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient"
+              class="text-xl sm:text-2xl font-bold text-white hover:text-orange-400 transition-colors duration-300 tracking-tight"
             >
-              livecoding.fr
+              LIVECODING<span class="text-orange-400">.FR</span>
             </a>
           </div>
 
@@ -38,7 +38,7 @@
             <button
               on:click={toggleNavbar}
               type="button"
-              class="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-300 transition-all duration-200 {showMenu ? 'bg-neutral-700' : ''}"
+              class="inline-flex items-center justify-center p-2 text-gray-300 hover:text-orange-400 hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-400 transition-all duration-200 {showMenu ? 'bg-neutral-800' : ''}"
               aria-expanded={showMenu}
               aria-label={showMenu ? 'Close menu' : 'Open menu'}
             >
@@ -57,7 +57,7 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div class="md:hidden {showMenu ? 'block animate-in slide-in-from-top-2 duration-200' : 'hidden'} mt-3 border-t border-neutral-700 pt-3">
+        <div class="md:hidden {showMenu ? 'block animate-in slide-in-from-top-2 duration-200' : 'hidden'} mt-3 border-t border-gray-800 pt-3">
           <div class="space-y-1 pb-2">
             <a href="/evenements" class="mobile-nav-link" on:click={() => showMenu = false}>Évènements</a>
             <a href="/membres" class="mobile-nav-link" on:click={() => showMenu = false}>Membres</a>
@@ -77,12 +77,23 @@
     <slot />
   </div>
 </main>
-<footer class="footer-style mt-auto">
-  <div class="max-w-7xl mx-auto">
+<footer class="bg-neutral-900 border-t border-gray-800 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
     <div class="flex flex-row justify-between items-center">
-      <span class="text-gray-400 text-sm">© 2024 Raphaël Forment</span>
+      <span class="text-gray-400 text-sm">
+        © {new Date().getFullYear()} 
+        <a 
+          href="https://raphaelforment.fr" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-gray-400 hover:text-orange-400 transition-colors duration-300 underline decoration-gray-600 hover:decoration-orange-400"
+        >
+          Raphaël Forment
+        </a>
+        {' '}et co.
+      </span>
       <a
-        class="text-gray-400 hover:text-orange-300 transition-colors duration-200 text-sm flex items-center gap-2"
+        class="text-gray-400 hover:text-orange-400 transition-colors duration-300 text-sm flex items-center gap-2"
         href="https://github.com/Bubobubobubobubo/livecodingfr"
         target="_blank"
         rel="noopener noreferrer"

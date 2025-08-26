@@ -3,7 +3,8 @@
 </svelte:head>
 <script>
   import Info from "$lib/components/Info.svelte";
-  import ResourceGrid from "$lib/components/ResourceGrid.svelte";
+  import Grid from "$lib/components/Grid.svelte";
+  import ResourceCard from "$lib/components/ResourceCard.svelte";
   import YouTubeLazyLoad from "$lib/components/YouTubeLazyLoad.svelte";
   
   const frenchResources = [
@@ -1152,23 +1153,63 @@ disponibles en anglais. Toute contribution est la bienvenue pour parfaire ce pet
 
 ## France : groupes, collectifs, lieux
 
-<ResourceGrid resources={frenchResources} />
+<Grid>
+  {#each frenchResources as resource}
+    <ResourceCard 
+      title={resource.title}
+      href={resource.href}
+      image={resource.image}
+      description={resource.description}
+      links={resource.links}
+    />
+  {/each}
+</Grid>
 
 <YouTubeLazyLoad src="https://www.youtube.com/embed/aLrBQ8rkrWQ" title="ALGORAVE GRRRND ZERO LYON" />
 
 ## International : groupes, collectifs, lieux
 
-<ResourceGrid resources={internationalResources} />
+<Grid>
+  {#each internationalResources as resource}
+    <ResourceCard 
+      title={resource.title}
+      href={resource.href}
+      image={resource.image}
+      description={resource.description}
+      links={resource.links}
+    />
+  {/each}
+</Grid>
 
 <YouTubeLazyLoad src="https://www.youtube.com/embed/jnk644QmFFw" title="type techno - eddyflux algorave set" />
 
 ## Environnements de live coding
 
-<ResourceGrid resources={softwareResources} />
+<Grid>
+  {#each softwareResources as resource}
+    <ResourceCard 
+      title={resource.title}
+      href={resource.href}
+      image={resource.image}
+      description={resource.description}
+      links={resource.links}
+    />
+  {/each}
+</Grid>
 
 <YouTubeLazyLoad src="https://www.youtube.com/embed/ntFMuvv2-TY" title="on-the-fly.documentary" className="w-full aspect-video" />
 
 ## Autres logiciels utiles
 
-<ResourceGrid resources={otherSoftwareResources} />
+<Grid>
+  {#each otherSoftwareResources as resource}
+    <ResourceCard 
+      title={resource.title}
+      href={resource.href}
+      image={resource.image}
+      description={resource.description}
+      links={resource.links}
+    />
+  {/each}
+</Grid>
 
