@@ -124,6 +124,11 @@ body {
   li {
     @apply list-disc text-base text-white py-1 ml-8 font-normal;
   }
+  
+  /* Ensure nested list items maintain the same text size */
+  li li {
+    @apply text-base;
+  }
 
   h1 {
     @apply text-4xl border-b-2 dark:border-b-white border-b-gray-400 py-3 mb-8 font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;

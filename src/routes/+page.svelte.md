@@ -51,3 +51,30 @@ Le _live coding_ a été historiquement promu et popularisé par le collectif in
         ></iframe>
     </div>
 </div>
+
+<div style="margin-top: 10px; margin-bottom: 10px;"></div>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="aspect-video">
+        <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/PsfTdFUQUVA" 
+            title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+    </div>
+    <div class="aspect-video">
+        <iframe 
+            class="w-full h-full"
+            src="https://youtube.com/embed/vG8UA8uYAM0" 
+            title="Algorave : la teuf en open source | Tracks | ARTE" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+    </div>
+</div>
