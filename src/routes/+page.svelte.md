@@ -1,6 +1,7 @@
 <script>
      import Info from "$lib/components/Info.svelte";
      import Gallery from "$lib/components/Gallery.svelte";
+     import YouTubeLazyLoad from "$lib/components/YouTubeLazyLoad.svelte";
 
      let intro_gallery = [
         {link: "https://ralt144mi.remigeorges.fr/Ralt144MI3.png", description: "Rémi Georges"},
@@ -17,7 +18,7 @@
 
 # Bienvenue
 
-[Livecoding.fr](https://livecoding.fr) est un site consacré à la mise en valeur de la pratique du _live coding_ en France. Il est périodiquement maintenu par un [groupe d'artistes](https://livecoding.fr/membres) et de musiciens francophones. Il se destine à servir de portail pour découvrir différents aspects de cette pratique : [évènements](https://livecoding.fr/evenements), [outils](https://livecoding.fr/outils), [réseaux](https://livecoding.fr/reseaux), liens vers le travail des artistes répertoriés, etc. Toute modification est la bienvenue. Le site est conçu pour être maintenu et actualisé facilement, de manière collaborative. Consultez [le dépôt](https://github.com/Bubobubobubobubo/livecodingfr) du site pour en apprendre plus.
+[Livecoding.fr](https://livecoding.fr) est un site dédié à la mise en valeur de la pratique du _live coding_ en France. Il est périodiquement maintenu par un [groupe d'artistes](https://livecoding.fr/membres) et de musiciens francophones. Il se destine à servir de portail pour découvrir différents aspects de cette pratique : [évènements](https://livecoding.fr/evenements), [outils](https://livecoding.fr/outils), [réseaux](https://livecoding.fr/reseaux), liens vers le travail des artistes répertoriés, etc. Toute modification est la bienvenue. Le site est conçu pour être maintenu et actualisé facilement, de manière collaborative. Consultez [le dépôt](https://github.com/Bubobubobubobubo/livecodingfr) du site pour en apprendre plus.
 
 <Gallery pictures={intro_gallery}/>
 
@@ -29,26 +30,18 @@ Le _live coding_ a été historiquement promu et popularisé par le collectif in
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <div class="aspect-video">
-        <iframe 
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/2GSNAGLkvGw" 
-            title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
-        ></iframe>
+        <YouTubeLazyLoad
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/2GSNAGLkvGw"
+            title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero"
+        />
     </div>
     <div class="aspect-video">
-        <iframe 
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/Crz6R4p_owI" 
-            title="Algorave : la teuf en open source | Tracks | ARTE" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
-        ></iframe>
+        <YouTubeLazyLoad
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/Crz6R4p_owI"
+            title="Algorave : la teuf en open source | Tracks | ARTE"
+        />
     </div>
 </div>
 
@@ -56,25 +49,17 @@ Le _live coding_ a été historiquement promu et popularisé par le collectif in
 
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <div class="aspect-video">
-        <iframe 
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/PsfTdFUQUVA" 
-            title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
-        ></iframe>
+        <YouTubeLazyLoad
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/PsfTdFUQUVA"
+            title="Algorave Lyon 2025 - 18h - 6h @GrrrndZero"
+        />
     </div>
     <div class="aspect-video">
-        <iframe 
-            class="w-full h-full"
-            src="https://youtube.com/embed/vG8UA8uYAM0" 
-            title="Algorave : la teuf en open source | Tracks | ARTE" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen
-        ></iframe>
+        <YouTubeLazyLoad
+            className="w-full h-full"
+            src="https://youtube.com/embed/vG8UA8uYAM0"
+            title="Algorave : la teuf en open source | Tracks | ARTE"
+        />
     </div>
 </div>

@@ -10,12 +10,12 @@
 </script>
 
 <div
-  class="w-full bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] flex flex-col h-full"
+  class="w-full bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] flex flex-col h-full border border-gray-700 hover:border-orange-400"
 >
   <a href={link} target="_blank" rel="noopener noreferrer">
     <img class="h-40 w-full object-cover" src={image} alt="" loading="lazy" />
   </a>
-  <div class="p-4 flex flex-col flex-1">
+  <div class="p-4 flex flex-col flex-1 border-t-2 border-orange-400">
     <a href={link} target="_blank" rel="noopener noreferrer">
       <h3 class="mb-2 text-base font-semibold text-white leading-tight hover:text-orange-300 transition-colors duration-200">
         {truncateString(title, 60)}

@@ -8,7 +8,7 @@
 
 <a
   href={link}
-  class="flex flex-col bg-neutral-800 hover:bg-neutral-700 shadow md:flex-row md:min-h-32 transition-colors duration-200"
+  class="flex flex-col bg-neutral-800 shadow-lg hover:shadow-xl md:flex-row md:min-h-32 transition-all duration-200 border border-gray-700 hover:border-orange-400"
 >
   <div class="w-full h-48 md:h-auto md:w-48 md:self-stretch flex-shrink-0 overflow-hidden">
     <img
@@ -18,7 +18,7 @@
       loading="lazy"
     />
   </div>
-  <div class="flex flex-col justify-between w-full p-4 min-h-0">
+  <div class="flex flex-col justify-between w-full p-4 min-h-0 border-t-2 border-orange-400 md:border-t-0 md:border-l-2">
     <div>
       <div class="flex justify-between items-start mb-3">
         <h3 class="text-xl font-semibold text-white leading-tight">

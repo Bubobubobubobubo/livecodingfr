@@ -6,11 +6,18 @@
 </script>
 
 <div
-  class="w-full max-w-sm mx-auto h-96 bg-neutral-800 shadow-lg transition-transform hover:scale-105 duration-200 flex flex-col"
+  class="w-full max-w-sm mx-auto h-96 bg-neutral-800 shadow-lg transition-all hover:scale-105 hover:shadow-xl duration-200 flex flex-col border border-gray-700 hover:border-orange-400"
 >
-  <div class="flex flex-col items-center p-6 h-full">
+  <div class="flex flex-col items-center p-6 h-full border-t-2 border-orange-400">
     <!-- Profile Image -->
-    <div class="w-28 h-28 sm:w-32 sm:h-32 mb-4 shadow-lg" style="background-image:url('{image}');background-size: cover;background-position: center;" />
+    <div class="w-28 h-28 sm:w-32 sm:h-32 mb-4 shadow-lg overflow-hidden">
+      <img 
+        src={image} 
+        alt={name}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
     
     <!-- Name -->
     <h3 class="mb-3 text-lg font-semibold text-white text-center member-name">

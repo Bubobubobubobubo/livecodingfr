@@ -4,6 +4,7 @@
 <script>
   import Info from "$lib/components/Info.svelte";
   import ResourceGrid from "$lib/components/ResourceGrid.svelte";
+  import YouTubeLazyLoad from "$lib/components/YouTubeLazyLoad.svelte";
   
   const frenchResources = [
     {
@@ -1153,19 +1154,19 @@ disponibles en anglais. Toute contribution est la bienvenue pour parfaire ce pet
 
 <ResourceGrid resources={frenchResources} />
 
-<iframe src="https://www.youtube.com/embed/aLrBQ8rkrWQ" title="ALGORAVE GRRRND ZERO LYON" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<YouTubeLazyLoad src="https://www.youtube.com/embed/aLrBQ8rkrWQ" title="ALGORAVE GRRRND ZERO LYON" />
 
 ## International : groupes, collectifs, lieux
 
 <ResourceGrid resources={internationalResources} />
 
-<iframe src="https://www.youtube.com/embed/jnk644QmFFw" title="type techno - eddyflux algorave set" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<YouTubeLazyLoad src="https://www.youtube.com/embed/jnk644QmFFw" title="type techno - eddyflux algorave set" />
 
 ## Environnements de live coding
 
 <ResourceGrid resources={softwareResources} />
 
-<iframe width="1672" height="871" src="https://www.youtube.com/embed/ntFMuvv2-TY" title="on-the-fly.documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<YouTubeLazyLoad src="https://www.youtube.com/embed/ntFMuvv2-TY" title="on-the-fly.documentary" className="w-full aspect-video" />
 
 ## Autres logiciels utiles
 

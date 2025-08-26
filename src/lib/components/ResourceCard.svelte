@@ -9,7 +9,7 @@
 <div class="resource-card">
   <div class="card-image">
     {#if image}
-      <img src={image} alt={title} />
+      <img src={image} alt={title} loading="lazy" />
     {:else}
       <div class="placeholder-image">
         <span>{title.charAt(0)}</span>
