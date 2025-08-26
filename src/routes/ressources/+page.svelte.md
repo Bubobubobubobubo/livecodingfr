@@ -198,7 +198,7 @@
     },
     {
       title: "TOPLAP Nodes",
-      href: "http//blog.toplap.org/nodes/",
+      href: "http://blog.toplap.org/nodes/",
       description: "Nodes locaux liés à TOPLAP : petites communautés indépendantes de live coders avec leur identité propre",
       image: "/images/toplap_map.png",
       links: [
