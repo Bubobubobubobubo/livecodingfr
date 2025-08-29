@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { EditorView, basicSetup } from 'codemirror';
-  import { EditorState } from '@codemirror/state';
+  import { EditorState, Prec } from '@codemirror/state';
   import { javascript } from '@codemirror/lang-javascript';
   import { keymap } from '@codemirror/view';
   import { HighlightStyle, syntaxHighlighting } from '@codemirror/language';
@@ -9,7 +9,7 @@
   
   let editorContainer;
   let view;
-  let output = '';
+  let outputs = [];
   let errorMessage = '';
 
   // Custom theme matching website colors
@@ -105,15 +105,20 @@
 
   function executeCode() {
     errorMessage = '';
-    output = '';
+    outputs = [];
     const code = view.state.doc.toString();
     
     try {
-      const originalLog = console.log;
-      const logs = [];
+      const originalConsole = {
+        log: console.log,
+        error: console.error,
+        warn: console.warn,
+        info: console.info,
+        debug: console.debug
+      };
       
-      console.log = (...args) => {
-        logs.push(args.map(arg => {
+      const formatArgs = (args) => {
+        return args.map(arg => {
           if (typeof arg === 'object') {
             try {
               return JSON.stringify(arg, null, 2);
@@ -122,48 +127,71 @@
             }
           }
           return String(arg);
-        }).join(' '));
-        originalLog(...args);
+        }).join(' ');
+      };
+      
+      console.log = (...args) => {
+        outputs.push({ type: 'log', message: formatArgs(args) });
+        originalConsole.log(...args);
+      };
+      
+      console.error = (...args) => {
+        outputs.push({ type: 'error', message: formatArgs(args) });
+        originalConsole.error(...args);
+      };
+      
+      console.warn = (...args) => {
+        outputs.push({ type: 'warn', message: formatArgs(args) });
+        originalConsole.warn(...args);
+      };
+      
+      console.info = (...args) => {
+        outputs.push({ type: 'info', message: formatArgs(args) });
+        originalConsole.info(...args);
+      };
+      
+      console.debug = (...args) => {
+        outputs.push({ type: 'debug', message: formatArgs(args) });
+        originalConsole.debug(...args);
       };
 
       const result = eval(code);
       
-      console.log = originalLog;
+      Object.assign(console, originalConsole);
       
-      if (logs.length > 0) {
-        output = logs.join('\n');
-      } else if (result !== undefined) {
-        output = String(result);
+      if (outputs.length === 0 && result !== undefined) {
+        outputs.push({ type: 'return', message: String(result) });
       }
     } catch (error) {
       errorMessage = error.toString();
     }
   }
 
-  const executeKeymap = keymap.of([{
-    key: "Ctrl-Enter",
-    run: () => {
+  const executeKeymap = Prec.high(keymap.of([{
+    key: "Mod-Enter",
+    run: (view) => {
       executeCode();
       return true;
     }
-  }]);
+  }]));
 
   onMount(() => {
     const startState = EditorState.create({
-      doc: `// JavaScript REPL - Press Ctrl+Enter to run
-const greeting = "Hello, world!";
-console.log(greeting);
+      doc: `// JavaScript REPL - Press Ctrl+Enter (Cmd+Enter on Mac) to run
+console.log("Regular log message");
+console.error("This is an error!");
+console.warn("Warning: Be careful!");
+console.info("Info: Did you know?");
+console.debug("Debug details");
 
-// Try some calculations
-const numbers = [1, 2, 3, 4, 5];
-const sum = numbers.reduce((a, b) => a + b, 0);
-console.log("Sum:", sum);`,
+// Return values are shown in green
+[1, 2, 3].map(x => x * 2);`,
       extensions: [
+        executeKeymap,
         basicSetup,
         javascript(),
         customTheme,
         syntaxHighlighting(highlightStyle),
-        executeKeymap,
         EditorView.lineWrapping
       ]
     });
@@ -187,26 +215,39 @@ console.log("Sum:", sum);`,
         on:click={executeCode}
         class="px-4 bg-neutral-800 text-orange-400 border border-gray-800 hover:border-orange-400 hover:bg-neutral-800 transition-all duration-200 text-sm font-semibold uppercase tracking-wider h-[200px]"
       >
-        Run<br/>(Ctrl+Enter)
+        Run<br/>(Ctrl/Cmd+Enter)
       </button>
     </div>
   </div>
   
-  {#if output || errorMessage}
+  {#if outputs.length > 0 || errorMessage}
     <div class="output-container">
-      {#if output}
-        <div class="mb-2">
-          <div class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-1">Output:</div>
-          <pre class="p-2 bg-neutral-800 border-l-2 border-white text-sm overflow-x-auto no-scrollbar"><code class="text-orange-300">{output}</code></pre>
-        </div>
-      {/if}
-      
-      {#if errorMessage}
-        <div>
-          <div class="text-sm font-semibold text-red-400 uppercase tracking-wider mb-1">Error:</div>
-          <pre class="p-2 bg-neutral-800 border-l-2 border-red-400 text-sm overflow-x-auto no-scrollbar"><code class="text-red-400">{errorMessage}</code></pre>
-        </div>
-      {/if}
+      <div class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-1">Console:</div>
+      <div class="bg-neutral-800 p-2">
+        {#each outputs as output}
+          <div class="console-line mb-1">
+            {#if output.type === 'log'}
+              <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-gray-200">{output.message}</code></pre>
+            {:else if output.type === 'error'}
+              <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-red-400">✖ {output.message}</code></pre>
+            {:else if output.type === 'warn'}
+              <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-yellow-400">⚠ {output.message}</code></pre>
+            {:else if output.type === 'info'}
+              <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-blue-400">ℹ {output.message}</code></pre>
+            {:else if output.type === 'debug'}
+              <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-gray-500">{output.message}</code></pre>
+            {:else if output.type === 'return'}
+              <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-green-400">← {output.message}</code></pre>
+            {/if}
+          </div>
+        {/each}
+        
+        {#if errorMessage}
+          <div class="console-line">
+            <pre class="text-sm overflow-x-auto no-scrollbar"><code class="text-red-500">✖ Uncaught {errorMessage}</code></pre>
+          </div>
+        {/if}
+      </div>
     </div>
   {/if}
 </div>
