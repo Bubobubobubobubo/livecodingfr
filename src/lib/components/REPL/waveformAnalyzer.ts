@@ -1,29 +1,39 @@
-let Tone: any = null;
-
 export class WaveformAnalyzer {
-  private analyser: any | null = null;
+  private analyser: AnalyserNode | null = null;
   private dataArray: Float32Array | null = null;
   private isAnalyzing: boolean = false;
   private animationId: number | null = null;
   private canvas: HTMLCanvasElement | null = null;
   private canvasContext: CanvasRenderingContext2D | null = null;
   private bufferLength: number = 2048;
+  private audioContext: AudioContext | null = null;
 
-  async init(canvas: HTMLCanvasElement): Promise<void> {
+  async init(canvas: HTMLCanvasElement, audioContext?: AudioContext): Promise<void> {
     this.canvas = canvas;
     this.canvasContext = canvas.getContext('2d');
     
-    if (!Tone) {
-      Tone = await import('tone');
-    }
+    // Use provided audioContext or create a new one
+    this.audioContext = audioContext || new (window.AudioContext || (window as any).webkitAudioContext)();
     
-    this.analyser = new Tone.Analyser('waveform', this.bufferLength);
-    this.dataArray = new Float32Array(this.bufferLength);
+    // Create analyser node
+    this.analyser = this.audioContext.createAnalyser();
+    this.analyser.fftSize = this.bufferLength;
+    this.analyser.smoothingTimeConstant = 0.8;
     
-    Tone.getDestination().connect(this.analyser);
+    this.dataArray = new Float32Array(this.analyser.frequencyBinCount);
+    
+    // Connect to destination (speakers) so we can analyze the output
+    this.analyser.connect(this.audioContext.destination);
     
     this.setupCanvas();
     this.startAnalysis();
+  }
+
+  // Method to connect an audio source to this analyzer
+  connectSource(source: AudioNode): void {
+    if (this.analyser) {
+      source.connect(this.analyser);
+    }
   }
 
   setupCanvas(): void {
@@ -56,11 +66,13 @@ export class WaveformAnalyzer {
   }
 
   private draw(): void {
-    if (!this.isAnalyzing || !this.analyser || !this.canvasContext || !this.canvas) return;
+    if (!this.isAnalyzing || !this.analyser || !this.canvasContext || !this.canvas || !this.dataArray) return;
 
     this.animationId = requestAnimationFrame(() => this.draw());
 
-    const waveform = this.analyser.getValue() as Float32Array;
+    // Get the time-domain data (waveform)
+    this.analyser.getFloatTimeDomainData(this.dataArray);
+    
     const width = this.canvas.clientWidth;
     const height = this.canvas.clientHeight;
 
@@ -71,11 +83,11 @@ export class WaveformAnalyzer {
     this.canvasContext.strokeStyle = '#fb923c';
     this.canvasContext.beginPath();
 
-    const sliceWidth = width / waveform.length;
+    const sliceWidth = width / this.dataArray.length;
     let x = 0;
 
-    for (let i = 0; i < waveform.length; i++) {
-      const v = (waveform[i] + 1) / 2;
+    for (let i = 0; i < this.dataArray.length; i++) {
+      const v = (this.dataArray[i] + 1) / 2; // Convert from -1,1 to 0,1
       const y = v * height;
 
       if (i === 0) {
@@ -125,7 +137,7 @@ export class WaveformAnalyzer {
   destroy(): void {
     this.stopAnalysis();
     if (this.analyser) {
-      this.analyser.dispose();
+      this.analyser.disconnect();
     }
   }
 }

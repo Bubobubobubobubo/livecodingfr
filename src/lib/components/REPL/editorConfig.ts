@@ -80,41 +80,7 @@ const highlightStyle = HighlightStyle.define([
   {tag: tags.strong, fontWeight: "bold"}
 ]);
 
-const defaultCode = `// JavaScript REPL with Audio Clock & Sequencer - Press Ctrl+Enter (Cmd+Enter on Mac) to run
-// NEW: Schedule on multiple beats with arrays! schedule('name', [0, 2, 4], callback)
-
-// Set pattern length to 16 beats
-cycle(16);
-
-// Drum pattern using arrays - much cleaner!
-schedule('kick', [0, 8], () => sine(60, 0.2).distort(0.2).vel(1));
-schedule('snare', [4, 12], () => sine(200, 0.05).reverb(0.3, 0.4));
-schedule('hihat', [0, 2, 4, 6, 8, 10, 12, 14], () => sine(8000, 0.02).highpass(5000));
-
-// Melodic pattern - play chord progression
-const Cmaj = [261, 329, 392]; // C E G
-const Gmaj = [392, 493, 587]; // G B D
-schedule('chord-C', [0, 4], () => {
-  Cmaj.forEach(f => sine(f, 0.5).lowpass(800).reverb());
-});
-schedule('chord-G', [8, 12], () => {
-  Gmaj.forEach(f => sine(f, 0.5).lowpass(800).reverb());
-});
-
-// Bass line with array scheduling
-schedule('bass', [0, 3, 6, 8, 11, 14], () => tri(55, 0.3).distort(0.3).lowpass(500));
-
-// Euclidean rhythm pattern E(5,8) for interesting grooves
-schedule('euclidean', [0, 2, 4, 5, 7], () => saw(440, 0.1).delay(0.1, 0.5));
-
-// Polyrhythm: 3 against 4
-schedule('poly3', [0, 5.33, 10.66], () => sine(880, 0.05));
-schedule('poly4', [0, 4, 8, 12], () => sine(660, 0.05));
-
-// You can still use single beats
-schedule('accent', 0, () => sine(1760, 0.02).vel(1));
-
-console.log("Pattern ready! Events:", listScheduled().length);`;
+const defaultCode = `// JavaScript REPL with Audio Clock & Sequencer - Press Ctrl+Enter (Cmd+Enter on Mac) to run`;
 
 export function createExecuteKeymap(executeCode: () => void) {
   return Prec.high(keymap.of([{

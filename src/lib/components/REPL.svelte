@@ -37,7 +37,6 @@
     
     // Set initial status immediately
     clockStatus = `▶ Time: 0.00s | Ticks: 0 | BPM: ${clock.bpm()}`;
-    console.log('Initial clock status set:', clockStatus);
     
     // Continue listening to clock updates after startup
     clock.on('timeUpdate', (data) => {
@@ -45,7 +44,6 @@
         const time = data.time.toFixed(2);
         const ticks = clock.ticks();
         clockStatus = `▶ Time: ${time}s | Ticks: ${ticks} | BPM: ${clock.bpm()}`;
-        console.log('Clock status updated:', clockStatus);
       }
     });
     

@@ -1,3 +1,5 @@
+import { transformPlayerSyntax, sine, sawtooth, square, triangle, createPlayer } from '../../transform/playerSyntax';
+
 interface ConsoleOutput {
   type: 'log' | 'error' | 'warn' | 'info' | 'debug' | 'return';
   message: string;
@@ -25,10 +27,6 @@ interface Sequencer {
   cycle: (length: number) => void;
   schedule: (name: string, beats: number | number[], callback: () => void) => void;
   clearSchedule: (name?: string) => void;
-  sine: (frequency: number, duration: number) => any;
-  saw: (frequency: number, duration: number) => any;
-  square: (frequency: number, duration: number) => any;
-  tri: (frequency: number, duration: number) => any;
   listScheduled: () => any[];
 }
 
@@ -106,26 +104,27 @@ export class CodeExecutor {
   }
 
   createExecutionContext(code: string, clock: Clock, sequencer: Sequencer): string {
-    return `
-      const time = () => clock.time();
-      const bpm = () => clock.bpm();
-      const ticks = () => clock.ticks();
-      const setBPM = (value) => clock.setBPM(value);
-      const stopClock = () => clock.stop();
-      const startClock = () => clock.start();
-      const isRunning = () => clock.running();
-      
-      const cycle = sequencer.cycle;
-      const schedule = sequencer.schedule;
-      const clearSchedule = sequencer.clearSchedule;
-      const sine = sequencer.sine;
-      const saw = sequencer.saw;
-      const square = sequencer.square;
-      const tri = sequencer.tri;
-      const listScheduled = sequencer.listScheduled;
-      
-      ${code}
-    `;
+    // Make functions available in global scope for eval
+    (globalThis as any).time = () => clock.time();
+    (globalThis as any).bpm = () => clock.bpm();
+    (globalThis as any).ticks = () => clock.ticks();
+    (globalThis as any).setBPM = (value: number) => clock.setBPM(value);
+    (globalThis as any).stopClock = () => clock.stop();
+    (globalThis as any).startClock = () => clock.start();
+    (globalThis as any).isRunning = () => clock.running();
+    
+    (globalThis as any).cycle = sequencer.cycle.bind(sequencer);
+    (globalThis as any).schedule = sequencer.schedule.bind(sequencer);
+    (globalThis as any).clearSchedule = sequencer.clearSchedule.bind(sequencer);
+    (globalThis as any).listScheduled = sequencer.listScheduled.bind(sequencer);
+    
+    (globalThis as any).sine = sine;
+    (globalThis as any).sawtooth = sawtooth;
+    (globalThis as any).square = square;
+    (globalThis as any).triangle = triangle;
+    (globalThis as any).createPlayer = createPlayer;
+    
+    return code;
   }
 
   execute(code: string, clock: Clock, sequencer: Sequencer): void {
@@ -134,7 +133,11 @@ export class CodeExecutor {
     try {
       this.setupConsoleCapture();
       
-      const executionContext = this.createExecutionContext(code, clock, sequencer);
+      const transformedCode = transformPlayerSyntax(code);
+      console.log('Original code:', code);
+      console.log('Transformed code:', transformedCode);
+      
+      const executionContext = this.createExecutionContext(transformedCode, clock, sequencer);
       const result = eval(executionContext);
       
       this.restoreConsole();

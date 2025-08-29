@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { clock } from '$lib/AudioBackend/audioClock';
   import { sequencer } from '$lib/AudioBackend/sequencer';
@@ -10,9 +10,13 @@
   async function startAudioClock() {
     try {
       console.log('Starting audio clock...');
-      const Tone = await import('tone');
-      await Tone.start();
-      console.log('Tone.js started');
+      
+      // Initialize Web Audio Context
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      if (audioContext.state === 'suspended') {
+        await audioContext.resume();
+      }
+      console.log('Audio context started');
       
       await clock.init();
       console.log('Clock initialized');

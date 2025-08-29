@@ -50,7 +50,12 @@
     "codemirror": "^6.0.2",
     "marked": "^11.1.0",
     "prismjs": "^1.29.0",
-    "tone": "^15.1.22",
+    "shift-ast": "^7.0.0",
+    "shift-codegen": "^8.1.0",
+    "shift-parser": "^8.0.0",
+    "shift-scope": "^6.0.0",
+    "shift-traverser": "^1.0.0",
+    "superdough": "^1.2.3",
     "vite-plugin-markdown": "^2.1.0"
   }
 }
