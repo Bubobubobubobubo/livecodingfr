@@ -2,6 +2,7 @@
      import Info from "$lib/components/Info.svelte";
      import Gallery from "$lib/components/Gallery.svelte";
      import YouTubeLazyLoad from "$lib/components/YouTubeLazyLoad.svelte";
+     import REPL from "$lib/components/REPL.svelte";
 
      let intro_gallery = [
         {link: "https://ralt144mi.remigeorges.fr/Ralt144MI3.png", description: "Rémi Georges"},
@@ -21,6 +22,10 @@
 [Livecoding.fr](https://livecoding.fr) est un site dédié à la mise en valeur de la pratique du _live coding_ en France. Il est périodiquement maintenu par un [groupe d'artistes](https://livecoding.fr/membres) et de musiciens francophones. Il se destine à servir de portail pour découvrir différents aspects de cette pratique : [évènements](https://livecoding.fr/evenements), [outils](https://livecoding.fr/outils), [réseaux](https://livecoding.fr/reseaux), liens vers le travail des artistes répertoriés, etc. Toute modification est la bienvenue. Le site est conçu pour être maintenu et actualisé facilement, de manière collaborative. Consultez [le dépôt](https://github.com/Bubobubobubobubo/livecodingfr) du site pour en apprendre plus.
 
 <Gallery pictures={intro_gallery}/>
+
+# Test REPL
+
+<REPL />
 
 # Qu'est-ce que le live-coding ?
 
