@@ -40,6 +40,7 @@
     "codemirror": "^6.0.2",
     "marked": "^11.1.0",
     "prismjs": "^1.29.0",
+    "tone": "^15.1.22",
     "vite-plugin-markdown": "^2.1.0"
   }
 }

@@ -7,6 +7,8 @@
   import { HighlightStyle, syntaxHighlighting } from '@codemirror/language';
   import { tags } from '@lezer/highlight';
   import { clock } from '$lib/audioClock.js';
+  import { sequencer } from '$lib/sequencer.js';
+  import * as Tone from 'tone';
   
   let editorContainer;
   let view;
@@ -109,8 +111,10 @@
 
   async function startAudioClock() {
     try {
+      await Tone.start();
       await clock.init();
       await clock.start();
+      sequencer.initSynthPool();
       clockStarted = true;
       
       // Update status on time updates
@@ -180,7 +184,7 @@
         originalConsole.debug(...args);
       };
 
-      // Create execution context with clock functions
+      // Create execution context with clock and sequencer functions
       const executionContext = `
         const time = () => clock.time();
         const bpm = () => clock.bpm();
@@ -189,6 +193,15 @@
         const stopClock = () => clock.stop();
         const startClock = () => clock.start();
         const isRunning = () => clock.running();
+        
+        const cycle = sequencer.cycle;
+        const schedule = sequencer.schedule;
+        const clearSchedule = sequencer.clearSchedule;
+        const sine = sequencer.sine;
+        const saw = sequencer.saw;
+        const square = sequencer.square;
+        const tri = sequencer.tri;
+        const listScheduled = sequencer.listScheduled;
         
         ${code}
       `;
@@ -220,19 +233,36 @@
     if (!editorContainer) return;
     
     const startState = EditorState.create({
-      doc: `// JavaScript REPL with Audio Clock - Press Ctrl+Enter (Cmd+Enter on Mac) to run
-// Clock functions available: time(), bpm(), ticks(), setBPM(value)
+      doc: `// JavaScript REPL with Audio Clock & Sequencer - Press Ctrl+Enter (Cmd+Enter on Mac) to run
+// Synths auto-play in schedule context: sine(), saw(), square(), tri()
+// No need for .play() - just write the sound!
 
-console.log("Current time:", time(), "seconds");
-console.log("Current BPM:", bpm());
-console.log("Tick count:", ticks());
+// Set pattern length to 8 beats
+cycle(8);
 
-// Try changing the BPM
-setBPM(140);
-console.log("New BPM:", bpm());
+// Super simple syntax - synths auto-play!
+schedule('kick', 0, () => sine(60, 0.2).vel(1));
+schedule('snare', 4, () => sine(200, 0.05));
 
-// Check if clock is running
-console.log("Clock running:", isRunning());`,
+// Hi-hat pattern - just freq and duration
+schedule('hat1', 2, () => sine(8000, 0.02));
+schedule('hat2', 6, () => sine(8000, 0.02));
+
+// Different waveforms
+schedule('melody', 1, () => saw(440, 0.3));
+schedule('melody2', 5, () => square(659, 0.3));
+
+// Bass line with triangle wave
+schedule('bass', 3, () => tri(110, 0.4));
+schedule('bass2', 7, () => tri(82.5, 0.4));
+
+// You can still chain methods if needed
+schedule('lead', 0, () => sine(880).dur(0.1).vel(0.5));
+
+// Redefine on the fly
+schedule('kick', 0, () => sine(80, 0.15));
+
+console.log("Pattern ready! BPM:", bpm());`,
       extensions: [
         executeKeymap,
         basicSetup,
