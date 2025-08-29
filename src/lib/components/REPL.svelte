@@ -234,35 +234,40 @@
     
     const startState = EditorState.create({
       doc: `// JavaScript REPL with Audio Clock & Sequencer - Press Ctrl+Enter (Cmd+Enter on Mac) to run
-// Synths auto-play in schedule context: sine(), saw(), square(), tri()
-// No need for .play() - just write the sound!
+// NEW: Schedule on multiple beats with arrays! schedule('name', [0, 2, 4], callback)
 
-// Set pattern length to 8 beats
-cycle(8);
+// Set pattern length to 16 beats
+cycle(16);
 
-// Super simple syntax - synths auto-play!
-schedule('kick', 0, () => sine(60, 0.2).vel(1));
-schedule('snare', 4, () => sine(200, 0.05));
+// Drum pattern using arrays - much cleaner!
+schedule('kick', [0, 8], () => sine(60, 0.2).distort(0.2).vel(1));
+schedule('snare', [4, 12], () => sine(200, 0.05).reverb(0.3, 0.4));
+schedule('hihat', [0, 2, 4, 6, 8, 10, 12, 14], () => sine(8000, 0.02).highpass(5000));
 
-// Hi-hat pattern - just freq and duration
-schedule('hat1', 2, () => sine(8000, 0.02));
-schedule('hat2', 6, () => sine(8000, 0.02));
+// Melodic pattern - play chord progression
+const Cmaj = [261, 329, 392]; // C E G
+const Gmaj = [392, 493, 587]; // G B D
+schedule('chord-C', [0, 4], () => {
+  Cmaj.forEach(f => sine(f, 0.5).lowpass(800).reverb());
+});
+schedule('chord-G', [8, 12], () => {
+  Gmaj.forEach(f => sine(f, 0.5).lowpass(800).reverb());
+});
 
-// Different waveforms
-schedule('melody', 1, () => saw(440, 0.3));
-schedule('melody2', 5, () => square(659, 0.3));
+// Bass line with array scheduling
+schedule('bass', [0, 3, 6, 8, 11, 14], () => tri(55, 0.3).distort(0.3).lowpass(500));
 
-// Bass line with triangle wave
-schedule('bass', 3, () => tri(110, 0.4));
-schedule('bass2', 7, () => tri(82.5, 0.4));
+// Euclidean rhythm pattern E(5,8) for interesting grooves
+schedule('euclidean', [0, 2, 4, 5, 7], () => saw(440, 0.1).delay(0.1, 0.5));
 
-// You can still chain methods if needed
-schedule('lead', 0, () => sine(880).dur(0.1).vel(0.5));
+// Polyrhythm: 3 against 4
+schedule('poly3', [0, 5.33, 10.66], () => sine(880, 0.05));
+schedule('poly4', [0, 4, 8, 12], () => sine(660, 0.05));
 
-// Redefine on the fly
-schedule('kick', 0, () => sine(80, 0.15));
+// You can still use single beats
+schedule('accent', 0, () => sine(1760, 0.02).vel(1));
 
-console.log("Pattern ready! BPM:", bpm());`,
+console.log("Pattern ready! Events:", listScheduled().length);`,
       extensions: [
         executeKeymap,
         basicSetup,

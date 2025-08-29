@@ -23,7 +23,7 @@
 
 <Gallery pictures={intro_gallery}/>
 
-# Test REPL
+# Essayez le live coding !
 
 <REPL />
 
