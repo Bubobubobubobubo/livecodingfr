@@ -1,0 +1,16 @@
+import{S as P,i as w,f as R,n as L,j as a,q as i,W as T,B as O,C as o,D as r,R as g,r as d,F as m,v as p}from"./CsX1GTQk.js";import"./IHki7fMi.js";function A(H){let s,C=`Rémi Georges a lancé depuis plus d’un an un label de musique dédiée à la musique
+<em>live codée</em>. Le label a pour nom <strong>Ordinateur dans la tête</strong> : ”<em>Live-coding Cassette &amp; prints Label Code as music, for humans and computers.</em>”. Par un pied de
+nez formidable, le label publie essentiellement de la musique au format cassette
+ou disquette (<em>floppy disk</em>). Il n’existe à ce jour que quatre cassettes dans le
+catalogue, et bien plus à paraître. Rémi édite aussi un <em>fanzine</em> du nom de <strong>Codé</strong>, consacré à quelques
+figures de la scène <em>live coding</em> francophone. Ce label fonctionne sur un
+principe <em>DIY</em>. Tout est fait à la main et assemblé quelque part entre Lyon et
+Vaulx-en-Velin. Chaque cassette n’est produite qu’à quelques exemplaires mais
+<em>Bandcamp</em> permet aussi d’acheter la musique au format numérique.`,c,f,b,l,M,q,h,v,u,k=`Le plus rigolo dans l’histoire, c’est qu’il ne s’agit pas du seul artiste
+lyonnais qui édite de la musique produite par des outils de <em>live coding</em>. Nous
+étions tombé il y a quelques mois sur un album publié par l’artiste américain
+Mike Hodnick : <a href="https://kindohm.bandcamp.com/album/prompt-3" rel="nofollow">Prompt 3</a>. Cet
+album est produit par Nil Hartman (un lyonnais !) et propose aussi une forme physique avec un
+format de distribution original : ”<em>2GB USB flash drive archival of 16-bit WAV files of Prompt 3 by Kindohm, engraved with the 3OP logo. High quality 12,7cm x 12,7cm matte paper digital print of Prompt 3 cover art by Kindohm &amp; Andrew Bates. Archival includes: exclusive outtakes, live performances, alternate artwork files, and Mike’s Prompt 3 workspace folder of .tidal and .flp files.</em>“.`,y,_,x,n,B=`Nous attendons de pied ferme l’apparition d’un troisième label publiant de la
+musique <em>live codée</em> à Lyon. Il semblerait que cela ne soit qu’une question de
+temps.`;return{c(){s=m("p"),s.innerHTML=C,c=p(),f=m("br"),b=p(),l=m("embed"),q=p(),h=m("br"),v=p(),u=m("p"),u.innerHTML=k,y=p(),_=m("br"),x=p(),n=m("p"),n.innerHTML=B,this.h()},l(e){s=r(e,"P",{"data-svelte-h":!0}),g(s)!=="svelte-1tl3fbq"&&(s.innerHTML=C),c=d(e),f=r(e,"BR",{}),b=d(e),l=r(e,"EMBED",{src:!0,style:!0}),q=d(e),h=r(e,"BR",{}),v=d(e),u=r(e,"P",{"data-svelte-h":!0}),g(u)!=="svelte-7nydhy"&&(u.innerHTML=k),y=d(e),_=r(e,"BR",{}),x=d(e),n=r(e,"P",{"data-svelte-h":!0}),g(n)!=="svelte-1308sfy"&&(n.innerHTML=B),this.h()},h(){T(l.src,M="https://ordinateurdanslatete.bandcamp.com/")||O(l,"src",M),o(l,"display","block"),o(l,"margin-left","auto"),o(l,"margin-right","auto"),o(l,"max-width","1000px"),o(l,"width","90%"),o(l,"height","500px")},m(e,t){i(e,s,t),i(e,c,t),i(e,f,t),i(e,b,t),i(e,l,t),i(e,q,t),i(e,h,t),i(e,v,t),i(e,u,t),i(e,y,t),i(e,_,t),i(e,x,t),i(e,n,t)},p:L,i:L,o:L,d(e){e&&(a(s),a(c),a(f),a(b),a(l),a(q),a(h),a(v),a(u),a(y),a(_),a(x),a(n))}}}const D={title:"Ordinateur dans la tête : un label de musique live codée",author:"Raphaël Maurice Forment",date:"2024-02-09"},{title:S,author:V,date:j}=D;class z extends P{constructor(s){super(),w(this,s,null,A,R,{})}}export{z as default,D as metadata};
