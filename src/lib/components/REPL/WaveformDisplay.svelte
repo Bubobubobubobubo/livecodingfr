@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  import { WaveformAnalyzer } from './waveformAnalyzer.js';
+  import { WaveformAnalyzer } from './waveformAnalyzer';
 
   export let isActive = false;
 

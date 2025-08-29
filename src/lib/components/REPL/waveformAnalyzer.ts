@@ -1,19 +1,21 @@
-import * as Tone from 'tone';
+let Tone: any = null;
 
 export class WaveformAnalyzer {
-  constructor() {
-    this.analyser = null;
-    this.dataArray = null;
-    this.isAnalyzing = false;
-    this.animationId = null;
-    this.canvas = null;
-    this.canvasContext = null;
-    this.bufferLength = 2048;
-  }
+  private analyser: any | null = null;
+  private dataArray: Float32Array | null = null;
+  private isAnalyzing: boolean = false;
+  private animationId: number | null = null;
+  private canvas: HTMLCanvasElement | null = null;
+  private canvasContext: CanvasRenderingContext2D | null = null;
+  private bufferLength: number = 2048;
 
-  async init(canvas) {
+  async init(canvas: HTMLCanvasElement): Promise<void> {
     this.canvas = canvas;
     this.canvasContext = canvas.getContext('2d');
+    
+    if (!Tone) {
+      Tone = await import('tone');
+    }
     
     this.analyser = new Tone.Analyser('waveform', this.bufferLength);
     this.dataArray = new Float32Array(this.bufferLength);
@@ -24,7 +26,7 @@ export class WaveformAnalyzer {
     this.startAnalysis();
   }
 
-  setupCanvas() {
+  setupCanvas(): void {
     if (!this.canvas || !this.canvasContext) return;
     
     const rect = this.canvas.getBoundingClientRect();
@@ -38,14 +40,14 @@ export class WaveformAnalyzer {
     this.canvas.style.height = rect.height + 'px';
   }
 
-  startAnalysis() {
+  startAnalysis(): void {
     if (this.isAnalyzing) return;
     
     this.isAnalyzing = true;
     this.draw();
   }
 
-  stopAnalysis() {
+  stopAnalysis(): void {
     this.isAnalyzing = false;
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
@@ -53,12 +55,12 @@ export class WaveformAnalyzer {
     }
   }
 
-  draw() {
-    if (!this.isAnalyzing || !this.analyser || !this.canvasContext) return;
+  private draw(): void {
+    if (!this.isAnalyzing || !this.analyser || !this.canvasContext || !this.canvas) return;
 
     this.animationId = requestAnimationFrame(() => this.draw());
 
-    const waveform = this.analyser.getValue();
+    const waveform = this.analyser.getValue() as Float32Array;
     const width = this.canvas.clientWidth;
     const height = this.canvas.clientHeight;
 
@@ -90,8 +92,8 @@ export class WaveformAnalyzer {
     this.drawGrid();
   }
 
-  drawGrid() {
-    if (!this.canvasContext) return;
+  private drawGrid(): void {
+    if (!this.canvasContext || !this.canvas) return;
 
     const width = this.canvas.clientWidth;
     const height = this.canvas.clientHeight;
@@ -116,11 +118,11 @@ export class WaveformAnalyzer {
     this.canvasContext.setLineDash([]);
   }
 
-  resize() {
+  resize(): void {
     this.setupCanvas();
   }
 
-  destroy() {
+  destroy(): void {
     this.stopAnalysis();
     if (this.analyser) {
       this.analyser.dispose();

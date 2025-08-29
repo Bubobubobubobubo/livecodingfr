@@ -1,8 +1,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import * as Tone from 'tone';
-  import { clock } from '$lib/audioClock.js';
-  import { sequencer } from '$lib/sequencer.js';
+  import { clock } from '$lib/AudioBackend/audioClock';
+  import { sequencer } from '$lib/AudioBackend/sequencer';
 
   const dispatch = createEventDispatcher();
 
@@ -10,19 +9,23 @@
 
   async function startAudioClock() {
     try {
+      console.log('Starting audio clock...');
+      const Tone = await import('tone');
       await Tone.start();
-      await clock.init();
-      await clock.start();
-      sequencer.initSynthPool();
+      console.log('Tone.js started');
       
-      clock.on('timeUpdate', (data) => {
-        const time = data.time.toFixed(2);
-        const ticks = clock.ticks();
-        clockStatus = `▶ Time: ${time}s | Ticks: ${ticks} | BPM: ${clock.bpm()}`;
-        dispatch('statusUpdate', clockStatus);
-      });
+      await clock.init();
+      console.log('Clock initialized');
+      
+      await clock.start();
+      console.log('Clock started, running:', clock.running());
+      
+      await sequencer.initSynthPool();
+      sequencer.registerClockListener();
+      console.log('Sequencer initialized');
       
       dispatch('clockStarted');
+      console.log('Clock startup complete');
     } catch (error) {
       console.error('Failed to start audio clock:', error);
     }

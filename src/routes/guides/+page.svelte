@@ -1,5 +1,6 @@
 <script lang="ts">
   export let data;
+  export let params: any = undefined;
   import Info from "$lib/components/Info.svelte";
 </script>
 

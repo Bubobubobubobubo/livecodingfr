@@ -1,5 +1,6 @@
 <script lang="ts">
   export const prerender = true;
+  export let params: any = undefined;
   import "../app.postcss";
   let showMenu = false;
   function toggleNavbar() {

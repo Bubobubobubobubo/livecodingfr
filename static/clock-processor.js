@@ -7,6 +7,8 @@ class ClockProcessor extends AudioWorkletProcessor {
     this.bpm = 120;
     this.startTime = 0;
     this.tickCount = 0;
+    this.currentTime = 0;
+    this.currentFrame = 0;
     
     this.port.onmessage = (event) => {
       const { type, data } = event.data;
@@ -14,13 +16,15 @@ class ClockProcessor extends AudioWorkletProcessor {
       switch(type) {
         case 'start':
           this.isRunning = true;
-          this.startTime = currentTime;
-          this.nextTickTime = currentTime;
+          this.startTime = this.currentTime;
+          this.nextTickTime = this.currentTime;
           this.tickCount = 0;
           this.port.postMessage({ 
             type: 'started', 
-            time: currentTime,
-            frame: currentFrame 
+            data: {
+              time: this.currentTime,
+              frame: this.currentFrame 
+            }
           });
           break;
           
@@ -38,13 +42,15 @@ class ClockProcessor extends AudioWorkletProcessor {
         case 'getStatus':
           this.port.postMessage({
             type: 'status',
-            isRunning: this.isRunning,
-            bpm: this.bpm,
-            time: currentTime - this.startTime,
-            tickCount: this.tickCount,
-            currentTime: currentTime,
-            currentFrame: currentFrame,
-            sampleRate: sampleRate
+            data: {
+              isRunning: this.isRunning,
+              bpm: this.bpm,
+              time: this.currentTime - this.startTime,
+              tickCount: this.tickCount,
+              currentTime: this.currentTime,
+              currentFrame: this.currentFrame,
+              sampleRate: sampleRate
+            }
           });
           break;
       }
@@ -52,20 +58,26 @@ class ClockProcessor extends AudioWorkletProcessor {
   }
   
   process(inputs, outputs, parameters) {
+    // Update our internal time tracking
+    this.currentTime = currentTime;
+    this.currentFrame = currentFrame;
+    
     if (!this.isRunning) {
       return true;
     }
     
     // Check if we've passed the next tick time
-    while (currentTime >= this.nextTickTime) {
+    while (this.currentTime >= this.nextTickTime) {
       // Send tick message
       this.port.postMessage({
         type: 'tick',
-        tickNumber: this.tickCount,
-        time: this.nextTickTime,
-        actualTime: currentTime,
-        elapsedTime: currentTime - this.startTime,
-        bpm: this.bpm
+        data: {
+          tickNumber: this.tickCount,
+          time: this.nextTickTime,
+          actualTime: this.currentTime,
+          elapsedTime: this.currentTime - this.startTime,
+          bpm: this.bpm
+        }
       });
       
       this.tickCount++;
@@ -73,13 +85,15 @@ class ClockProcessor extends AudioWorkletProcessor {
     }
     
     // Send periodic time updates (every ~100ms)
-    if (currentFrame % (sampleRate * 0.1) < 128) {
+    if (this.currentFrame % (sampleRate * 0.1) < 128) {
       this.port.postMessage({
         type: 'timeUpdate',
-        time: currentTime - this.startTime,
-        currentTime: currentTime,
-        frame: currentFrame,
-        tickCount: this.tickCount
+        data: {
+          time: this.currentTime - this.startTime,
+          currentTime: this.currentTime,
+          frame: this.currentFrame,
+          tickCount: this.tickCount
+        }
       });
     }
     

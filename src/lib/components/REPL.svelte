@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
-  import { clock } from '$lib/audioClock.js';
-  import { sequencer } from '$lib/sequencer.js';
-  import { createEditor } from './REPL/editorConfig.js';
-  import { CodeExecutor } from './REPL/codeExecution.js';
+  import { clock } from '$lib/AudioBackend/audioClock';
+  import { sequencer } from '$lib/AudioBackend/sequencer';
+  import { createEditor } from './REPL/editorConfig';
+  import { CodeExecutor } from './REPL/codeExecution';
   import AudioClockStartup from './REPL/AudioClockStartup.svelte';
   import ClockStatus from './REPL/ClockStatus.svelte';
   import ConsoleOutput from './REPL/ConsoleOutput.svelte';
@@ -31,8 +31,24 @@
   }
 
   function handleClockStarted() {
+    console.log('Clock started event received in REPL');
     clockStarted = true;
     editorReady = true;
+    
+    // Set initial status immediately
+    clockStatus = `▶ Time: 0.00s | Ticks: 0 | BPM: ${clock.bpm()}`;
+    console.log('Initial clock status set:', clockStatus);
+    
+    // Continue listening to clock updates after startup
+    clock.on('timeUpdate', (data) => {
+      if (data && typeof data.time === 'number') {
+        const time = data.time.toFixed(2);
+        const ticks = clock.ticks();
+        clockStatus = `▶ Time: ${time}s | Ticks: ${ticks} | BPM: ${clock.bpm()}`;
+        console.log('Clock status updated:', clockStatus);
+      }
+    });
+    
     initializeEditor();
   }
 

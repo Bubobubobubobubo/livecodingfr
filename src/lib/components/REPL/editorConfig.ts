@@ -116,17 +116,17 @@ schedule('accent', 0, () => sine(1760, 0.02).vel(1));
 
 console.log("Pattern ready! Events:", listScheduled().length);`;
 
-export function createExecuteKeymap(executeCode) {
+export function createExecuteKeymap(executeCode: () => void) {
   return Prec.high(keymap.of([{
     key: "Mod-Enter",
-    run: (view) => {
+    run: (view: EditorView) => {
       executeCode();
       return true;
     }
   }]));
 }
 
-export function createEditor(container, executeCode) {
+export function createEditor(container: HTMLElement, executeCode: () => void): EditorView {
   const executeKeymap = createExecuteKeymap(executeCode);
   
   const startState = EditorState.create({

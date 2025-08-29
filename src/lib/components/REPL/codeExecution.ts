@@ -1,24 +1,56 @@
-export class CodeExecutor {
-  constructor() {
-    this.outputs = [];
-    this.errorMessage = '';
-    this.originalConsole = null;
-  }
+interface ConsoleOutput {
+  type: 'log' | 'error' | 'warn' | 'info' | 'debug' | 'return';
+  message: string;
+}
 
-  getOutputs() {
+interface OriginalConsole {
+  log: typeof console.log;
+  error: typeof console.error;
+  warn: typeof console.warn;
+  info: typeof console.info;
+  debug: typeof console.debug;
+}
+
+interface Clock {
+  time(): number;
+  bpm(): number;
+  ticks(): number;
+  setBPM(value: number): void;
+  stop(): void;
+  start(): void;
+  running(): boolean;
+}
+
+interface Sequencer {
+  cycle: (length: number) => void;
+  schedule: (name: string, beats: number | number[], callback: () => void) => void;
+  clearSchedule: (name?: string) => void;
+  sine: (frequency: number, duration: number) => any;
+  saw: (frequency: number, duration: number) => any;
+  square: (frequency: number, duration: number) => any;
+  tri: (frequency: number, duration: number) => any;
+  listScheduled: () => any[];
+}
+
+export class CodeExecutor {
+  private outputs: ConsoleOutput[] = [];
+  private errorMessage: string = '';
+  private originalConsole: OriginalConsole | null = null;
+
+  getOutputs(): ConsoleOutput[] {
     return this.outputs;
   }
 
-  getError() {
+  getError(): string {
     return this.errorMessage;
   }
 
-  clearOutput() {
+  clearOutput(): void {
     this.outputs = [];
     this.errorMessage = '';
   }
 
-  formatArgs(args) {
+  formatArgs(args: any[]): string {
     return args.map(arg => {
       if (typeof arg === 'object') {
         try {
@@ -31,7 +63,7 @@ export class CodeExecutor {
     }).join(' ');
   }
 
-  setupConsoleCapture() {
+  setupConsoleCapture(): void {
     this.originalConsole = {
       log: console.log,
       error: console.error,
@@ -40,40 +72,40 @@ export class CodeExecutor {
       debug: console.debug
     };
 
-    console.log = (...args) => {
+    console.log = (...args: any[]) => {
       this.outputs.push({ type: 'log', message: this.formatArgs(args) });
-      this.originalConsole.log(...args);
+      this.originalConsole!.log(...args);
     };
 
-    console.error = (...args) => {
+    console.error = (...args: any[]) => {
       this.outputs.push({ type: 'error', message: this.formatArgs(args) });
-      this.originalConsole.error(...args);
+      this.originalConsole!.error(...args);
     };
 
-    console.warn = (...args) => {
+    console.warn = (...args: any[]) => {
       this.outputs.push({ type: 'warn', message: this.formatArgs(args) });
-      this.originalConsole.warn(...args);
+      this.originalConsole!.warn(...args);
     };
 
-    console.info = (...args) => {
+    console.info = (...args: any[]) => {
       this.outputs.push({ type: 'info', message: this.formatArgs(args) });
-      this.originalConsole.info(...args);
+      this.originalConsole!.info(...args);
     };
 
-    console.debug = (...args) => {
+    console.debug = (...args: any[]) => {
       this.outputs.push({ type: 'debug', message: this.formatArgs(args) });
-      this.originalConsole.debug(...args);
+      this.originalConsole!.debug(...args);
     };
   }
 
-  restoreConsole() {
+  restoreConsole(): void {
     if (this.originalConsole) {
       Object.assign(console, this.originalConsole);
       this.originalConsole = null;
     }
   }
 
-  createExecutionContext(code, clock, sequencer) {
+  createExecutionContext(code: string, clock: Clock, sequencer: Sequencer): string {
     return `
       const time = () => clock.time();
       const bpm = () => clock.bpm();
@@ -96,7 +128,7 @@ export class CodeExecutor {
     `;
   }
 
-  execute(code, clock, sequencer) {
+  execute(code: string, clock: Clock, sequencer: Sequencer): void {
     this.clearOutput();
     
     try {
@@ -111,7 +143,7 @@ export class CodeExecutor {
         this.outputs.push({ type: 'return', message: String(result) });
       }
     } catch (error) {
-      this.errorMessage = error.toString();
+      this.errorMessage = error instanceof Error ? error.toString() : String(error);
       this.restoreConsole();
     }
   }
