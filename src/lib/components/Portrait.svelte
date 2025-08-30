@@ -1,4 +1,6 @@
 <script lang="ts">
+  import LazyImage from './LazyImage.svelte';
+  
   export let image: string;
   export let name: string;
   export let site: string;
@@ -11,11 +13,10 @@
   <div class="flex flex-col items-center p-6 h-full border-t-2 border-theme-accent-primary">
     <!-- Profile Image -->
     <div class="w-28 h-28 sm:w-32 sm:h-32 mb-4 shadow-lg overflow-hidden">
-      <img 
+      <LazyImage 
         src={image} 
         alt={name}
-        class="w-full h-full object-cover"
-        loading="lazy"
+        className="w-full h-full object-cover"
       />
     </div>
     

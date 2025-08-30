@@ -12,7 +12,7 @@
       title: "Cookie Collective",
       href: "https://cookie.paris",
       description: "Principal collectif francophone d'artistes live coders. Organisateur d'événements en région parisienne.",
-      image: "https://www.cookie.paris/static/04d2e692bcab0866529cd81a3730c09e/a941a/10.webp",
+      image: "/images/cookie_collective.webp",
       links: [
         {
           title: "Discord",
@@ -40,7 +40,7 @@
       title: "Hackerspaces",
       href: "#",
       description: "Espaces de création numérique, de militantisme pour le logiciel libre/ouvert, laboratoires artistiques.",
-      image: "https://fuz.re/img/17.jpg",
+      image: "/images/fuz_hackerspace.webp",
       links: [
         {
           title: "Le Fuz (Paris / Montreuil)",
@@ -63,7 +63,7 @@
       title: "Centres nationaux de création musicale (CNCM)",
       href: "#",
       description: "Centres nationaux dédiés à la création et recherche en musique électroacoustique. Soutiens de la scène.",
-      image: "https://www.grame.fr/assets/f1920x1200-q85-p1/346a0f23/img_3140.jpg.webp",
+      image: "/images/grame_cncm.webp",
       links: [
         {
           title: "Athénor (Saint-Nazaire)",
@@ -91,7 +91,7 @@
       title: "TOPLAP Strasbourg",
       href: "https://livecodingstrasbourg.github.io/",
       description: "Branche strasbourgeoise du collectif TOPLAP. Ateliers et événements locaux.",
-      image: "https://blog.toplap.org/wp-content/uploads/sites/9/2024/08/5x0H0GDY1KWi-toplab-1024x819.png",
+      image: "/images/toplap_strasbourg.webp",
       links: [
         {
           title: "Blog et guides (par Crash Server)",
@@ -114,7 +114,7 @@
       title: "Recherche académique",
       href: "",
       description: "Recherche universitaire à propos du live coding",
-      image: "https://journee.livecoding.fr/images/jlc_affiche.png",
+      image: "/images/jlc_recherche.webp",
       links: [
         {
           title: "Journée d'étude sur le live coding",
@@ -137,7 +137,7 @@
       title: "Lieux de concert",
       href: "",
       description: "Lieux accueillant des événements de live coding",
-      image: "https://i1.sndcdn.com/artworks-Oq6e5MU2sWztY2JY-TR6qxw-t500x500.jpg",
+      image: "/images/lieux_concert.webp",
       links: [
         {
           title: "Chair de Poule",
@@ -169,7 +169,7 @@
       title: "TOPLAP.org",
       href: "https://toplap.org",
       description: "Collectif historique international du live coding, fondé en 2003.",
-      image: "https://blog.toplap.org/wp-content/uploads/sites/9/2024/01/iclc-2023.jpg",
+      image: "/images/toplap_org.webp",
       links: [
         {
           title: "Manifesto Draft",
@@ -268,7 +268,7 @@
       title: "Réseaux sociaux et sites divers",
       href: "https://archive.org/details/toplap",
       description: "Réseaux d'échange entre live coders",
-      image: "https://files.social.toplap.org/site_uploads/files/000/000/001/@1x/1c3ad86fbd5b23e0.png",
+      image: "/images/toplap_social.webp",
       links: [
         {
           title: "TOPLAP Discord",
@@ -296,7 +296,7 @@
       title: "Demoscene",
       href: "https://www.shadertoy.com/",
       description: "Contre-culture informatique et création numérique audiovisuelle",
-      image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Assembly2004-areena01.jpg",
+      image: "/images/demoscene.webp",
       links: [
         {
           title: "Pouët.net",
@@ -324,7 +324,7 @@
       title: "Communauté Monome",
       href: "https://llllllll.co/",
       description: "Communauté Monome et musique électronique DIY.",
-      image: "https://monome.org/image/both.jpg",
+      image: "/images/monome_community.webp",
       links: [
         {
           title: "Lines Forum",
@@ -352,7 +352,7 @@
       title: "Labels musicaux",
       href: "",
       description: "Labels et sorties musicales produites par des live coders",
-      image: "https://f4.bcbits.com/img/0032778681_10.jpg",
+      image: "/images/labels_musicaux.webp",
       links: [
         {
           title: "Ordinateur dans la tête",
@@ -388,7 +388,7 @@
       title: "Éditeurs de code",
       href: "",
       description: "Outils pour éditer, débugguer, faire tourner du code, etc. L'outil de base des live coders, craints et chéris.",
-      image: "https://raphaelforment.fr/images/stems.png",
+      image: "/images/editeurs_code.webp",
       links: [
         {
           title: "Visual Studio Code",
@@ -687,7 +687,7 @@
       title: "SuperCollider",
       href: "https://supercollider.github.io/",
       description: "Environnement de programmation audio temps réel. S'il ne fallait en citer qu'un, ce serait celui-là.",
-      image: "https://mit-press-new-us.imgix.net/covers/9780262049702.jpg?auto=format&w=298&dpr=1&q=80",
+      image: "/images/supercollider.webp",
       links: [
         {
           title: "Forum",
@@ -720,7 +720,7 @@
       title: "TidalCycles",
       href: "https://tidalcycles.org/",
       description: "Langage de patterns musicaux basé sur Haskell. Puissant, minimaliste, très expressif.",
-      image: "https://tidalcycles.org/img/logo.svg",
+      image: "/images/tidalcycles.svg",
       links: [
         {
           title: "Documentation",
@@ -753,7 +753,7 @@
       title: "Strudel",
       href: "https://strudel.tidalcycles.org/",
       description: "Version JavaScript de TidalCycles dans le navigateur. Populaire, accessible, large communauté d'utilisateurs.",
-      image: "https://strudel.cc/icons/strudel_icon.png",
+      image: "/images/strudel.webp",
       links: [
         {
           title: "Strudel.cc",
@@ -786,7 +786,7 @@
       title: "Sonic Pi",
       href: "https://sonic-pi.net/",
       description: "Outil/instrument accessible et pédagogique, basé sur la programmation impérative. Stable et robuste.",
-      image: "https://sonic-pi.net/media/images/home/logo.png",
+      image: "/images/sonicpi.webp",
       links: [
         {
           title: "In-Thread",
@@ -819,7 +819,7 @@
       title: "FoxDot / Renardo",
       href: "https://foxdot.org/",
       description: "Live coding Python avec SuperCollider.",
-      image: "https://ryan-kirkbride.github.io/hydepark.png",
+      image: "/images/foxdot.webp",
       links: [
         {
           title: "Groupe Telegram",
@@ -852,7 +852,7 @@
       title: "OrcΛ",
       href: "https://hundredrabbits.itch.io/orca",
       description: "Séquenceur ésotérique et langage de programmation en deux dimensions. Programmation et automates cellulaires.",
-      image: "https://raw.githubusercontent.com/wiki/hundredrabbits/Orca-c/PREVIEW.jpg",
+      image: "/images/orca.webp",
       links: [
         {
           title: "Orca-C",
@@ -918,7 +918,7 @@
       title: "Gibber",
       href: "https://gibber.cc/",
       description: "Environnement audiovisuel de live coding dans le navigateur.",
-      image: "https://gibber.cc/gibber_image.jpg",
+      image: "/images/gibber.webp",
       links: [
         {
           title: "Gibber Playground",
@@ -946,7 +946,7 @@
       title: "ChucK",
       href: "https://chuck.stanford.edu/",
       description: "Langage fortement temporisé pour la synthèse audio temps réel.",
-      image: "https://chuck.stanford.edu/doc/images/chuck-logo2023w.png",
+      image: "/images/chuck.webp",
       links: [
         {
           title: "Documentation",
@@ -980,7 +980,7 @@
       title: "Hydra",
       href: "https://hydra.ojack.xyz/",
       description: "Live coding vidéo dans le navigateur.",
-      image: "https://cdm.link/app/uploads/2021/10/hydra.jpg",
+      image: "/images/hydra.webp",
       links: [
         {
           title: "Éditeur en ligne",
@@ -1013,7 +1013,7 @@
       title: "Pure Data / PlugData",
       href: "https://puredata.info/",
       description: "Programmation visuelle pour l'audio temps réel. Principal environnement utilisé pour le live patching.",
-      image: "https://plugdata.org/images/app.png",
+      image: "/images/puredata.webp",
       links: [
         {
           title: "PlugData",
