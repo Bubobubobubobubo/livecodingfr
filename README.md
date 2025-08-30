@@ -13,6 +13,48 @@ statique. Les outils suivants sont utilisés :
 - [DaisyUi](https://daisyui.com/) : CSS supplémentaire.
 - [Mdsvex](https://github.com/pngwn/MDsveX) : MarkDown en Svelte.
 
+## Structure du site
+
+```
+Site Livecoding.fr
+├── Pages principales
+│   ├── Accueil (/)
+│   ├── Membres (/membres)
+│   ├── Outils (/outils)
+│   ├── Ressources (/ressources)
+│   ├── Événements (/evenements)
+│   ├── Réseaux (/reseaux)
+│   ├── Presse (/presse)
+│   └── Contacts (/contacts)
+│
+├── Données structurées (src/lib/data/)
+│   ├── membres.json        → Profils des membres
+│   ├── outils.json         → Outils de livecoding
+│   ├── ressources.json     → Ressources et liens
+│   ├── evenements.json     → Événements et actualités
+│   ├── reseaux.json        → Liens réseaux sociaux
+│   └── presse.json         → Articles de presse
+│
+├── Composants (src/lib/components/)
+│   ├── TitleBar.svelte     → Barre de titre
+│   ├── Portrait.svelte     → Portraits des membres
+│   ├── SoftwareCard.svelte → Cartes outils
+│   ├── ResourceCard.svelte → Cartes ressources
+│   ├── ContactCard.svelte  → Cartes contacts
+│   ├── Calendar.svelte     → Calendrier
+│   ├── Gallery.svelte      → Galeries
+│   ├── Grid.svelte         → Grilles d'affichage
+│   ├── Press.svelte        → Articles presse
+│   ├── Info.svelte         → Composant info
+│   ├── ThemeSwitcher.svelte → Changement de thème
+│   └── YouTubeLazyLoad.svelte → Vidéos YouTube
+│
+└── Configuration
+    ├── Layout principal (+layout.svelte)
+    ├── Gestion des thèmes (theme.ts)
+    └── Styles globaux (app.postcss)
+```
+
 ## Comment contribuer ?
 
 - Les pages du site sont écrites en **Markdown**. Vous pouvez les modifier même
