@@ -1,200 +1,103 @@
-// Test setup file for vitest
+/**
+ * Test setup configuration for Vitest
+ * Provides global mocks and utilities for testing
+ */
+
 import { vi } from 'vitest';
 
-// Enhanced Web Audio API Mock
-class MockAudioContext {
-  constructor() {
-    this.state = 'running';
-    this.currentTime = 0;
-    this.sampleRate = 44100;
-    this.destination = {
-      connect: vi.fn(),
-      disconnect: vi.fn(),
-    };
-  }
-  
-  createOscillator() {
-    return {
-      frequency: { value: 440 },
-      type: 'sine',
-      connect: vi.fn(),
-      disconnect: vi.fn(),
-      start: vi.fn(),
-      stop: vi.fn(),
-    };
-  }
-  
-  createGain() {
-    return {
-      gain: { value: 1 },
-      connect: vi.fn(),
-      disconnect: vi.fn(),
-    };
-  }
-  
-  suspend() {
-    this.state = 'suspended';
-    return Promise.resolve();
-  }
-  
-  resume() {
-    this.state = 'running';
-    return Promise.resolve();
-  }
-}
-
-// Mock ToneJS for testing
-const mockTone = {
-  now: () => 0.1,
-  Synth: vi.fn(() => ({
-    oscillator: { type: 'sine' },
-    envelope: { attack: 0.01, decay: 0.1, sustain: 0, release: 0.1 },
-    toDestination: vi.fn(),
+// Mock Web Audio API components for testing
+const mockAudioContext = {
+  createAnalyser: vi.fn(() => ({
+    fftSize: 2048,
+    smoothingTimeConstant: 0.8,
+    frequencyBinCount: 1024,
     connect: vi.fn(),
     disconnect: vi.fn(),
-    triggerAttackRelease: vi.fn()
+    getFloatTimeDomainData: vi.fn()
   })),
-  Reverb: vi.fn(() => ({
-    decay: 1.5,
-    wet: { value: 0.5 },
+  createGain: vi.fn(() => ({
     connect: vi.fn(),
     disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
+    gain: { value: 1.0 }
   })),
-  FeedbackDelay: vi.fn(() => ({
-    delayTime: { value: 0.25 },
-    feedback: { value: 0.5 },
-    wet: { value: 0.5 },
+  createOscillator: vi.fn(() => ({
     connect: vi.fn(),
     disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
+    start: vi.fn(),
+    stop: vi.fn(),
+    frequency: { value: 440 },
+    type: 'sine'
   })),
-  Filter: vi.fn(() => ({
-    frequency: { value: 1000 },
-    type: 'lowpass',
-    Q: { value: 1 },
-    wet: { value: 0.5 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  Distortion: vi.fn(() => ({
-    distortion: 0.4,
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  Chorus: vi.fn(() => ({
-    frequency: { value: 1.5 },
-    depth: 0.7,
-    wet: { value: 0.5 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  Phaser: vi.fn(() => ({
-    frequency: { value: 0.5 },
-    octaves: 3,
-    baseFrequency: 350,
-    wet: { value: 0.5 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  Tremolo: vi.fn(() => ({
-    frequency: { value: 10 },
-    depth: { value: 0.5 },
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  Vibrato: vi.fn(() => ({
-    frequency: { value: 5 },
-    depth: { value: 0.1 },
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  AutoFilter: vi.fn(() => ({
-    frequency: { value: 1 },
-    baseFrequency: 200,
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  AutoWah: vi.fn(() => ({
-    baseFrequency: 100,
-    octaves: 6,
-    sensitivity: 0,
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  BitCrusher: vi.fn(() => ({
-    bits: { value: 4 },
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  Chebyshev: vi.fn(() => ({
-    order: 50,
-    wet: { value: 1 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  })),
-  PingPongDelay: vi.fn(() => ({
-    delayTime: 0.25,
-    feedback: { value: 0.5 },
-    wet: { value: 0.5 },
-    connect: vi.fn(),
-    disconnect: vi.fn(),
-    toDestination: vi.fn(),
-    inUse: false
-  }))
+  destination: {},
+  currentTime: 0,
+  state: 'running',
+  resume: vi.fn().mockResolvedValue(undefined)
 };
 
-// Mock AudioClock
-const mockClock = {
-  on: vi.fn(),
-  off: vi.fn(),
-  emit: vi.fn(),
-  ticks: () => 0,
-  time: () => 0.1,
-  bpm: () => 120,
-  running: () => false
+// Mock AudioContext constructor
+global.AudioContext = vi.fn(() => mockAudioContext);
+global.webkitAudioContext = vi.fn(() => mockAudioContext);
+
+// Mock canvas and rendering APIs
+const mockCanvas = {
+  getContext: vi.fn(() => ({
+    fillStyle: '',
+    fillRect: vi.fn(),
+    strokeStyle: '',
+    lineWidth: 1,
+    beginPath: vi.fn(),
+    moveTo: vi.fn(),
+    lineTo: vi.fn(),
+    stroke: vi.fn(),
+    scale: vi.fn(),
+    setLineDash: vi.fn()
+  })),
+  width: 300,
+  height: 150,
+  clientWidth: 300,
+  clientHeight: 150,
+  getBoundingClientRect: vi.fn(() => ({
+    width: 300,
+    height: 150,
+    top: 0,
+    left: 0,
+    right: 300,
+    bottom: 150
+  })),
+  style: {}
 };
 
-// Setup global mocks
-global.AudioContext = MockAudioContext;
-global.webkitAudioContext = MockAudioContext;
+global.HTMLCanvasElement = vi.fn(() => mockCanvas);
 
-// Make mocks available
-vi.mock('tone', () => ({ default: mockTone }));
-vi.mock('../../src/lib/audioClock.js', () => ({ clock: mockClock }));
+// Mock ResizeObserver
+global.ResizeObserver = vi.fn().mockImplementation((callback) => ({
+  observe: vi.fn(),
+  disconnect: vi.fn(),
+  unobserve: vi.fn()
+}));
 
-// Performance mock
-global.performance = global.performance || {
-  now: () => Date.now()
+// Mock window.devicePixelRatio
+Object.defineProperty(window, 'devicePixelRatio', {
+  value: 1,
+  writable: true
+});
+
+// Mock requestAnimationFrame
+global.requestAnimationFrame = vi.fn((cb) => {
+  setTimeout(cb, 16);
+  return 1;
+});
+
+global.cancelAnimationFrame = vi.fn();
+
+// Mock performance.now for timing tests
+global.performance = {
+  now: vi.fn(() => Date.now())
 };
 
-// Mock Promise for synchronous testing
-global.Promise.resolve = vi.fn(() => ({ then: vi.fn(cb => cb()) }));
+// Clean up after each test
+afterEach(() => {
+  vi.clearAllMocks();
+});
+
+console.log('✓ Test setup complete - Web Audio API and DOM mocks initialized');

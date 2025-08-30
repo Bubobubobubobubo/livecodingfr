@@ -1,4 +1,8 @@
-import { clock } from './audioClock';
+import { LightClock } from './lightClock';
+import { musicalTime } from './musicalTime';
+
+// Create singleton clock instance 
+const clock = new LightClock();
 
 interface ScheduledEvent {
   beat: number;
@@ -30,13 +34,13 @@ export function cycle(beats: number): number {
 
 export function schedule(
   idOrBeat: string | number | number[],
-  beatOrCallback?: number | number[] | (() => void),
-  callbackOrUndefined?: (() => void)
+  beatOrCallback?: number | number[] | ((time: number) => void),
+  callbackOrUndefined?: ((time: number) => void)
 ): string | string[] {
   let id: string | null;
   let beats: number[];
   let callback: (time: number) => void;
-  
+
   if (typeof idOrBeat === 'string') {
     id = idOrBeat;
     beats = Array.isArray(beatOrCallback) ? beatOrCallback : [beatOrCallback as number];
@@ -46,7 +50,7 @@ export function schedule(
     beats = Array.isArray(idOrBeat) ? idOrBeat : [idOrBeat];
     callback = beatOrCallback as (time: number) => void;
   }
-  
+
   for (const beat of beats) {
     if (typeof beat !== 'number') {
       throw new Error(`Beat must be a number, got ${typeof beat}`);
@@ -55,7 +59,7 @@ export function schedule(
       throw new Error(`Beat ${beat} is out of range for pattern length ${patternLength}`);
     }
   }
-  
+
   const wrappedCallback = (time: number) => {
     currentScheduleTime = time;
     try {
@@ -64,15 +68,15 @@ export function schedule(
       currentScheduleTime = null;
     }
   };
-  
+
   const eventKeys: string[] = [];
-  
+
   if (id) {
     if (namedEvents.has(id)) {
       const existingKeys = namedEvents.get(id)!;
       existingKeys.forEach(key => scheduledEvents.delete(key));
     }
-    
+
     const newKeys: string[] = [];
     beats.forEach((beat, index) => {
       const eventKey = `named_${id}_${index}`;
@@ -80,7 +84,7 @@ export function schedule(
       newKeys.push(eventKey);
       eventKeys.push(eventKey);
     });
-    
+
     namedEvents.set(id, newKeys);
     return id;
   } else {
@@ -120,13 +124,13 @@ export function listScheduled(): ListedEvent[] {
 
 export function registerClockListener() {
   if (clockListenerRegistered) return;
-  
+
   clock.on('timeUpdate', (data) => {
     const currentTick = clock.ticks();
-    
+
     if (currentTick !== lastTick) {
       const currentBeat = currentTick % patternLength;
-      
+
       scheduledEvents.forEach((event) => {
         if (event.beat === currentBeat) {
           try {
@@ -137,32 +141,70 @@ export function registerClockListener() {
           }
         }
       });
-      
+
       lastTick = currentTick;
     }
   });
-  
+
   clockListenerRegistered = true;
 }
 
-// Empty stubs for backward compatibility
-export function sine() { return null; }
-export function saw() { return null; }
-export function square() { return null; }
-export function tri() { return null; }
-export function initSynthPool() { return Promise.resolve([]); }
+export function scheduleAtNextBar(callback: (time: number) => void, id: string): void {
+  const nextBarTick = musicalTime.getNextBarTick();
+  const currentTick = clock.ticks();
+  const ticksToWait = nextBarTick - currentTick;
+
+  // Convert ticks to beats for scheduling (assuming 4 ticks per beat)
+  const beatsToWait = Math.ceil(ticksToWait / 4);
+  const targetBeat = (Math.floor(currentTick / 4) + beatsToWait) % patternLength;
+
+  schedule(id, [targetBeat], callback);
+}
+
+export function timeSignature(beatsPerBar: number, ticksPerBeat: number = 4): void {
+  musicalTime.setTimeSignature(beatsPerBar, ticksPerBeat);
+}
+
+export function getMusicalPosition() {
+  return musicalTime.getCurrentMusicalPosition();
+}
+
+export function getTimingInfo() {
+  return musicalTime.getTimingInfo();
+}
+
+export function formatMusicalPosition(pos?: any) {
+  return musicalTime.formatMusicalPosition(pos);
+}
+
+export function getNextBarTick() {
+  return musicalTime.getNextBarTick();
+}
+
+export function isAtBarStart() {
+  return musicalTime.isAtBarStart();
+}
+
+export function isAtBeatStart() {
+  return musicalTime.isAtBeatStart();
+}
+
+export { clock };
 
 export const sequencer = {
   cycle,
   schedule,
   clearSchedule,
-  sine,
-  saw,
-  square,
-  tri,
-  initSynthPool,
   registerClockListener,
   listScheduled,
+  scheduleAtNextBar,
+  timeSignature,
+  getMusicalPosition,
+  getTimingInfo,
+  formatMusicalPosition,
+  getNextBarTick,
+  isAtBarStart,
+  isAtBeatStart,
   getPatternLength: (): number => patternLength,
   getScheduledEvents: () => Array.from(scheduledEvents.values())
 };

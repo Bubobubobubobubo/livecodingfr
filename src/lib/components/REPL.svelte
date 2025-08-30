@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { clock } from '$lib/AudioBackend/audioClock';
-  import { sequencer } from '$lib/AudioBackend/sequencer';
+  import { clock, sequencer } from '$lib/AudioBackend/sequencer';
   import { createEditor } from './REPL/editorConfig';
   import { CodeExecutor } from './REPL/codeExecution';
   import AudioClockStartup from './REPL/AudioClockStartup.svelte';
@@ -14,12 +13,22 @@
   let clockStarted = false;
   let clockStatus = '⏸ Clock not started';
   let editorReady = false;
+  let outputs = [];
+  let errorMessage = '';
   
   const codeExecutor = new CodeExecutor();
 
   function executeCode() {
+    if (!view) {
+      console.warn('Editor not initialized yet');
+      return;
+    }
     const code = view.state.doc.toString();
     codeExecutor.execute(code, clock, sequencer);
+    
+    // Update reactive variables to trigger re-render
+    outputs = codeExecutor.getOutputs();
+    errorMessage = codeExecutor.getError();
   }
 
   async function initializeEditor() {
@@ -27,7 +36,8 @@
     
     if (!editorContainer) return;
     
-    view = createEditor(editorContainer, executeCode);
+    const editorInstance = createEditor(editorContainer, executeCode);
+    view = editorInstance.view;
   }
 
   function handleClockStarted() {
@@ -90,8 +100,8 @@
     </div>
     
     <ConsoleOutput 
-      outputs={codeExecutor.getOutputs()}
-      errorMessage={codeExecutor.getError()}
+      {outputs}
+      {errorMessage}
     />
   {/if}
 </div>

@@ -3,6 +3,9 @@ import pkg from 'shift-traverser';
 const { replace } = pkg;
 import { codeGen } from 'shift-codegen';
 import * as AST from 'shift-ast';
+import { Player } from '../patterns/Player';
+import { QueryScheduler } from '../patterns/QueryScheduler';
+import { sine, sawtooth, testPattern } from '../patterns/SequencePattern';
 
 export function transformPlayerSyntax(code: string): string {
   try {
@@ -28,7 +31,7 @@ export function transformPlayerSyntax(code: string): string {
                 object: new AST.IdentifierExpression({
                   name: playerName
                 }),
-                property: 'assign'
+                property: 'setPattern'
               }),
               arguments: [expression]
             })
@@ -55,94 +58,23 @@ export function transformPlayerSyntax(code: string): string {
   }
 }
 
-// Chainable audio parameter builder
-class AudioChain {
-  private params: any = {};
-  
-  constructor(initialParams: any = {}) {
-    this.params = { ...initialParams };
-  }
-  
-  
-  // Common superdough parameters
-  note(value: string | number) { return new AudioChain({ ...this.params, note: value }); }
-  s(value: string) { return new AudioChain({ ...this.params, s: value }); }
-  gain(value: number) { return new AudioChain({ ...this.params, gain: value }); }
-  cutoff(value: number) { return new AudioChain({ ...this.params, cutoff: value }); }
-  resonance(value: number) { return new AudioChain({ ...this.params, resonance: value }); }
-  delay(value: number) { return new AudioChain({ ...this.params, delay: value }); }
-  room(value: number) { return new AudioChain({ ...this.params, room: value }); }
-  pan(value: number) { return new AudioChain({ ...this.params, pan: value }); }
-  attack(value: number) { return new AudioChain({ ...this.params, attack: value }); }
-  decay(value: number) { return new AudioChain({ ...this.params, decay: value }); }
-  sustain(value: number) { return new AudioChain({ ...this.params, sustain: value }); }
-  release(value: number) { return new AudioChain({ ...this.params, release: value }); }
-  
-  // Play the sound
-  async play(deadline = 0, duration = 0.125) {
-    try {
-      // Import superdough and its initialization functions
-      const superdoughModule = await import('superdough');
-      const { 
-        superdough, 
-        initAudioOnFirstClick, 
-        registerSynthSounds 
-      } = superdoughModule;
-      
-      // Initialize superdough if not already done
-      if (!(window as any).__superdoughInitialized) {
-        console.log('Initializing superdough...');
-        await Promise.all([
-          initAudioOnFirstClick(),
-          registerSynthSounds()
-        ]);
-        (window as any).__superdoughInitialized = true;
-        console.log('Superdough initialized');
-      }
-      
-      console.log('Playing sound with params:', this.params);
-      console.log('Deadline:', deadline, 'Duration:', duration);
-      
-      // Call superdough with the parameters
-      superdough(this.params, deadline, duration);
-    } catch (error) {
-      console.error('Failed to play sound:', error);
-    }
-    return this;
-  }
-  
-  getParams() {
-    return this.params;
-  }
-}
-
-// Common synth/instrument generators
-export function sine() { return new AudioChain({ s: 'sine' }); }
-export function sawtooth() { return new AudioChain({ s: 'sawtooth' }); }
-export function square() { return new AudioChain({ s: 'square' }); }
-export function triangle() { return new AudioChain({ s: 'triangle' }); }
+// Pattern system functions
+export { sine, sawtooth, testPattern };
 
 // Player factory function
-export function createPlayer(name: string) {
-  return {
-    name,
-    currentChain: null as AudioChain | null,
-    
-    assign(chain: AudioChain) {
-      this.currentChain = chain;
-      // Auto-play when assigned
-      if (chain && typeof chain.play === 'function') {
-        chain.play().catch(error => {
-          console.error(`Failed to play sound for player ${name}:`, error);
-        });
-      }
-      return this;
-    },
-    
-    stop() {
-      // TODO: Implement stop functionality
-      console.log(`Player ${name} stopped`);
-      return this;
-    }
-  };
+export function createPlayer(name: string): Player {
+  const player = new Player(name);
+  const scheduler = QueryScheduler.getInstance();
+  scheduler.addPlayer(player);
+  return player;
+}
+
+// Start scheduler function for REPL
+export function startScheduler(): void {
+  QueryScheduler.getInstance().start();
+}
+
+// Stop scheduler function for REPL
+export function stopScheduler(): void {
+  QueryScheduler.getInstance().stop();
 }

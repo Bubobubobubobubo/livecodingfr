@@ -16,11 +16,11 @@ export class LightClock {
   private startTime: number = 0;
   private tickCount: number = 0;
   private nextTickTime: number = 0;
-  private tickInterval: number = 0.125; // 16th notes at 120 BPM
+  private tickInterval: number = 0.125;
   private dummyGain: GainNode | null = null;
   private lastUpdateTime: number = 0;
-  private updateInterval: number = 0.1; // 100ms updates
-  
+  private updateInterval: number = 0.1;
+
   private listeners: Record<EventType, EventCallback[]> = {
     tick: [],
     timeUpdate: [],
@@ -34,12 +34,12 @@ export class LightClock {
     }
 
     this.context = new (window.AudioContext || (window as any).webkitAudioContext)();
-    
+
     // Create dummy gain for Safari compatibility (from the technique)
     this.dummyGain = this.context.createGain();
     this.dummyGain.gain.value = 0;
     this.dummyGain.connect(this.context.destination);
-    
+
     this.updateTickInterval();
     this.isInitialized = true;
   }
@@ -54,10 +54,10 @@ export class LightClock {
     // Use ConstantSourceNode for precise timing
     const constantSource = this.context.createConstantSource();
     constantSource.connect(this.dummyGain!);
-    
+
     constantSource.start(startTime);
     constantSource.stop(endTime);
-    
+
     constantSource.addEventListener('ended', callback);
   }
 
@@ -66,7 +66,7 @@ export class LightClock {
 
     const currentTime = this.context.currentTime;
     const elapsedTime = currentTime - this.startTime;
-    
+
     // Emit tick event
     this.emit('tick', {
       tickNumber: this.tickCount,
@@ -140,10 +140,10 @@ export class LightClock {
 
   getStatus(): void {
     if (!this.context) return;
-    
+
     const currentTime = this.context.currentTime;
     const elapsedTime = this.isRunning ? currentTime - this.startTime : 0;
-    
+
     this.emit('timeUpdate', {
       time: elapsedTime,
       tickCount: this.tickCount,

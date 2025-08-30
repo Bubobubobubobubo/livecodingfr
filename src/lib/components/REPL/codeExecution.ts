@@ -1,4 +1,4 @@
-import { transformPlayerSyntax, sine, sawtooth, square, triangle, createPlayer } from '../../transform/playerSyntax';
+import { SandboxContext } from './sandboxContext';
 
 interface ConsoleOutput {
   type: 'log' | 'error' | 'warn' | 'info' | 'debug' | 'return';
@@ -13,6 +13,9 @@ interface OriginalConsole {
   debug: typeof console.debug;
 }
 
+/**
+ * Interface for audio timing clock functionality
+ */
 interface Clock {
   time(): number;
   bpm(): number;
@@ -23,32 +26,65 @@ interface Clock {
   running(): boolean;
 }
 
+/**
+ * Interface for pattern sequencing functionality
+ */
 interface Sequencer {
   cycle: (length: number) => void;
   schedule: (name: string, beats: number | number[], callback: () => void) => void;
   clearSchedule: (name?: string) => void;
-  listScheduled: () => any[];
+  listScheduled: () => ScheduledEvent[];
 }
 
+/**
+ * Represents a scheduled audio event
+ */
+interface ScheduledEvent {
+  name: string;
+  beats: number | number[];
+  callback: () => void;
+}
+
+/**
+ * Handles JavaScript code execution in a sandboxed environment
+ * with console output capture and audio API integration
+ */
 export class CodeExecutor {
   private outputs: ConsoleOutput[] = [];
   private errorMessage: string = '';
   private originalConsole: OriginalConsole | null = null;
+  private sandbox: SandboxContext | null = null;
 
+  /**
+   * Retrieve all captured console outputs
+   * @returns Array of console output messages with types
+   */
   getOutputs(): ConsoleOutput[] {
     return this.outputs;
   }
 
+  /**
+   * Get the last execution error message
+   * @returns Error message or empty string if no error
+   */
   getError(): string {
     return this.errorMessage;
   }
 
+  /**
+   * Clear all captured outputs and error messages
+   */
   clearOutput(): void {
     this.outputs = [];
     this.errorMessage = '';
   }
 
-  formatArgs(args: any[]): string {
+  /**
+   * Format console arguments for display
+   * @param args - Arguments passed to console methods
+   * @returns Formatted string representation
+   */
+  private formatArgs(args: unknown[]): string {
     return args.map(arg => {
       if (typeof arg === 'object') {
         try {
@@ -61,7 +97,10 @@ export class CodeExecutor {
     }).join(' ');
   }
 
-  setupConsoleCapture(): void {
+  /**
+   * Hijack console methods to capture output for display
+   */
+  private setupConsoleCapture(): void {
     this.originalConsole = {
       log: console.log,
       error: console.error,
@@ -96,55 +135,57 @@ export class CodeExecutor {
     };
   }
 
-  restoreConsole(): void {
+  /**
+   * Restore original console methods
+   */
+  private restoreConsole(): void {
     if (this.originalConsole) {
       Object.assign(console, this.originalConsole);
       this.originalConsole = null;
     }
   }
 
-  createExecutionContext(code: string, clock: Clock, sequencer: Sequencer): string {
-    // Make functions available in global scope for eval
-    (globalThis as any).time = () => clock.time();
-    (globalThis as any).bpm = () => clock.bpm();
-    (globalThis as any).ticks = () => clock.ticks();
-    (globalThis as any).setBPM = (value: number) => clock.setBPM(value);
-    (globalThis as any).stopClock = () => clock.stop();
-    (globalThis as any).startClock = () => clock.start();
-    (globalThis as any).isRunning = () => clock.running();
-    
-    (globalThis as any).cycle = sequencer.cycle.bind(sequencer);
-    (globalThis as any).schedule = sequencer.schedule.bind(sequencer);
-    (globalThis as any).clearSchedule = sequencer.clearSchedule.bind(sequencer);
-    (globalThis as any).listScheduled = sequencer.listScheduled.bind(sequencer);
-    
-    (globalThis as any).sine = sine;
-    (globalThis as any).sawtooth = sawtooth;
-    (globalThis as any).square = square;
-    (globalThis as any).triangle = triangle;
-    (globalThis as any).createPlayer = createPlayer;
-    
-    return code;
+  /**
+   * Initialize or update the sandbox context
+   * @param clock - Audio timing clock instance
+   * @param sequencer - Pattern sequencer instance
+   */
+  private initializeSandbox(clock: Clock, sequencer: Sequencer): void {
+    if (!this.sandbox) {
+      this.sandbox = new SandboxContext(clock, sequencer);
+    }
   }
 
+  /**
+   * Execute JavaScript code directly in page context
+   * @param code - JavaScript code to execute
+   * @param clock - Audio timing clock instance
+   * @param sequencer - Pattern sequencer instance
+   */
   execute(code: string, clock: Clock, sequencer: Sequencer): void {
     this.clearOutput();
     
     try {
       this.setupConsoleCapture();
       
-      const transformedCode = transformPlayerSyntax(code);
-      console.log('Original code:', code);
-      console.log('Transformed code:', transformedCode);
+      // Make audio functions available globally during execution
+      (window as any).clock = clock;
+      (window as any).sequencer = sequencer;
+      (window as any).time = () => clock.time();
+      (window as any).bpm = () => clock.bpm();
+      (window as any).ticks = () => clock.ticks();
+      (window as any).setBPM = (value: number) => clock.setBPM(value);
       
-      const executionContext = this.createExecutionContext(transformedCode, clock, sequencer);
-      const result = eval(executionContext);
+      // Execute code directly with eval
+      const result = eval(code);
       
       this.restoreConsole();
       
+      // Show return value if there's no console output and result exists
       if (this.outputs.length === 0 && result !== undefined) {
         this.outputs.push({ type: 'return', message: String(result) });
       }
+      
     } catch (error) {
       this.errorMessage = error instanceof Error ? error.toString() : String(error);
       this.restoreConsole();

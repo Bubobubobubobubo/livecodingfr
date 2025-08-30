@@ -1,5 +1,5 @@
 // Test file for sequencer
-import { sequencer, sine, saw, square, tri } from './sequencer.js';
+import { sequencer, sine, saw, square, tri } from './AudioBackend/sequencer.js';
 
 // Mock context for testing
 let testResults = [];

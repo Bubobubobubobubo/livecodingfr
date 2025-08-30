@@ -1,3 +1,7 @@
+/**
+ * Real-time audio waveform analyzer and visualizer using Web Audio API
+ * Provides time-domain waveform visualization on HTML canvas
+ */
 export class WaveformAnalyzer {
   private analyser: AnalyserNode | null = null;
   private dataArray: Float32Array | null = null;
@@ -8,6 +12,11 @@ export class WaveformAnalyzer {
   private bufferLength: number = 2048;
   private audioContext: AudioContext | null = null;
 
+  /**
+   * Initialize the waveform analyzer with canvas and audio context
+   * @param canvas - HTML canvas element for rendering waveform
+   * @param audioContext - Optional existing AudioContext, creates new one if not provided
+   */
   async init(canvas: HTMLCanvasElement, audioContext?: AudioContext): Promise<void> {
     this.canvas = canvas;
     this.canvasContext = canvas.getContext('2d');
@@ -30,12 +39,19 @@ export class WaveformAnalyzer {
   }
 
   // Method to connect an audio source to this analyzer
+  /**
+   * Connect an audio source to this analyzer for visualization
+   * @param source - AudioNode to analyze and visualize
+   */
   connectSource(source: AudioNode): void {
     if (this.analyser) {
       source.connect(this.analyser);
     }
   }
 
+  /**
+   * Configure canvas for high-DPI rendering and proper scaling
+   */
   setupCanvas(): void {
     if (!this.canvas || !this.canvasContext) return;
     
@@ -50,6 +66,9 @@ export class WaveformAnalyzer {
     this.canvas.style.height = rect.height + 'px';
   }
 
+  /**
+   * Begin real-time waveform analysis and rendering
+   */
   startAnalysis(): void {
     if (this.isAnalyzing) return;
     
@@ -57,6 +76,9 @@ export class WaveformAnalyzer {
     this.draw();
   }
 
+  /**
+   * Stop waveform analysis and cancel animation frame
+   */
   stopAnalysis(): void {
     this.isAnalyzing = false;
     if (this.animationId) {
@@ -130,10 +152,16 @@ export class WaveformAnalyzer {
     this.canvasContext.setLineDash([]);
   }
 
+  /**
+   * Reconfigure canvas dimensions after resize
+   */
   resize(): void {
     this.setupCanvas();
   }
 
+  /**
+   * Clean up resources and disconnect audio nodes
+   */
   destroy(): void {
     this.stopAnalysis();
     if (this.analyser) {

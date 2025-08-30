@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { clock } from '$lib/AudioBackend/audioClock';
-  import { sequencer } from '$lib/AudioBackend/sequencer';
+  import { clock, sequencer } from '$lib/AudioBackend/sequencer';
 
   const dispatch = createEventDispatcher();
 
@@ -24,7 +23,6 @@
       await clock.start();
       console.log('Clock started, running:', clock.running());
       
-      await sequencer.initSynthPool();
       sequencer.registerClockListener();
       console.log('Sequencer initialized');
       

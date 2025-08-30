@@ -1,18 +1,63 @@
-<script>
+<script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { WaveformAnalyzer } from './waveformAnalyzer';
 
-  export let isActive = false;
+  /**
+   * Whether the waveform analyzer should be active
+   */
+  export let isActive: boolean = false;
 
-  let canvas;
-  let waveformAnalyzer;
-  let resizeObserver;
+  let canvas: HTMLCanvasElement;
+  let waveformAnalyzer: WaveformAnalyzer | null = null;
+  let resizeObserver: ResizeObserver | null = null;
 
+  /**
+   * Initialize waveform analyzer and set up resize observer
+   */
   onMount(() => {
-    waveformAnalyzer = new WaveformAnalyzer();
-    
-    if (isActive) {
-      initializeWaveform();
+    try {
+      waveformAnalyzer = new WaveformAnalyzer();
+      
+      if (isActive) {
+        initializeWaveform();
+      }
+
+      setupResizeObserver();
+    } catch (error) {
+      console.error('Failed to initialize waveform display:', error);
+    }
+  });
+
+  /**
+   * Clean up resources on component destruction
+   */
+  onDestroy(() => {
+    cleanup();
+  });
+
+  /**
+   * Initialize the waveform analyzer with the canvas element
+   */
+  async function initializeWaveform(): Promise<void> {
+    if (!waveformAnalyzer || !canvas) {
+      console.warn('Cannot initialize waveform: missing analyzer or canvas');
+      return;
+    }
+
+    try {
+      await waveformAnalyzer.init(canvas);
+    } catch (error) {
+      console.error('Failed to initialize waveform analyzer:', error);
+    }
+  }
+
+  /**
+   * Set up resize observer to handle canvas resizing
+   */
+  function setupResizeObserver(): void {
+    if (typeof ResizeObserver === 'undefined') {
+      console.warn('ResizeObserver not supported');
+      return;
     }
 
     resizeObserver = new ResizeObserver(() => {
@@ -24,27 +69,44 @@
     if (canvas) {
       resizeObserver.observe(canvas);
     }
-  });
+  }
 
-  onDestroy(() => {
+  /**
+   * Clean up all resources
+   */
+  function cleanup(): void {
     if (waveformAnalyzer) {
       waveformAnalyzer.destroy();
+      waveformAnalyzer = null;
     }
+    
     if (resizeObserver) {
       resizeObserver.disconnect();
-    }
-  });
-
-  async function initializeWaveform() {
-    if (waveformAnalyzer && canvas) {
-      await waveformAnalyzer.init(canvas);
+      resizeObserver = null;
     }
   }
 
-  $: if (isActive && waveformAnalyzer && canvas) {
-    initializeWaveform();
-  } else if (!isActive && waveformAnalyzer) {
-    waveformAnalyzer.stopAnalysis();
+  /**
+   * Reactive statement to handle activation state changes
+   */
+  $: handleActivationChange(isActive, waveformAnalyzer, canvas);
+
+  /**
+   * Handle changes to the activation state
+   * @param active - Whether waveform should be active
+   * @param analyzer - Current waveform analyzer instance
+   * @param canvasElement - Canvas element reference
+   */
+  function handleActivationChange(
+    active: boolean, 
+    analyzer: WaveformAnalyzer | null, 
+    canvasElement: HTMLCanvasElement
+  ): void {
+    if (active && analyzer && canvasElement) {
+      initializeWaveform();
+    } else if (!active && analyzer) {
+      analyzer.stopAnalysis();
+    }
   }
 </script>
 

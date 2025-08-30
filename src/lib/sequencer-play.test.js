@@ -1,5 +1,5 @@
 // Test auto-play behavior
-import { schedule, sine, cycle, clearSchedule } from './sequencer.js';
+import { schedule, sine, cycle, clearSchedule } from './AudioBackend/sequencer.js';
 
 console.log('Testing auto-play with chaining...\n');
 
