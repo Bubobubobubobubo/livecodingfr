@@ -9,14 +9,14 @@
   {
     "name": "Raphaël Forment",
     "description": "BuboBubo",
-    "image": "https://avatars.githubusercontent.com/u/45191785?s=400&u=3ee9062082ce04b6f08f811e657797fe9528d106&v=4",
+    "image": "/images/members/raphael_forment_github.webp",
     "site": "https://raphaelforment.fr",
     "mail": ""
   },
   {
     "name": "Rémi Georges",
     "description": "Ralt144MI",
-    "image": "https://avatars.githubusercontent.com/u/75539795?v=4",
+    "image": "/images/members/remi_georges_github.webp",
     "site": "https://remigeorges.fr/",
     "mail": ""
   },
@@ -30,42 +30,42 @@
   {
     "name": "Agathe Herrou",
     "description": "th4",
-    "image": "https://club.tidalcycles.org/user_avatar/club.tidalcycles.org/th4/144/505_2.png",
+    "image": "/images/members/agathe_herrou.webp",
     "site": "https://th4music.net",
     "mail": ""
   },
   {
     "name": "Raphaël Bastide",
     "description": "_",
-    "image": "https://radicalnetworks.org/archives/2018/participants/raphael-bastide/raphaelbastide.jpg",
+    "image": "/images/members/raphael_bastide.webp",
     "site": "https://raphaelbastide.com",
     "mail": ""
   },
   {
     "name": "Mamady Diarra",
     "description": "ΛFΛLFL",
-    "image": "https://image-cdn.later.com/linkinbio_attachments/avatar/uploads-8d2b4941-bbce-6e0a-f8fd-c45c1736c9fb/thumb_md.jpg",
+    "image": "/images/members/mamady_diarra.webp",
     "site": "https://linkin.bio/afalfl",
     "mail": ""
   },
   {
     "name": "AZERTYPE",
     "description": "_",
-    "image": "https://avatars.githubusercontent.com/u/86887772?v=4",
+    "image": "/images/members/azertype_github.webp",
     "site": "http://www.azertype.fr/",
     "mail": ""
   },
   {
     "name": "Crash Server",
     "description": "_",
-    "image": "https://crashserver.fr/_astro/schlaff-1024x683.BAFGLUnJ_Z2sOrK6.webp",
+    "image": "/images/members/crash_server.webp",
     "site": "https://crashserver.fr/",
     "mail": ""
   },
   {
     "name": "Jonathan Lefebvre",
     "description": "Krease / VJBlind",
-    "image": "images/vj.jpeg",
+    "image": "/images/vj.jpeg",
     "site": "https://www.linkedin.com/in/jonathan-lefebvre-a4867744/",
     "mail": ""
   },
@@ -100,35 +100,35 @@
   {
     "name": "Johann Philippe",
     "description": "_",
-    "image": "https://www.ateliersmedicis.fr/sites/atelier-medicis.fr/files/styles/acteur/public/2021-04/landscape.webp?itok=zsBOuROD",
+    "image": "/images/members/johann_philippe.webp",
     "site": "https://soundcloud.com/johannphilippe",
     "mail": ""
   },
   {
     "name": "Jacopo Greco d'Alceo",
     "description": "_",
-    "image": "https://avatars.githubusercontent.com/u/92983918?v=4",
+    "image": "/images/members/jacopo_greco_github.webp",
     "site": "https://jacopogrecodalceo.github.io/",
     "mail": ""
   },
   {
     "name": "Joenio M. Costa",
     "description": "Joenio Marques da Costa",
-    "image": "https://joenio.me/avatars/joenio-2024-nocolor-150x150.jpg",
+    "image": "/images/members/joenio_costa.webp",
     "site": "https://joenio.me",
     "mail": ""
   },
   {
     "name": "Mari Moura",
     "description": ":mari_moura ::art",
-    "image": "https://marimoura.4two.art/imagem_1.jpg",
+    "image": "/images/members/mari_moura.webp",
     "site": "https://marimoura.4two.art",
     "mail": ""
   },
   {
     "name": "ParVagues",
     "description": "🥁 Ambient/Breakbeat/Techno livecoding with MIDI input 🎛️",
-    "image": "https://i1.sndcdn.com/avatars-gSZ1pacuvThegE3s-L9KzUg-t1080x1080.jpg",
+    "image": "/images/members/parvagues.webp",
     "site": "https://me.nech.pl/parvagues/",
     "mail": "parvagues@nech.removethispart.pl"
   }

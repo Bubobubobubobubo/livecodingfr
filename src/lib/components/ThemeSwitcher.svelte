@@ -29,12 +29,6 @@
   aria-label="Changer le thème: {currentThemeData.label}"
   title="Thème: {currentThemeData.label}"
 >
-  <svg 
-    class="w-4 h-4" 
-    fill="currentColor" 
-    viewBox="0 0 24 24"
-  >
-    <path d="M12 18C8.686 18 6 15.314 6 12s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-5-4a5 5 0 0110 0h-2a3 3 0 00-6 0H7z"/>
-  </svg>
+  <span class="text-base">◐</span>
   <span class="hidden sm:inline">{currentThemeData.label}</span>
 </button>

@@ -3,21 +3,21 @@
     "name": "Renardo",
     "creator": "Elie Gavoty et co.",
     "description": "Un environnement conçu pour improviser de la musique algorithmique en Python, conçu pour les débutants. Une nouvelle version de FoxDot avec beaucoup de nouvelles fonctionnalités.",
-    "image": "https://renardo.org/images/screenshot1.png",
+    "image": "/images/tools/renardo.webp",
     "link": "https://renardo.org"
   },
   {
     "name": "Protoplug",
     "creator": "Pierre Cusa",
     "description": "Protoplug is a VST/AU plugin that lets you load and edit Lua scripts as audio effects and instruments. The scripts can process audio and MIDI, display their own interface, and use external libraries. Transform any music software into a live coding environment!",
-    "image": "https://www.osar.fr/protoplug/protoplug_screenshot.png",
+    "image": "/images/tools/protoplug.webp",
     "link": "https://github.com/pac-dev/protoplug"
   },
   {
     "name": "Sardine",
     "creator": "Raphaël Forment",
     "description": "Sardine est un logiciel libre et open source pour Python 3.10+. Sardine transforme Python en un instrument de musique. C'est un framework pour live coder et contrôler du matérial audio depuis Python. Sardine peut se synchroniser à d'autres logiciels ou instances du même logiciel.",
-    "image": "https://sardine.raphaelforment.fr/sardine_logo.svg#center",
+    "image": "/images/tools/sardine_logo.svg#center",
     "link": "https://sardine.raphaelforment.fr"
   },
   {
@@ -25,20 +25,20 @@
     "creator": "Guillaume Pelletier-Auger",
     "description": "Grimoire est un logiciel expérimental dédié à l'exploration de nouvelles rencontres possibles entre l'animation, la musique, le dessin, la programmation informatique, la performance audiovisuelle, l'écriture et l'hypertextualité. Avec Grimoire, les artistes peuvent apprendre la programmtion 'in vivo' afin de créer de l'art génératif visuel ou sonore ainsi que des systèmes interactifs.",
     "link": "https://pelletierauger.com/grimoire/",
-    "image": "https://pelletierauger.com/images/thumbnails/grimoire.jpg"
+    "image": "/images/tools/grimoire.webp"
   },
   {
     "name": "Été",
     "creator": "Raphaël Bastide",
     "description": "Été mélange live coding (écriture musicale temps réel au travers du code) et percussions. Le programme considère le clavier comme un instrument percussif. Le musicien peut écrire des instructions algorithmiques et des instructions percussives très précises au sein du même environnement de programmation. Été est une expérimentation qui essaie de lier dans un même programme le temps dédié à la composition algorithmique et celui dédié à l'improvisation spontanée.",
-    "image": "https://gitlab.com/uploads/-/system/project/avatar/35391245/Screenshot_2023-09-19_16-09-44.jpg",
+    "image": "/images/tools/ete.webp",
     "link": "https://raphaelbastide.com/ete/"
   },
   {
     "name": "Cordelia",
     "creator": "Jacopo Greco d'Alceo",
     "description": "Une méthode, une tendre affection, hiver 2023. Cordelia est un environnement de live coding qui combine Python au moteur audio CSound.",
-    "image": "https://avatars.githubusercontent.com/u/92983918?v=4",
+    "image": "/images/tools/cordelia_github.webp",
     "link": "https://github.com/jacopogrecodalceo/CORDELIA"
   },
   {
@@ -52,7 +52,7 @@
     "name": "OSCII",
     "creator": "Adel Faure",
     "description": "OSCII est un logiciel pour dessiner et live coder des visuels en text-mode. OSCII produit également du son grâce à WebAudio.",
-    "image": "https://i1.sndcdn.com/avatars-1Kjtq0wbLSNSpNQH-AqRXfQ-t500x500.jpg",
+    "image": "/images/tools/oscii.webp",
     "link": "https://gitlab.com/adelfaure/oscii"
   },
   {
@@ -66,28 +66,28 @@
     "name": "Claude",
     "creator": "Loïc Vital",
     "description": "Claude est un outil pour synchroniser des visuels avec de l'audio dans un contexte de live coding. Claude, pour le moment, est seulement disponible pour un environnement : Sardine. Il peut être utilisé comme un sender, ce qui permet ensuite d'utiliser le Sardine Pattern Language pour écrire des valeurs uniform à envoyer.",
-    "image": "https://avatars.githubusercontent.com/u/70104194?v=4",
+    "image": "/images/tools/claude_github.webp",
     "link": "https://github.com/mugulmd/Claude"
   },
   {
     "name": "Cascade",
     "creator": "Raphaël Bastide",
     "description": "Cascade est un environnement de live-coding pour le navigateur web. Il transforme les règles du langage CSS en sons !",
-    "image": "https://raphaelbastide.com/cascade/website/img/poster.svg",
+    "image": "/images/tools/cascade.svg",
     "link": "https://raphaelbastide.com/cascade/"
   },
   {
     "name": "Biset Regex",
     "creator": "Gibbon Joyeux",
     "description": "Un séquenceur de patterns pour créer des rythmes et des mélodies à partir de texte sur VCVRack 2.0.",
-    "image": "https://library.vcvrack.com/screenshots/400/Biset/Biset-Regex.png",
+    "image": "/images/tools/biset_regex.webp",
     "link": "https://github.com/gibbonjoyeux/VCV-Biset"
   },
   {
     "name": "dublang",
     "creator": "Joenio Marques da Costa",
     "description": "dublang est un système de codage en direct multilingue qui prend en charge plusieurs langues au cours d'un même code source.",
-    "image": "https://dublang.4two.art/artwork/dublang-logo-bg-white-420x420.png",
+    "image": "/images/tools/dublang_logo.webp",
     "link": "https://dublang.4two.art"
   }
 ]

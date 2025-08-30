@@ -3,41 +3,41 @@
     "name": "Cookie Collective",
     "place": "Paris",
     "description": "Le Cookie Collective rassemble des artistes impliqués dans la création numérique temps réel. Cela couvre le domaine du jeu vidéo, des installations artistiques, du mapping vidéo, la demoscene, les algoraves, etc. Nous organisons des jams au cours desquelles les artistes réalisent des créations sonores ou visuelles devant un public. Nous publions des fanzines qui mettent l'accent sur nos manières de créer. Nous accueillons tout ceux qui partagent un intérêt commun pour la création temps réel. Contactez nous ou rejoignez le serveur Discord.",
-    "image": "https://www.cookie.paris/image.jpg",
+    "image": "/images/networks/cookie_collective.webp",
     "link": "https://cookie.paris"
   },
   {
     "name": "Fuz Hackerspace",
     "place": "Montreuil",
     "description": "FUZ est un hackerspace à Montreuil (anciennement à Paris). Il est la continuation de deux hackerspaces complémentaires, DataPaulette et LeJack, dans un nouveau lieu depuis octobre 2018, déménagé en juillet 2022. Chacun sont issus du LeLoop et de la Blackboxe (blog). Ateliers de creative coding (programmation artistique) organisés par le Cookie Collective.",
-    "image": "https://wiki.fuz.re/lib/exe/fetch.php?media=wiki:logo.png",
+    "image": "/images/networks/fuz_hackerspace.webp",
     "link": "https://wiki.fuz.re/doku.php?id=evenements:creative_coding"
   },
   {
     "name": "Creative Coding Bordeaux",
     "place": "Bordeaux",
     "description": "Creative Coding Bordeaux est un groupe destiné au partage des idées, techniques et passions autour de l'art algorithmique",
-    "image": "https://secure.meetupstatic.com/photos/event/b/7/a/2/clean_515327010.webp",
+    "image": "/images/networks/creative_coding_bordeaux.webp",
     "link": "https://www.meetup.com/fr-FR/creative-coding-bordeaux/"
   },
   {
     "name": "Digital Audio Community",
     "place": "Lyon",
     "description": "Creative Code Lyon est une communauté lyonnaise dédiée à la programmation créative. En son sein existe un petit groupe, nommé le DAC (Digital Audio Community). Il se réunit toutes les deux semaines au Laboratoire Ouvert Lyonnais (LOL) pour discuter de synthèse sonore, de live coding, de création sonore. Pour nous contacter, rejoignez le serveur Discord !",
-    "image": "images/creative_code_lyon.jpeg",
+    "image": "/images/creative_code_lyon.jpeg",
     "link": "https://discord.gg/B2e5a3Y3uk"
   },
   {
     "name": "Ordinateur dans la tête",
     "place": "Lyon",
     "description": "Label de musique consacré à la diffusion de musique live codée sur cassette. Réalise également des impressions papier. 'Code as music, for humans and computers'.",
-    "image": "https://f4.bcbits.com/img/0028956465_21.jpg",
+    "image": "/images/networks/ordinateur_dans_la_tete.webp",
     "link": "https://ordinateurdanslatete.bandcamp.com/"
   },
   {
     "name": "Live Coding Strasbourg",
     "place": "Strasbourg",
-    "image": "https://livecodingstrasbourg.github.io/_astro/logo_Toplap_Strasbourg.DoEZNnjO_zq8SO.webp",
+    "image": "/images/networks/live_coding_strasbourg.webp",
     "description": "Communauté dédiée au live coding à Strasbourg, organisée par Crash Server. Organise concerts et ateliers dédiés au live-coding.",
     "link": "https://www.facebook.com/livecodingstrasbourg"
   }

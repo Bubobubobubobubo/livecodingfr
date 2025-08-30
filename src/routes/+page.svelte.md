@@ -2,15 +2,14 @@
      import Info from "$lib/components/Info.svelte";
      import Gallery from "$lib/components/Gallery.svelte";
      import YouTubeLazyLoad from "$lib/components/YouTubeLazyLoad.svelte";
-     import REPL from "$lib/components/REPL.svelte";
 
      let intro_gallery = [
-        {link: "https://ralt144mi.remigeorges.fr/Ralt144MI3.png", description: "Rémi Georges"},
-        {link: "https://www.cookie.paris/static/bc65c5fd7f7c76dc70bcd9892dc17a4d/7c735/16.webp", description: "Azertype"},
-        {link: "https://www.cookie.paris/static/9dbc442f1f54a41b9210b3ba1b835226/7c735/13.webp", description: "Jules Cipher"},
+        {link: "../images/members/ralt144mi.webp", description: "Rémi Georges"},
+        {link: "../images/members/azertype1.webp", description: "Azertype"},
+        {link: "../images/members/azertype2.webp", description: "Jules Cipher"},
         {link: "../images/leondenise.jpeg", description: "Léon Denise"},
         {link: "../images/algorave_2025.jpg", description: "Algorave au Grrrnd Zero"},
-        {link: "https://sardine.raphaelforment.fr/presentation/what_is_live_coding.jpeg#center", description: "Raphaël Forment"},
+        {link: "../images/what_is_live_coding.webp", description: "Raphaël Forment"},
      ]
 </script>
 <svelte:head>
@@ -22,10 +21,6 @@
 [Livecoding.fr](https://livecoding.fr) est un site dédié à la mise en valeur de la pratique du _live coding_ en France. Il est périodiquement maintenu par un [groupe d'artistes](https://livecoding.fr/membres) et de musiciens francophones. Il se destine à servir de portail pour découvrir différents aspects de cette pratique : [évènements](https://livecoding.fr/evenements), [outils](https://livecoding.fr/outils), [réseaux](https://livecoding.fr/reseaux), liens vers le travail des artistes répertoriés, etc. Toute modification est la bienvenue. Le site est conçu pour être maintenu et actualisé facilement, de manière collaborative. Consultez [le dépôt](https://github.com/Bubobubobubobubo/livecodingfr) du site pour en apprendre plus.
 
 <Gallery pictures={intro_gallery}/>
-
-# Essayez le live coding !
-
-<REPL />
 
 # Qu'est-ce que le live-coding ?
 
@@ -43,7 +38,7 @@ Au-delà de la performance, le <i>live coding</i> est une pratique qui mène à 
 Le <i>live coding</i> a été historiquement promu et popularisé par le collectif international <a href="https://toplap.org">TOPLAP</a>. La scène du <i>live coding</i> réunit aujourd'hui de nombreux <a href="https://livecodingbook.toplap.org/">chercheurs</a>, musiciens et développeurs de tous horizons. De nombreux groupes en Europe et dans le monde sont issus de la sphère d'influence de ce collectif et ont depuis trouvé leur voix propre : <a href="https://toplap.cat/en/home">TOPLAP Barcelona</a>, <a href="https://livecode.nyc/">Livecode NYC</a>, parmi d'autres. La pratique du <i>live coding</i> s'est popularisée au travers d'un <a href="https://toplap.org/wiki/ManifestoDraft">manifeste</a> et de nombreuses <a href="https://algorave.com">Algoraves</a> (<i>algorithmic rave parties</i>, à partir de 2012). Toutefois, limiter le <i>live coding</i> à ce seul phénomène culturel revient à ne prêter à attention qu'à l'arbre qui cache la forêt. Le <i>live coding</i> est une pratique ancienne, qui existe <i>a minima</i> depuis la fin des années 1980. Cette dernière s'est disséminée dans l'ensemble des arts numériques, aussi bien en <a href="https://supercollider.github.io/">musique</a> que dans les <a href="https://teddavis.org/p5live/">arts visuels</a>, le <a href="https://chuck.cs.princeton.edu/chunity/">jeu vidéo</a>, etc. Le <i>live coding</i> est une pratique courante en informatique, bien que sa mise en valeur par la performance soit un phénomène plus rare.
 </div>
 <div class="bg-theme-bg-secondary rounded-lg flex items-center justify-center min-h-[200px]">
-<span class="text-theme-text-muted"><img src="https://raphaelforment.fr/images/software_picture/buboquark_algorave_grrrnd.png"/></span>
+<span class="text-theme-text-muted"><img src="../images/buboquark_algorave_grrrnd.webp"/></span>
 </div>
 </div>
 
