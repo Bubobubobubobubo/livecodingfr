@@ -73,7 +73,7 @@
   });
 </script>
 
-<div class="repl-container bg-neutral-900 border border-gray-800 p-4 my-4 relative">
+<div class="repl-container bg-theme-bg-secondary border border-theme-border-primary p-4 my-4 relative">
   {#if !editorReady}
     <AudioClockStartup 
       on:clockStarted={handleClockStarted}
@@ -92,7 +92,7 @@
         <div class="flex-1" bind:this={editorContainer}></div>
         <button
           on:click={executeCode}
-          class="px-4 bg-neutral-800 text-orange-400 border border-gray-800 hover:border-orange-400 hover:bg-neutral-800 transition-all duration-200 text-sm font-semibold uppercase tracking-wider h-[200px]"
+          class="px-4 bg-theme-bg-tertiary text-theme-accent-primary border border-theme-border-primary hover:border-theme-accent-primary hover:bg-theme-bg-secondary transition-all duration-200 text-sm font-semibold uppercase tracking-wider h-[200px]"
         >
           Run<br/>(Ctrl/Cmd+Enter)
         </button>

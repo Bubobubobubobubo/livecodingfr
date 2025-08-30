@@ -10,18 +10,18 @@
 </script>
 
 <div
-  class="w-full bg-neutral-800 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] flex flex-col h-full border border-gray-700 hover:border-orange-400"
+  class="w-full bg-theme-bg-secondary shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] flex flex-col h-full border border-theme-border-secondary hover:border-theme-accent-primary"
 >
   <a href={link} target="_blank" rel="noopener noreferrer">
     <img class="h-40 w-full object-cover" src={image} alt="" loading="lazy" />
   </a>
-  <div class="p-4 flex flex-col flex-1 border-t-2 border-orange-400">
+  <div class="p-4 flex flex-col flex-1 border-t-2 border-theme-accent-primary">
     <a href={link} target="_blank" rel="noopener noreferrer">
-      <h3 class="mb-2 text-base font-semibold text-white leading-tight hover:text-orange-300 transition-colors duration-200">
+      <h3 class="mb-2 text-base font-semibold text-theme-text-primary leading-tight hover:text-theme-accent-secondary transition-colors duration-200">
         {truncateString(title, 60)}
       </h3>
     </a>
-    <p class="mb-4 text-sm text-gray-400 font-normal leading-relaxed flex-1">
+    <p class="mb-4 text-sm text-theme-text-muted font-normal leading-relaxed flex-1">
       {description}
     </p>
     <div class="mt-auto">
@@ -29,7 +29,7 @@
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center text-sm font-medium text-orange-300 hover:text-orange-200 transition-colors duration-200"
+        class="inline-flex items-center text-sm font-medium text-theme-accent-secondary hover:text-theme-accent-primary transition-colors duration-200"
       >
         Lire l'article →
       </a>

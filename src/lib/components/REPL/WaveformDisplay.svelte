@@ -117,15 +117,15 @@
   ></canvas>
   {#if !isActive}
     <div class="overlay">
-      <span class="text-gray-500 text-sm">Start audio clock to see waveform</span>
+      <span class="text-theme-text-muted text-sm">Start audio clock to see waveform</span>
     </div>
   {/if}
 </div>
 
 <style>
   .waveform-container {
-    background: #262626;
-    border: 1px solid #1f2937;
+    background: rgb(var(--color-bg-tertiary));
+    border: 1px solid rgb(var(--color-border-primary));
     height: 80px;
     position: relative;
     overflow: hidden;
@@ -146,6 +146,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(23, 23, 23, 0.8);
+    background: rgba(var(--color-bg-primary), 0.8);
   }
 </style>

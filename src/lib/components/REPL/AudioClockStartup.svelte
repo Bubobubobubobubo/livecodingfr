@@ -35,14 +35,14 @@
 </script>
 
 <div class="start-overlay">
-  <h2 class="text-2xl font-bold text-orange-400 mb-4">Démarrer l'horloge audio</h2>
-  <p class="text-gray-300 mb-6">
+  <h2 class="text-2xl font-bold text-theme-accent-primary mb-4">Démarrer l'horloge audio</h2>
+  <p class="text-theme-text-secondary mb-6">
     Ce REPL utilise une horloge audio haute précision pour la synchronisation.<br>
     Cliquez ci-dessous pour démarrer le contexte audio et initialiser l'éditeur.
   </p>
   <button
     on:click={startAudioClock}
-    class="px-6 py-2 bg-orange-400 text-black font-semibold uppercase tracking-wider hover:bg-orange-300 transition-colors"
+    class="px-6 py-2 bg-theme-accent-primary text-theme-bg-primary font-semibold uppercase tracking-wider hover:bg-theme-accent-secondary transition-colors"
   >
     Démarrer l'horloge
   </button>

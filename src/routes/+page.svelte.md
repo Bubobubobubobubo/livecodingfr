@@ -29,7 +29,7 @@
 
 # Qu'est-ce que le live-coding ?
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-black dark:text-white">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-theme-text-primary">
 <div>
 Le <i>live coding</i> est une pratique d'improvisation où les langages de programmation deviennent des instruments de création temps réel. Durant leur performance, les <i>live coders</i> écrivent et modifient du code, le projettent afin que le public puisse suivre leur processus créatif. Cette transparence transforme la programmation en un moment d'expression artistique ouvert, partagé, visible de tous. Cette pratique se situe au croisement de l'informatique musicale, de l'ingéniérie logicielle, de l'improvisation et de la musique algorithmique ou générative. Le <i>live coding</i> est une pratique intrinsèquement pluridisciplinaire. Les artistes entrelacent librement création sonore et visuelle, pensée algorithmique et geste créatif. En transformant l'ordinateur en instrument, le <i>live coding</i> offre un contrepoint intéressant au paysage habituel -- et déjà figé -- des lutheries contemporaines.
 </div>
@@ -38,12 +38,12 @@ Au-delà de la performance, le <i>live coding</i> est une pratique qui mène à 
 </div>
 </div>
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-black dark:text-white mt-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-theme-text-primary mt-6">
 <div>
 Le <i>live coding</i> a été historiquement promu et popularisé par le collectif international <a href="https://toplap.org">TOPLAP</a>. La scène du <i>live coding</i> réunit aujourd'hui de nombreux <a href="https://livecodingbook.toplap.org/">chercheurs</a>, musiciens et développeurs de tous horizons. De nombreux groupes en Europe et dans le monde sont issus de la sphère d'influence de ce collectif et ont depuis trouvé leur voix propre : <a href="https://toplap.cat/en/home">TOPLAP Barcelona</a>, <a href="https://livecode.nyc/">Livecode NYC</a>, parmi d'autres. La pratique du <i>live coding</i> s'est popularisée au travers d'un <a href="https://toplap.org/wiki/ManifestoDraft">manifeste</a> et de nombreuses <a href="https://algorave.com">Algoraves</a> (<i>algorithmic rave parties</i>, à partir de 2012). Toutefois, limiter le <i>live coding</i> à ce seul phénomène culturel revient à ne prêter à attention qu'à l'arbre qui cache la forêt. Le <i>live coding</i> est une pratique ancienne, qui existe <i>a minima</i> depuis la fin des années 1980. Cette dernière s'est disséminée dans l'ensemble des arts numériques, aussi bien en <a href="https://supercollider.github.io/">musique</a> que dans les <a href="https://teddavis.org/p5live/">arts visuels</a>, le <a href="https://chuck.cs.princeton.edu/chunity/">jeu vidéo</a>, etc. Le <i>live coding</i> est une pratique courante en informatique, bien que sa mise en valeur par la performance soit un phénomène plus rare.
 </div>
-<div class="bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center min-h-[200px]">
-<span class="text-gray-500 dark:text-gray-400"><img src="https://raphaelforment.fr/images/software_picture/buboquark_algorave_grrrnd.png"/></span>
+<div class="bg-theme-bg-secondary rounded-lg flex items-center justify-center min-h-[200px]">
+<span class="text-theme-text-muted"><img src="https://raphaelforment.fr/images/software_picture/buboquark_algorave_grrrnd.png"/></span>
 </div>
 </div>
 

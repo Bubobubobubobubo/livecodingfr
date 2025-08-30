@@ -1,10 +1,67 @@
 @tailwind base;
 
+/* Theme System Variables */
 :root {
+  /* Existing DaisyUI variables */
   --rounded-box: 0;
   --rounded-btn: 0;
   --rounded-badge: 0;
   --tab-radius: 0;
+  
+  /* Dark Theme (Default) */
+  --color-bg-primary: 23 23 23;        /* neutral-900 */
+  --color-bg-secondary: 38 38 38;      /* neutral-800 */
+  --color-bg-tertiary: 0 0 0;          /* black */
+  --color-text-primary: 255 255 255;   /* white */
+  --color-text-secondary: 209 213 219; /* gray-300 */
+  --color-text-muted: 156 163 175;     /* gray-400 */
+  --color-accent-primary: 251 146 60;  /* orange-400 */
+  --color-accent-secondary: 253 186 116; /* orange-300 */
+  --color-accent-tertiary: 249 115 22; /* orange-600 */
+  --color-border-primary: 31 41 55;    /* gray-800 */
+  --color-border-secondary: 55 65 81;  /* gray-700 */
+}
+
+[data-theme="light"] {
+  --color-bg-primary: 255 255 255;     /* white */
+  --color-bg-secondary: 249 250 251;   /* gray-50 */
+  --color-bg-tertiary: 243 244 246;    /* gray-100 */
+  --color-text-primary: 17 24 39;      /* gray-900 */
+  --color-text-secondary: 75 85 99;    /* gray-600 */
+  --color-text-muted: 107 114 128;     /* gray-500 */
+  --color-accent-primary: 234 88 12;   /* orange-600 */
+  --color-accent-secondary: 251 146 60; /* orange-400 */
+  --color-accent-tertiary: 194 65 12;  /* orange-700 */
+  --color-border-primary: 209 213 219; /* gray-300 */
+  --color-border-secondary: 229 231 235; /* gray-200 */
+}
+
+[data-theme="catppuccin-mocha"] {
+  --color-bg-primary: 30 30 46;        /* #1e1e2e */
+  --color-bg-secondary: 49 50 68;      /* #313244 */
+  --color-bg-tertiary: 69 71 90;       /* #45475a */
+  --color-text-primary: 205 214 244;   /* #cdd6f4 */
+  --color-text-secondary: 166 173 200; /* #a6adc8 */
+  --color-text-muted: 127 132 156;     /* #7f849c */
+  --color-accent-primary: 137 180 250; /* #89b4fa - blue */
+  --color-accent-secondary: 166 227 161; /* #a6e3a1 - green */
+  --color-accent-tertiary: 203 166 247; /* #cba6f7 - mauve */
+  --color-border-primary: 88 91 112;   /* #585b70 */
+  --color-border-secondary: 108 112 134; /* #6c7086 */
+}
+
+[data-theme="catppuccin-frappe"] {
+  --color-bg-primary: 48 52 70;        /* #303446 */
+  --color-bg-secondary: 41 44 60;      /* #292c3c */
+  --color-bg-tertiary: 35 38 52;       /* #232634 */
+  --color-text-primary: 198 208 245;   /* #c6d0f5 */
+  --color-text-secondary: 181 191 226; /* #b5bfe2 */
+  --color-text-muted: 165 173 206;     /* #a5adce */
+  --color-accent-primary: 140 170 238; /* #8caaee - blue */
+  --color-accent-secondary: 166 209 137; /* #a6d189 - green */
+  --color-accent-tertiary: 202 158 230; /* #ca9ee6 - mauve */
+  --color-border-primary: 81 87 109;   /* #51576d */
+  --color-border-secondary: 98 104 128; /* #626880 */
 }
 
 /* Set IBM Plex Sans as default font */
@@ -41,6 +98,15 @@ body {
       }
     }
 
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
 
     /* Hide scrollbar for Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
@@ -55,7 +121,7 @@ body {
 
 
     .footer-style {
-      @apply px-4 sm:px-6 lg:px-8 py-4 bg-neutral-800 border-t border-neutral-700;
+      @apply px-4 sm:px-6 lg:px-8 py-4 bg-theme-bg-secondary border-t border-theme-border-secondary;
     }
     
     .footer-style * {
@@ -63,12 +129,12 @@ body {
     }
 
     .mobile-nav-link {
-      @apply block px-4 py-2.5 text-sm font-semibold text-gray-300 hover:text-orange-400 hover:bg-neutral-800 transition-all duration-200 uppercase tracking-wider border-l-2 border-transparent hover:border-orange-400;
+      @apply block px-4 py-2.5 text-sm font-semibold text-theme-text-secondary hover:text-theme-accent-primary hover:bg-theme-bg-secondary transition-all duration-200 uppercase tracking-wider border-l-2 border-transparent hover:border-theme-accent-primary;
     }
 
 
     .nav-link {
-      @apply text-sm font-semibold text-gray-300 hover:text-orange-400 px-3 py-2 transition-all duration-300 relative uppercase tracking-wider;
+      @apply text-sm font-semibold text-theme-text-secondary hover:text-theme-accent-primary px-3 py-2 transition-all duration-300 relative uppercase tracking-wider;
     }
     
     .nav-link::after {
@@ -78,7 +144,7 @@ body {
       left: 0;
       width: 0;
       height: 2px;
-      background: #fb923c;
+      background: rgb(var(--color-accent-primary));
       transition: width 0.3s ease;
     }
     
@@ -87,7 +153,7 @@ body {
     }
 
     .website-title {
-      @apply text-3xl uppercase font-bold bg-gradient-to-r from-orange-300 via-red-300 to-orange-200 text-transparent bg-clip-text animate-gradient;
+      @apply text-3xl uppercase font-bold bg-gradient-to-r from-theme-accent-secondary via-theme-accent-primary to-theme-accent-secondary text-transparent bg-clip-text animate-gradient;
       font-family: 'IBM Plex Sans', sans-serif;
     }
 
@@ -118,15 +184,15 @@ body {
   }
 
   a {
-    @apply text-orange-300;
+    @apply text-theme-accent-secondary hover:text-theme-accent-primary transition-colors duration-200;
   }
 
   p {
-    @apply text-lg text-white mb-6 leading-relaxed font-normal;
+    @apply text-lg text-theme-text-primary mb-6 leading-relaxed font-normal;
   }
 
   li {
-    @apply list-disc text-base text-white py-1 ml-8 font-normal;
+    @apply list-disc text-base text-theme-text-primary py-1 ml-8 font-normal;
   }
   
   /* Ensure nested list items maintain the same text size */
@@ -135,16 +201,16 @@ body {
   }
 
   h1 {
-    @apply text-4xl border-b-2 dark:border-b-white border-b-gray-400 py-3 mb-8 font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
+    @apply text-4xl border-b-2 border-theme-border-primary py-3 mb-8 font-bold text-transparent bg-clip-text bg-gradient-to-r from-theme-accent-secondary to-theme-accent-primary;
   }
   h2 {
-    @apply text-2xl border-b-2 dark:border-b-white border-b-gray-400 py-2 mb-6 mt-10 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-orange-200;
+    @apply text-2xl border-b-2 border-theme-border-primary py-2 mb-6 mt-10 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-theme-accent-secondary to-theme-accent-primary;
   }
   h3 {
-    @apply text-xl py-2 mb-4 mt-8 font-semibold text-white;
+    @apply text-xl py-2 mb-4 mt-8 font-semibold text-theme-text-primary;
   }
   h4 {
-    @apply text-lg py-1 mb-3 mt-6 font-medium text-white;
+    @apply text-lg py-1 mb-3 mt-6 font-medium text-theme-text-primary;
   }
   pre {
     @apply bg-base-300 border-white border-l-2 my-4 px-2 py-2 pl-4
@@ -158,7 +224,7 @@ body {
     @apply my-4 space-y-1 list-decimal ml-8;
   }
   blockquote {
-    @apply bg-gray-900 py-5 px-6 mx-0 my-8 border-l-4 text-base text-white leading-relaxed font-normal italic;
+    @apply bg-theme-bg-secondary py-5 px-6 mx-0 my-8 border-l-4 border-theme-accent-primary text-base text-theme-text-primary leading-relaxed font-normal italic;
   }
 }
 @tailwind components;

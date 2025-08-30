@@ -12,33 +12,33 @@ const customTheme = EditorView.theme({
   "&": {
     height: "200px",
     fontSize: "14px",
-    backgroundColor: "#262626",
-    border: "1px solid #1f2937"
+    backgroundColor: "rgb(var(--color-bg-secondary))",
+    border: "1px solid rgb(var(--color-border-primary))"
   },
   ".cm-content": {
-    caretColor: "#fb923c",
+    caretColor: "rgb(var(--color-accent-primary))",
     fontFamily: "monospace",
     padding: "10px",
-    color: "#ffffff"
+    color: "rgb(var(--color-text-primary))"
   },
   ".cm-focused .cm-cursor": {
-    borderLeftColor: "#fb923c"
+    borderLeftColor: "rgb(var(--color-accent-primary))"
   },
   ".cm-focused .cm-selectionBackground, .cm-selectionBackground, .cm-content ::selection": {
-    backgroundColor: "#fb923c33 !important"
+    backgroundColor: "rgba(var(--color-accent-primary), 0.2) !important"
   },
   ".cm-activeLine": {
-    backgroundColor: "#17171722"
+    backgroundColor: "rgba(var(--color-bg-tertiary), 0.5)"
   },
   ".cm-gutters": {
-    backgroundColor: "#171717",
-    color: "#9ca3af",
+    backgroundColor: "rgb(var(--color-bg-tertiary))",
+    color: "rgb(var(--color-text-muted))",
     border: "none",
-    borderRight: "1px solid #1f2937"
+    borderRight: "1px solid rgb(var(--color-border-primary))"
   },
   ".cm-activeLineGutter": {
-    backgroundColor: "#262626",
-    color: "#fb923c"
+    backgroundColor: "rgb(var(--color-bg-secondary))",
+    color: "rgb(var(--color-accent-primary))"
   },
   ".cm-lineNumbers": {
     minWidth: "3rem"
@@ -47,37 +47,46 @@ const customTheme = EditorView.theme({
     padding: "0 2px 0 6px"
   },
   ".cm-foldGutter": {
-    color: "#9ca3af"
+    color: "rgb(var(--color-text-muted))"
   },
   "&.cm-focused .cm-matchingBracket": {
-    backgroundColor: "#fb923c33",
-    outline: "1px solid #fb923c"
+    backgroundColor: "rgba(var(--color-accent-primary), 0.2)",
+    outline: "1px solid rgb(var(--color-accent-primary))"
   }
 }, {dark: true});
 
+// Create a function to get CSS variable values
+function getCSSVariable(name: string): string {
+  if (typeof document !== 'undefined') {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(name);
+    return value ? `rgb(${value})` : '#ffffff';
+  }
+  return '#ffffff';
+}
+
 const highlightStyle = HighlightStyle.define([
-  {tag: tags.keyword, color: "#fb923c", fontWeight: "bold"},
-  {tag: tags.controlKeyword, color: "#fb923c", fontWeight: "bold"},
-  {tag: tags.operatorKeyword, color: "#fb923c"},
-  {tag: tags.operator, color: "#fb923c"},
-  {tag: tags.punctuation, color: "#9ca3af"},
-  {tag: tags.separator, color: "#9ca3af"},
-  {tag: tags.bracket, color: "#9ca3af"},
-  {tag: tags.variableName, color: "#ffffff"},
-  {tag: tags.function(tags.variableName), color: "#fdba74"},
-  {tag: tags.propertyName, color: "#60a5fa"},
-  {tag: tags.string, color: "#86efac"},
-  {tag: tags.number, color: "#c084fc"},
-  {tag: tags.bool, color: "#c084fc", fontWeight: "bold"},
-  {tag: tags.null, color: "#c084fc", fontWeight: "bold"},
-  {tag: tags.regexp, color: "#fbbf24"},
-  {tag: tags.comment, color: "#6b7280", fontStyle: "italic"},
-  {tag: tags.lineComment, color: "#6b7280", fontStyle: "italic"},
-  {tag: tags.blockComment, color: "#6b7280", fontStyle: "italic"},
-  {tag: tags.typeName, color: "#fdba74", fontWeight: "bold"},
-  {tag: tags.className, color: "#fdba74", fontWeight: "bold"},
-  {tag: tags.self, color: "#fb923c", fontWeight: "bold"},
-  {tag: tags.meta, color: "#9ca3af", fontStyle: "italic"},
+  {tag: tags.keyword, color: "rgb(var(--color-accent-primary))", fontWeight: "bold"},
+  {tag: tags.controlKeyword, color: "rgb(var(--color-accent-primary))", fontWeight: "bold"},
+  {tag: tags.operatorKeyword, color: "rgb(var(--color-accent-primary))"},
+  {tag: tags.operator, color: "rgb(var(--color-accent-primary))"},
+  {tag: tags.punctuation, color: "rgb(var(--color-text-muted))"},
+  {tag: tags.separator, color: "rgb(var(--color-text-muted))"},
+  {tag: tags.bracket, color: "rgb(var(--color-text-muted))"},
+  {tag: tags.variableName, color: "rgb(var(--color-text-primary))"},
+  {tag: tags.function(tags.variableName), color: "rgb(var(--color-accent-secondary))"},
+  {tag: tags.propertyName, color: "rgb(var(--color-accent-tertiary))"},
+  {tag: tags.string, color: "rgb(var(--color-accent-secondary))"},
+  {tag: tags.number, color: "rgb(var(--color-accent-tertiary))"},
+  {tag: tags.bool, color: "rgb(var(--color-accent-tertiary))", fontWeight: "bold"},
+  {tag: tags.null, color: "rgb(var(--color-accent-tertiary))", fontWeight: "bold"},
+  {tag: tags.regexp, color: "rgb(var(--color-accent-primary))"},
+  {tag: tags.comment, color: "rgb(var(--color-text-muted))", fontStyle: "italic"},
+  {tag: tags.lineComment, color: "rgb(var(--color-text-muted))", fontStyle: "italic"},
+  {tag: tags.blockComment, color: "rgb(var(--color-text-muted))", fontStyle: "italic"},
+  {tag: tags.typeName, color: "rgb(var(--color-accent-secondary))", fontWeight: "bold"},
+  {tag: tags.className, color: "rgb(var(--color-accent-secondary))", fontWeight: "bold"},
+  {tag: tags.self, color: "rgb(var(--color-accent-primary))", fontWeight: "bold"},
+  {tag: tags.meta, color: "rgb(var(--color-text-muted))", fontStyle: "italic"},
   {tag: tags.emphasis, fontStyle: "italic"},
   {tag: tags.strong, fontWeight: "bold"}
 ]);

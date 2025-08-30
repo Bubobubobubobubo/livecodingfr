@@ -31,28 +31,28 @@
   href={link}
   target="_blank"
   rel="noopener noreferrer"
-  class="group flex flex-col bg-neutral-900 border border-gray-800 hover:border-orange-500 transition-all duration-300 hover:scale-[1.005] overflow-hidden"
+  class="group flex flex-col bg-theme-bg-secondary border border-theme-border-secondary hover:border-theme-accent-primary transition-all duration-300 hover:scale-[1.005] overflow-hidden"
 >
   <div class="p-5">
     <div class="flex items-start justify-between mb-3">
       <div class="flex-grow">
-        <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors mb-1">
+        <h3 class="text-xl font-bold text-theme-text-primary group-hover:text-theme-accent-primary transition-colors mb-1">
           {title}
         </h3>
         {#if members}
-          <p class="text-xs uppercase tracking-wider text-orange-400 font-medium">{members}</p>
+          <p class="text-xs uppercase tracking-wider text-theme-accent-primary font-medium">{members}</p>
         {/if}
       </div>
-      <div class="text-gray-400 group-hover:text-orange-400 transition-colors ml-3">
+      <div class="text-theme-text-muted group-hover:text-theme-accent-primary transition-colors ml-3">
         {@html getIcon()}
       </div>
     </div>
-    <p class="text-sm text-gray-300 leading-relaxed">
+    <p class="text-sm text-theme-text-secondary leading-relaxed">
       {description}
     </p>
   </div>
-  <div class="px-5 py-3 bg-neutral-800 border-t border-gray-800 group-hover:bg-neutral-850 transition-colors">
-    <span class="text-xs uppercase tracking-wider text-gray-400 group-hover:text-orange-400 font-semibold transition-colors flex items-center gap-2">
+  <div class="px-5 py-3 bg-theme-bg-tertiary border-t border-theme-border-primary group-hover:bg-theme-bg-secondary transition-colors">
+    <span class="text-xs uppercase tracking-wider text-theme-text-muted group-hover:text-theme-accent-primary font-semibold transition-colors flex items-center gap-2">
       {#if platform === 'discord'}
         Rejoindre le Discord
       {:else if platform === 'telegram'}

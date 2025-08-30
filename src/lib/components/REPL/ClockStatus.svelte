@@ -16,8 +16,8 @@
 
 <style>
   .clock-status {
-    background: #262626;
-    border: 1px solid #1f2937;
+    background: rgb(var(--color-bg-secondary));
+    border: 1px solid rgb(var(--color-border-primary));
     height: 80px;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
   }
 
   .clock-icon {
-    color: #10b981;
+    color: rgb(var(--color-accent-secondary));
     font-size: 18px;
     font-weight: bold;
     animation: pulse 2s infinite;
@@ -45,7 +45,7 @@
   .clock-line {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
-    color: #ffffff;
+    color: rgb(var(--color-text-primary));
     font-weight: 500;
     line-height: 1.2;
   }
