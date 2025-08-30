@@ -1,5 +1,0 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="200" fill="#2d3748"/>
-  <text x="200" y="100" text-anchor="middle" fill="#a0aec0" font-family="system-ui" font-size="16">Article de presse</text>
-  <text x="200" y="120" text-anchor="middle" fill="#718096" font-family="system-ui" font-size="12">Image non disponible</text>
-</svg>
