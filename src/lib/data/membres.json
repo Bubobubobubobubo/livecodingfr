@@ -1,5 +1,19 @@
 [
   {
+    "name": "Koodes",
+    "description": "NSDOS / OS_XY",
+    "image": "/images/members/koodes.jpg",
+    "site": "https://www.youtube.com/nsdos",
+    "mail": ""
+  },
+  {
+    "name": "Irvin Zoure",
+    "description": "nananouille",
+    "image": "/images/members/irvin.webp",
+    "site": "",
+    "mail": "lowridersasso@proton.me"
+  },
+  {
     "name": "Jules Déjardin",
     "description": "Fronssons",
     "image": "/images/fronssons.png",
