@@ -89,5 +89,19 @@
     "description": "dublang est un système de codage en direct multilingue qui prend en charge plusieurs langues au cours d'un même code source.",
     "image": "/images/tools/dublang_logo.webp",
     "link": "https://dublang.4two.art"
+  },
+  {
+    "name": "Sova",
+    "creator": "Raphaël Forment, Loïg Jezequel, Tanguy Dubois",
+    "description": "Sova est un séquenceur à pas polyglotte pour le live coding. Chaque pas contient du code, écrit dans le langage de votre choix, évalué en temps réel au passage du séquenceur.",
+    "image": "/images/tools/sova.webp",
+    "link": "https://sova.livecoding.fr"
+  },
+  {
+    "name": "Cagire",
+    "creator": "Raphaël Forment",
+    "description": "Cagire est un séquenceur à pas où chaque pas contient un script Forth. Le script associé est exécuté à chaque fois que le séquenceur atteint ce pas.",
+    "image": "/images/tools/cagire.webp",
+    "link": "https://cagire.raphaelforment.fr"
   }
 ]
