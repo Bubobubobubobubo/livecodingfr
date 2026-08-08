@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="FaustX">
+  <rect width="512" height="512" fill="#0C171C"/>
+
+  <g stroke-linecap="square" fill="none">
+    <!-- the chain: three modules wired in series, Faust's own drawing -->
+    <path d="M64 176 H128" stroke="#6FAEC5" stroke-width="6"/>
+    <path d="M208 176 H304" stroke="#6FAEC5" stroke-width="6"/>
+    <path d="M384 176 H448" stroke="#6FAEC5" stroke-width="6"/>
+    <rect x="128" y="136" width="80" height="80" stroke="#6FAEC5" stroke-width="6"/>
+    <rect x="304" y="136" width="80" height="80" stroke="#6FAEC5" stroke-width="6"/>
+
+    <!-- the middle one is reached again while it sounds: same place, new body -->
+    <path d="M64 336 H128" stroke="#6FAEC5" stroke-width="6"/>
+    <path d="M208 336 H304" stroke="#6FAEC5" stroke-width="6"/>
+    <path d="M384 336 H448" stroke="#6FAEC5" stroke-width="6"/>
+    <rect x="128" y="296" width="80" height="80" stroke="#6FAEC5" stroke-width="6"/>
+    <rect x="304" y="296" width="80" height="80" fill="#3A2A17" stroke="#E0A055" stroke-width="6"/>
+    <path d="M322 314 L366 358" stroke="#E0A055" stroke-width="6"/>
+    <path d="M366 314 L322 358" stroke="#E0A055" stroke-width="6"/>
+  </g>
+
+  <text x="256" y="452" text-anchor="middle" fill="#DCE6E9"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="52" letter-spacing="2">Faust<tspan fill="#E0A055">X</tspan></text>
+</svg>
