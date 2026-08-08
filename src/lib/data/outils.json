@@ -103,5 +103,12 @@
     "description": "Cagire est un séquenceur à pas où chaque pas contient un script Forth. Le script associé est exécuté à chaque fois que le séquenceur atteint ce pas.",
     "image": "/images/tools/cagire.webp",
     "link": "https://cagire.raphaelforment.fr"
+  },
+  {
+    "name": "FaustX",
+    "creator": "Romain Peyrichou",
+    "description": "FaustX est un sur-ensemble de Faust pour le live coding. On y nomme un exemplaire et on agit dessus pendant que le son joue : remplacer le corps d'un module en gardant sa mémoire, le recâbler, piloter un réglage par un signal. FaustX traduit vers du Faust ordinaire. Il est livré avec un catalogue des 998 fonctions publiques de la bibliothèque Faust, avec leurs paramètres, valeurs de départ et bornes.",
+    "image": "/images/tools/faustx.svg",
+    "link": "https://github.com/roomi-fields/faustx"
   }
 ]
