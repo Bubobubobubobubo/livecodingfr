@@ -1,0 +1,6 @@
+# Dependency build scripts are opt-in since pnpm 10 and fatal when unapproved
+# since pnpm 11. esbuild needs its postinstall to place the platform binary;
+# svelte-preprocess (via svelte-check) only prints a reminder, so it stays off.
+allowBuilds:
+  esbuild: true
+  svelte-preprocess: false
